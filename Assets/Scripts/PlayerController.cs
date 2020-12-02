@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private float nextTimeOfFire = 0;
+    public Weapon currentWeapon;
+
+    [Header("Player")]
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] int health = 200;
 
     Rigidbody2D myRigidbody;
-    //public Camera cam;
-
+    
     Vector2 movement;
-        
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
         HandleCharacterMovement();
+        Shoot();
     }
 
     private void FixedUpdate()
@@ -41,7 +44,33 @@ public class PlayerController : MonoBehaviour
 
     }
 
- 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Shoot()
+       {
+        if (Input.GetMouseButton(0))
+        {
+            if (Time.time >= nextTimeOfFire)
+            {
+                currentWeapon.Shoot();
+                nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
+            }
+
+        }
+       }
 
 }
 
