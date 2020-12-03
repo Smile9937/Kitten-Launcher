@@ -6,10 +6,11 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 { 
     private Transform Player;
+    
     [SerializeField] int MoveSpeed = 4;
     [SerializeField] int MaxDist = 10;
     [SerializeField] int MinDist = 5;
-
+    
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -18,7 +19,11 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         transform.LookAt(Player);
+        ChasePlayer();
+    }
 
+    private void ChasePlayer()
+    {
         if (Vector3.Distance(transform.position, Player.position) >= MinDist)
         {
 
@@ -29,7 +34,7 @@ public class EnemyAI : MonoBehaviour
 
             if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
             {
-                //Here call any function you want, such as Shoot at player or something
+                AttackPlayer();
             }
 
         }
