@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float mSpeed = 10f;
+    public List<Cards>cards;
+
+    public float startMoveSpeed = 10f;
+    public float moveSpeed = 10f;
 
     Rigidbody2D myRigidbody;
     void Start()
@@ -24,7 +27,7 @@ public class Player : MonoBehaviour
         float verticalMove = Input.GetAxis("Vertical");
         float horizontalMove = Input.GetAxis("Horizontal");
 
-        Vector2 playerVelocity = new Vector2(horizontalMove * mSpeed, verticalMove * mSpeed);
+        Vector2 playerVelocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
         myRigidbody.velocity = playerVelocity;
     }
     private void Aim()
