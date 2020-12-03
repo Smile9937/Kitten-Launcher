@@ -10,9 +10,14 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] int MoveSpeed = 4;
     [SerializeField] int MaxDist = 10;
     [SerializeField] int MinDist = 5;
+
+    [SerializeField] GameObject projectile;
+    [SerializeField] float fireRate = 1f;
+    [SerializeField] float nextFire;
     
     void Start()
     {
+        nextFire = Time.time;
         Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -39,6 +44,12 @@ public class EnemyAI : MonoBehaviour
 
         }
     }
+
+    private void AttackPlayer()
+    {
+
+    }
+
 }
 
 
