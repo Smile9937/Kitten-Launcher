@@ -10,11 +10,11 @@ using UnityEngine;
         public GameObject bulletPrefab;
         public float fireRate = 1;
         public int damage = 20;
-        public GameObject connectedWeapon;
 
         public void Shoot()
         {
             GameObject bullet = Instantiate(bulletPrefab, GameObject.Find("Firepoint").transform.position, Quaternion.identity);
+        
         }
     }
 

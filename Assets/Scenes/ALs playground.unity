@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 907288876}
   - component: {fileID: 907288875}
   - component: {fileID: 907288878}
+  - component: {fileID: 907288879}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -312,6 +313,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &907288879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907288874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7740449f4d44d8b48a01ca00448f4061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1120420314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4730263301504241760, guid: 766fb17c678830a469eb9975fe85bb48,
@@ -786,6 +799,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4065525431869913257, guid: 12339d510bcf298429b7946e6d6b40d7,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: c5c2616a228406a45b9edb3ba320c611,
+        type: 2}
     - target: {fileID: 4065525431869913258, guid: 12339d510bcf298429b7946e6d6b40d7,
         type: 3}
       propertyPath: m_Name
@@ -846,5 +865,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4065525433334449551, guid: 12339d510bcf298429b7946e6d6b40d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d9eae97347ed04488ed9648bcab3671,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12339d510bcf298429b7946e6d6b40d7, type: 3}
