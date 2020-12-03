@@ -11,9 +11,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] int MaxDist = 10;
     [SerializeField] int MinDist = 5;
 
-    [SerializeField] GameObject projectile;
-    [SerializeField] float fireRate = 1f;
-    [SerializeField] float nextFire;
+    GameObject projectile;
+
+    float fireRate = 1f;
+    float nextFire;
     
     void Start()
     {
@@ -45,11 +46,17 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void AttackPlayer()
+    void AttackPlayer()
     {
-
+        if(Time.time > nextFire)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            nextFire = Time.time + fireRate;
+        }
     }
 
 }
+
+
 
 
