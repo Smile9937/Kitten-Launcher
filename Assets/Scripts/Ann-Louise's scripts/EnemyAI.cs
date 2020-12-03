@@ -18,7 +18,9 @@ public class EnemyAI : MonoBehaviour
     
     void Start()
     {
+        // Checking when it's time to fire/attack
         nextFire = Time.time;
+
         Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -42,7 +44,6 @@ public class EnemyAI : MonoBehaviour
             {
                 AttackPlayer();
             }
-
         }
     }
 
@@ -50,6 +51,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(Time.time > nextFire)
         {
+            //Creating the projectile and then resetting the nextfire
             Instantiate(projectile, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
