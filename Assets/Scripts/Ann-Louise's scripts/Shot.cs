@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    private float speed = 5;
+    [SerializeField] private float speed = 50f;
     private Vector2 direction;
     void Start()
     {
@@ -14,6 +14,7 @@ public class Shot : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
+    
     // Update is called once per frame
     void Update()
     {

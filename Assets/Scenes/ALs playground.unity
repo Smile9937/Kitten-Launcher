@@ -799,6 +799,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2695975237945997039, guid: 12339d510bcf298429b7946e6d6b40d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4065525431869913257, guid: 12339d510bcf298429b7946e6d6b40d7,
         type: 3}
       propertyPath: currentWeapon
@@ -808,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 4065525431869913258, guid: 12339d510bcf298429b7946e6d6b40d7,
         type: 3}
       propertyPath: m_Name
-      value: Player_Placeholder
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4065525431869913262, guid: 12339d510bcf298429b7946e6d6b40d7,
         type: 3}
