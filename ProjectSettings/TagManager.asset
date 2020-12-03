@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - Rooms
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -14,13 +15,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - Ground
+  - Player
+  - Enemies
+  - Loot
+  - Destroyer
+  - Room Templates
   - 
   - 
   - 
@@ -41,4 +42,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 450177335
+    locked: 0
+  - name: Ground
+    uniqueID: 3186362483
+    locked: 0
+  - name: Player
+    uniqueID: 294300201
+    locked: 0
+  - name: Enemies
+    uniqueID: 2387977799
+    locked: 0
+  - name: Loot
+    uniqueID: 4243355307
     locked: 0
