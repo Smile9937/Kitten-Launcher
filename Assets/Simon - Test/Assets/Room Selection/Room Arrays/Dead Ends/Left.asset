@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef4a081db0c216547a5068927098fa87, type: 3}
-  m_Name: Room 1
+  m_Script: {fileID: 11500000, guid: d3d0080efabf87942b7f57051dacd054, type: 3}
+  m_Name: Left
   m_EditorClassIdentifier: 
-  roomArrays: {fileID: 11400000, guid: ae09f10d6e9d8294c999583f83204c66, type: 2}
-  roomWidth: 29
-  roomHeight: 17
-  positionX: 2
-  positionY: 1
+  rooms:
+  - {fileID: -5724283044837311116, guid: aa31171160c8f874d88b6850fbe29cea, type: 3}

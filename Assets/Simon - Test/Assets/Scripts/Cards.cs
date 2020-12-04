@@ -11,5 +11,5 @@ public class Cards : ScriptableObject
     public Sprite cardSprite;
 
     [Header("Effects")]
-    public int moveSpeedMultiplier = 1;
+    public int moveSpeedBonus = 1;
 }

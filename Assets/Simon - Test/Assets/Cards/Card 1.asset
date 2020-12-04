@@ -16,4 +16,4 @@ MonoBehaviour:
   activatedText: Text 4
   cardSprite: {fileID: -2488111991826676060, guid: 8efd3944ac6b3be40aaef46c40e132f1,
     type: 3}
-  moveSpeedMultiplier: 3
+  moveSpeedBonus: 1

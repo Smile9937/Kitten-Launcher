@@ -7,29 +7,19 @@ public class RoomExit : MonoBehaviour
     [SerializeField] int direction;
 
     int teleport = 6;
-    bool powerupCollected = false;
 
     Player player;
     MoveCamera moveCamera;
-    BetweenBattle betweenBattle;
     void Start()
     {
         moveCamera = FindObjectOfType<MoveCamera>();
         player = FindObjectOfType<Player>();
-        betweenBattle = FindObjectOfType<BetweenBattle>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.CompareTag("Player"))
         {
-            /*if (powerupCollected == false)
-            {
-                powerupCollected = true;
-
-                betweenBattle.OpenPowerupScreen();
-
-            }*/
                 //Bottom
                 if (direction == 1)
                 {

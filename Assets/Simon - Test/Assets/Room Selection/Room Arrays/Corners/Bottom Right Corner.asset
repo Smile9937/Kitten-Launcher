@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3d0080efabf87942b7f57051dacd054, type: 3}
-  m_Name: Bottom Left Corner
+  m_Name: Bottom Right Corner
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 85504449811243788, guid: c03d6ab1e4173f8468856399b68339ae, type: 3}
+  - {fileID: -1420573355640093278, guid: 8d2ad7a4c9390fe429e46844dc33cac2, type: 3}

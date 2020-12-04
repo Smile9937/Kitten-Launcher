@@ -8,17 +8,19 @@ public class PowerupEdit : MonoBehaviour
 
     Player player;
     BetweenBattle betweenBattle;
+    RoomManager roomManager;
     void Start()
     {
         player = FindObjectOfType<Player>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
+        roomManager = FindObjectOfType<RoomManager>();
 
         //Change text
         UnityEngine.UI.Text roomEffectTextField = gameObject.transform.GetChild(1).GetComponent<UnityEngine.UI.Text>();
         roomEffectTextField.text = card.roomText;
         
         UnityEngine.UI.Text activatedEffectTextField = gameObject.transform.GetChild(2).GetComponent<UnityEngine.UI.Text>();
-        activatedEffectTextField.text = card.roomText;
+        activatedEffectTextField.text = card.activatedText;
         
         //Change image
         UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(3).GetComponent<UnityEngine.UI.Image>();
@@ -29,6 +31,7 @@ public class PowerupEdit : MonoBehaviour
     {
         player.cards.Add(card);
         betweenBattle.ClosePowerupScreen();
+        player.GetClosestRoom().OpenDoors();
 
     }
 }

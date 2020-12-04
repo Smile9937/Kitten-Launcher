@@ -6,8 +6,6 @@ using UnityEngine;
 public class Room : ScriptableObject
 {
     public RoomArray roomArrays;
-    public float roomWidth;
-    public float roomHeight;
     public float positionX;
     public float positionY;
 }
