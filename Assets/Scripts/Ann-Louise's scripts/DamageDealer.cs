@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
+    PlayerController player;
+
     [SerializeField] int damage = 100;
     
     public int GetDamage()
@@ -15,4 +17,14 @@ public class DamageDealer : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+/*    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+        if (CompareTag("PlayerBullet"))
+        {
+            damage = player.currentWeapon.damage;
+        }
+    } */
+
 }

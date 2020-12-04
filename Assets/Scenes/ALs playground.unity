@@ -382,7 +382,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 48c2f555ef601614ba25bfe860477dd0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -420,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 1381181517}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 5.51}
-  m_LocalScale: {x: 2.351, y: 2.351, z: 2.351}
+  m_LocalScale: {x: 9.126348, y: 9.126348, z: 9.126348}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -707,15 +707,15 @@ MonoBehaviour:
   waves:
   - name: Boogers
     enemy: {fileID: 6011578304216373130, guid: 9fca0afeedd5618499600c0b8c32202e, type: 3}
-    count: 2
+    count: 3
     rate: 1
   - name: Snoogers
     enemy: {fileID: 7329703139923538429, guid: b98e4f96331eefd42aff8148f64d5655, type: 3}
-    count: 3
+    count: 5
     rate: 2
   - name: Moogers
     enemy: {fileID: 6011578304216373130, guid: 9fca0afeedd5618499600c0b8c32202e, type: 3}
-    count: 4
+    count: 8
     rate: 3
   spawnPoints:
   - {fileID: 1120420314}
@@ -799,17 +799,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2695975237945997039, guid: 12339d510bcf298429b7946e6d6b40d7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065525431869913257, guid: 12339d510bcf298429b7946e6d6b40d7,
-        type: 3}
-      propertyPath: currentWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: c5c2616a228406a45b9edb3ba320c611,
-        type: 2}
     - target: {fileID: 4065525431869913258, guid: 12339d510bcf298429b7946e6d6b40d7,
         type: 3}
       propertyPath: m_Name
@@ -870,11 +859,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4065525433334449551, guid: 12339d510bcf298429b7946e6d6b40d7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d9eae97347ed04488ed9648bcab3671,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12339d510bcf298429b7946e6d6b40d7, type: 3}

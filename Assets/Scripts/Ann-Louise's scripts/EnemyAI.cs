@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] int MaxDist = 10;
     [SerializeField] int MinDist = 5;
 
-    GameObject projectile;
+    [SerializeField] GameObject projectile;
 
     float fireRate = 1f;
     float nextFire;
@@ -22,29 +22,35 @@ public class EnemyAI : MonoBehaviour
         nextFire = Time.time;
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        
     }
 
     void Update()
     {
+        if(Player != null)
+        {
         transform.LookAt(Player);
         ChasePlayer();
+        if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+        {
+            AttackPlayer();
+        }
+        }
     }
 
     private void ChasePlayer()
     {
-        if (Vector3.Distance(transform.position, Player.position) >= MinDist)
-        {
-
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            Debug.Log("Looking at player");
-
-
-
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+            if (Player != null)
             {
-                AttackPlayer();
+                if (Vector3.Distance(transform.position, Player.position) >= MinDist)
+                {
+                 transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                Debug.Log("Looking at player");
+                }
+                    
             }
-        }
+        
     }
 
     void AttackPlayer()

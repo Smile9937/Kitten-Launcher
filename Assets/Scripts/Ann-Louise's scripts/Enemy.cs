@@ -23,12 +23,17 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
-        health -= damageDealer.GetDamage();
+        if(damageDealer != null)
+        {
+            health -= damageDealer.GetDamage();
+        }
         ProcessHit();
     }
 
     private void ProcessHit()
     {
+        health -= GameObject.Find("Player").GetComponent<PlayerController>().currentWeapon.damage;
+        //health -= damageDealer.GetDamage();
         if (health <= 0f)
         {
             Destroy(gameObject);

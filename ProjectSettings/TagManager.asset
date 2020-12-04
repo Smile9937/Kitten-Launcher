@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Rooms
   - SpawnPoint
+  - Enemy
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
@@ -22,8 +25,8 @@ TagManager:
   - Loot
   - Destroyer
   - Room Templates
-  - 
-  - 
+  - PlayerBullet
+  - EnemyBullet
   - 
   - 
   - 

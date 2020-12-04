@@ -6,17 +6,17 @@ public class EnemyBullet : MonoBehaviour
 {
     float moveSpeed = 10f;
 
-    Rigidbody2D rigidbody;
+    Rigidbody2D rb;
 
-    Player target;
+    PlayerController target;
     Vector2 moveDirection;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        target = GameObject.FindObjectOfType<Player>();
+        rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindObjectOfType<PlayerController>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-        rigidbody.velocity = new Vector2(moveDirection.x, moveDirection.y);
+        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 3f);
     }
 

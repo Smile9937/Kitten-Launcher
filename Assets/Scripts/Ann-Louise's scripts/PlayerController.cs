@@ -47,13 +47,18 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
-        ProcessHit(damageDealer);
+        if(damageDealer != null)
+        {
+            ProcessHit(damageDealer);
+        }
+        
     }
 
     private void ProcessHit(DamageDealer damageDealer)
     {
+        Debug.Log("wtf");
         health -= damageDealer.GetDamage();
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
