@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponTest
   m_EditorClassIdentifier: 
   currentWeaponSpr: {fileID: 21300000, guid: 0d9eae97347ed04488ed9648bcab3671, type: 3}
-  bulletPrefab: {fileID: 7720020637547496024, guid: f47385f6b94166840891f7a4fca29cc5,
+  bulletPrefab: {fileID: -1297180476014209166, guid: f47385f6b94166840891f7a4fca29cc5,
     type: 3}
-  fireRate: 1
-  damage: 20
+  fireRate: 5
+  damage: 100

@@ -6,7 +6,7 @@ public class DamageDealer : MonoBehaviour
 {
     PlayerController player;
 
-    [SerializeField] int damage = 100;
+    public int damage = 100;
     
     public int GetDamage()
     {
