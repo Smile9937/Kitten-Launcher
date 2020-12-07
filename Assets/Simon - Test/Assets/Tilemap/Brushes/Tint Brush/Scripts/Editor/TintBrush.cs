@@ -11,7 +11,7 @@ namespace UnityEditor
 	{
 		public Color m_Color = Color.white;
 		
-		public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position)
+		public override void Paint(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -24,7 +24,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void Erase(GridLayout grid, GameObject brushTarget, Vector3Int position)
+		public override void Erase(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -63,7 +63,7 @@ namespace UnityEditor
 	[CustomEditor(typeof(TintBrush))]
 	public class TintBrushEditor : UnityEditor.Tilemaps.GridBrushEditorBase
 	{
-		public override GameObject[] validTargets
+		public override UnityEngine.GameObject[] validTargets
 		{
 			get
 			{

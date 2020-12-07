@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public float startMoveSpeed = 10f;
     public float moveSpeed = 10f;
+
     Rigidbody2D myRigidbody;
 
     public float speedBonus;
@@ -23,7 +24,6 @@ public class Player : MonoBehaviour
     {
         Move();
         Aim();
-        if (cards.Count != 0) { speedBonus = cards[0].moveSpeedBonus * GetClosestRoom().effectMultiplier; }
     }
 
     public RoomManager GetClosestRoom()

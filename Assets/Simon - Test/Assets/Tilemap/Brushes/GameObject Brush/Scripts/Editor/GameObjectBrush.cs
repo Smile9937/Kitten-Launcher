@@ -45,7 +45,7 @@ namespace UnityEditor
 			SizeUpdated();
 		}
 
-		public override void Paint(GridLayout gridLayout, GameObject brushTarget, Vector3Int position)
+		public override void Paint(GridLayout gridLayout, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -64,7 +64,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void Erase(GridLayout gridLayout, GameObject brushTarget, Vector3Int position)
+		public override void Erase(GridLayout gridLayout, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -80,7 +80,7 @@ namespace UnityEditor
 			ClearSceneCell(grid, parent, position);
 		}
 
-		public override void BoxFill(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
+		public override void BoxFill(GridLayout gridLayout, UnityEngine.GameObject brushTarget, BoundsInt position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -97,7 +97,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void BoxErase(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
+		public override void BoxErase(GridLayout gridLayout, UnityEngine.GameObject brushTarget, BoundsInt position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -112,7 +112,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void FloodFill(GridLayout gridLayout, GameObject brushTarget, Vector3Int position)
+		public override void FloodFill(GridLayout gridLayout, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			Debug.LogWarning("FloodFill not supported");
 		}
@@ -154,7 +154,7 @@ namespace UnityEditor
 				FlipY();
 		}
 
-		public override void Pick(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, Vector3Int pickStart)
+		public override void Pick(GridLayout gridLayout, UnityEngine.GameObject brushTarget, BoundsInt position, Vector3Int pickStart)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -175,7 +175,7 @@ namespace UnityEditor
 			if (parent != null)
 			{
 				Vector3 cellCenter = grid.LocalToWorld(grid.CellToLocalInterpolated(position + new Vector3(.5f, .5f, .5f)));
-				GameObject go = GetObjectInCell(grid, parent, position);
+                UnityEngine.GameObject go = GetObjectInCell(grid, parent, position);
 
 				if (go != null)
 				{
@@ -183,11 +183,11 @@ namespace UnityEditor
 
 					if (prefab)
 					{
-						SetGameObject(brushPosition, (GameObject) prefab);
+                        SetGameObject(brushPosition, (UnityEngine.GameObject) prefab);
 					}
 					else
 					{
-						GameObject newInstance = Instantiate(go);
+                        UnityEngine.GameObject newInstance = Instantiate(go);
 						newInstance.hideFlags = HideFlags.HideAndDontSave;
 						SetGameObject(brushPosition, newInstance);
 					}
@@ -199,7 +199,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void MoveStart(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
+		public override void MoveStart(GridLayout gridLayout, UnityEngine.GameObject brushTarget, BoundsInt position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -219,7 +219,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void MoveEnd(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
+		public override void MoveEnd(GridLayout gridLayout, UnityEngine.GameObject brushTarget, BoundsInt position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
@@ -299,7 +299,7 @@ namespace UnityEditor
 			SizeUpdated();
 		}
 
-		public void SetGameObject(Vector3Int position, GameObject go)
+		public void SetGameObject(Vector3Int position, UnityEngine.GameObject go)
 		{
 			if (ValidateCellPosition(position))
 				m_Cells[GetCellIndex(position)].gameObject = go;
@@ -343,7 +343,7 @@ namespace UnityEditor
 			return (x % m_Size.x) + m_Size.x * (y % m_Size.y) + m_Size.x * m_Size.y * (z % m_Size.z);
 		}
 
-		private static GameObject GetObjectInCell(GridLayout grid, Transform parent, Vector3Int position)
+		private static UnityEngine.GameObject GetObjectInCell(GridLayout grid, Transform parent, Vector3Int position)
 		{
 			int childCount = parent.childCount;
 			Vector3 min = grid.LocalToWorld(grid.CellToLocalInterpolated(position));
@@ -385,15 +385,15 @@ namespace UnityEditor
 			}
 		}
 
-		private static void SetSceneCell(GridLayout grid, Transform parent, Vector3Int position, GameObject go, Vector3 offset, Vector3 scale, Quaternion orientation)
+		private static void SetSceneCell(GridLayout grid, Transform parent, Vector3Int position, UnityEngine.GameObject go, Vector3 offset, Vector3 scale, Quaternion orientation)
 		{
 			if (parent == null || go == null)
 				return;
 
-			GameObject instance = null;
+            UnityEngine.GameObject instance = null;
 			if (PrefabUtility.GetPrefabType(go) == PrefabType.Prefab)
 			{
-				instance = (GameObject) PrefabUtility.InstantiatePrefab(go);
+				instance = (UnityEngine.GameObject)PrefabUtility.InstantiatePrefab(go);
 			}
 			else
 			{
@@ -415,7 +415,7 @@ namespace UnityEditor
 			if (parent == null)
 				return;
 
-			GameObject erased = GetObjectInCell(grid, parent, new Vector3Int(position.x, position.y, position.z));
+            UnityEngine.GameObject erased = GetObjectInCell(grid, parent, new Vector3Int(position.x, position.y, position.z));
 			if (erased != null)
 				Undo.DestroyObjectImmediate(erased);
 		}
@@ -436,13 +436,13 @@ namespace UnityEditor
 		[Serializable]
 		public class BrushCell
 		{
-			public GameObject gameObject { get { return m_GameObject; } set { m_GameObject = value; } }
+			public UnityEngine.GameObject gameObject { get { return m_GameObject; } set { m_GameObject = value; } }
 			public Vector3 offset { get { return m_Offset; } set { m_Offset = value; } }
 			public Vector3 scale { get { return m_Scale; } set { m_Scale = value; } }
 			public Quaternion orientation { get { return m_Orientation; } set { m_Orientation = value; } }
 			
 			[SerializeField]
-			private GameObject m_GameObject;
+			private UnityEngine.GameObject m_GameObject;
 			[SerializeField]
 			Vector3 m_Offset = Vector3.zero;
 			[SerializeField]
@@ -470,7 +470,7 @@ namespace UnityEditor
 	{
 		public GameObjectBrush brush { get { return target as GameObjectBrush; } }
 
-		public override void OnPaintSceneGUI(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
+		public override void OnPaintSceneGUI(GridLayout gridLayout, UnityEngine.GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
 		{
 			BoundsInt gizmoRect = position;
 

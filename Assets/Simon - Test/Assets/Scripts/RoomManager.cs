@@ -1,27 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    [SerializeField] GameObject doors;
     public float effectMultiplier;
-    GenerateLayout generateLayout;
+    public int enemies;
     Player player;
+    GameObject doorsInRoom;
     void Start()
     {
         player = FindObjectOfType<Player>();
         player.rooms.Add(transform);
-        generateLayout = FindObjectOfType<GenerateLayout>();
+        InstantiateDoors();
         CloseDoors();
+    }
+
+    private void InstantiateDoors()
+    {
+        doorsInRoom = Instantiate(doors, transform.position, transform.rotation);
     }
 
     private void CloseDoors()
     {
-        transform.GetChild(0).gameObject.SetActive(true);
+        doorsInRoom.SetActive(true);
     }
     public void OpenDoors()
     {
-        transform.GetChild(0).gameObject.SetActive(false);
+        doorsInRoom.SetActive(false);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            enemies++;
+        }
+    }
 }

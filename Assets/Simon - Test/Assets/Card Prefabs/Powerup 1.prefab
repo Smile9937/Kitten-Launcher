@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3269545515912559505}
   - component: {fileID: 3269545515912559507}
-  - component: {fileID: 3269545515912559506}
+  - component: {fileID: 9072324450745591267}
   m_Layer: 5
   m_Name: Powerup 1
   m_TagString: Untagged
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3269545515912559506}
+      - m_Target: {fileID: 9072324450745591267}
         m_MethodName: GivePlayerCard
         m_Mode: 1
         m_Arguments:
@@ -330,7 +330,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3269545515912559506
+--- !u!114 &9072324450745591267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3269545515912559504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41890284b0484fd4682b4439b9b0fd8f, type: 3}
+  m_Script: {fileID: 11500000, guid: fed5aab8bc31a2845bdd34eee86f9f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 272e7432564981d44ac9fb7a1757fdf0, type: 2}

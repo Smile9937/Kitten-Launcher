@@ -8,9 +8,9 @@ public class Shot : MonoBehaviour
     private Vector2 direction;
     void Start()
     {
-        direction = GameObject.Find("Direction").transform.position;
-        transform.position = GameObject.Find("Firepoint").transform.position;
-        transform.eulerAngles = new Vector3(0, 0, GameObject.Find("Player").transform.eulerAngles.z);
+        direction = UnityEngine.GameObject.Find("Direction").transform.position;
+        transform.position = UnityEngine.GameObject.Find("Firepoint").transform.position;
+        transform.eulerAngles = new Vector3(0, 0, UnityEngine.GameObject.Find("Player").transform.eulerAngles.z);
         Destroy(gameObject, 2f);
     }
 

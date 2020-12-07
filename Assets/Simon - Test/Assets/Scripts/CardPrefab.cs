@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupEdit : MonoBehaviour
+public class CardPrefab : MonoBehaviour
 {
     [SerializeField] Cards card;
 

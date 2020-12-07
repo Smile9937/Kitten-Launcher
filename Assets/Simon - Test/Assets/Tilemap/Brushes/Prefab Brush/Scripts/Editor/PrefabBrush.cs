@@ -10,19 +10,19 @@ namespace UnityEditor
 	public class PrefabBrush : GridBrushBase
 	{
 		private const float k_PerlinOffset = 100000f;
-		public GameObject[] m_Prefabs;
+		public UnityEngine.GameObject[] m_Prefabs;
 		public float m_PerlinScale = 0.5f;
 		public int m_Z;
 
-		public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position)
+		public override void Paint(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)
 				return;
 
 			int index = Mathf.Clamp(Mathf.FloorToInt(GetPerlinValue(position, m_PerlinScale, k_PerlinOffset)*m_Prefabs.Length), 0, m_Prefabs.Length - 1);
-			GameObject prefab = m_Prefabs[index];
-			GameObject instance = (GameObject) PrefabUtility.InstantiatePrefab(prefab);
+            UnityEngine.GameObject prefab = m_Prefabs[index];
+            UnityEngine.GameObject instance = (UnityEngine.GameObject)PrefabUtility.InstantiatePrefab(prefab);
 			Undo.RegisterCreatedObjectUndo((Object)instance, "Paint Prefabs");
 			if (instance != null)
 			{
@@ -31,7 +31,7 @@ namespace UnityEditor
 			}
 		}
 
-		public override void Erase(GridLayout grid, GameObject brushTarget, Vector3Int position)
+		public override void Erase(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
 		{
 			// Do not allow editing palettes
 			if (brushTarget.layer == 31)

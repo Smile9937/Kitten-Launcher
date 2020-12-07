@@ -14,10 +14,13 @@ public class GenerateLayout : MonoBehaviour
     int index;
     public int currentEffectMultiplier;
     RoomManager currentRoom;
+    ShowMap showMap;
 
     void Start()
     {
+        showMap = FindObjectOfType<ShowMap>();
         Generate();
+        showMap.GenerateMap();
     }
 
     private void Generate()
@@ -33,18 +36,30 @@ public class GenerateLayout : MonoBehaviour
 
         for(int i = 0; i < roomEdits.Length; i++)
         {
-            index = UnityEngine.Random.Range(0, list.Count - 1);
-            currentEffectMultiplier = list[index];
-            list.RemoveAt(index);
+            if (i != 0)
+            {
+                index = UnityEngine.Random.Range(0, list.Count - 1);
+                currentEffectMultiplier = list[index];
+                list.RemoveAt(index);
+
+            } else
+            {
+                effectMultiplier[currentEffectMultiplier] = 1;
+            }
+
 
             Vector3 roomPosition = new Vector3(roomEdits[i].positionX, roomEdits[i].positionY, transform.position.z);
             position = new Vector3[roomEdits.Length];
             position[i] = new Vector3(roomPosition.x * roomWidth, roomPosition.y * roomHeight, roomPosition.z);
 
+            showMap.mapPositions.Add(position[i]);
+            showMap.roomType.Add(roomEdits[i].roomArrays.roomType);
+            showMap.roomText.Add(effectMultiplier[currentEffectMultiplier]);
+
             currentRoom = roomEdits[i].roomArrays.rooms[UnityEngine.Random.Range(0, roomEdits[i].roomArrays.rooms.Length-1)];
             RoomManager roomPrefab = Instantiate(currentRoom, position[i], transform.rotation);
 
-            roomPrefab.effectMultiplier = currentEffectMultiplier;
+            roomPrefab.effectMultiplier = effectMultiplier[currentEffectMultiplier];
         }
     }
 }

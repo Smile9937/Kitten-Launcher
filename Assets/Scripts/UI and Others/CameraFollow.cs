@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     private Transform playerPos;
     void Awake()
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        playerPos = UnityEngine.GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame

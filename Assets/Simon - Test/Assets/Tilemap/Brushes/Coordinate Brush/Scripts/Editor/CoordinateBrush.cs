@@ -8,19 +8,19 @@ namespace UnityEditor
     public class CoordinateBrush : UnityEditor.Tilemaps.GridBrush {
         public int z = 0;
 
-        public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position)
+        public override void Paint(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
             var zPosition = new Vector3Int(position.x, position.y, z);
             base.Paint(grid, brushTarget, zPosition);
         }
         
-        public override void Erase(GridLayout grid, GameObject brushTarget, Vector3Int position)
+        public override void Erase(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
             var zPosition = new Vector3Int(position.x, position.y, z);
             base.Erase(grid, brushTarget, zPosition);
         }
         
-        public override void FloodFill(GridLayout grid, GameObject brushTarget, Vector3Int position)
+        public override void FloodFill(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
             var zPosition = new Vector3Int(position.x, position.y, z);
             base.FloodFill(grid, brushTarget, zPosition);
@@ -43,13 +43,13 @@ namespace UnityEditor
     {
         private CoordinateBrush coordinateBrush { get { return target as CoordinateBrush; } }
 
-        public override void PaintPreview(GridLayout grid, GameObject brushTarget, Vector3Int position)
+        public override void PaintPreview(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
             var zPosition = new Vector3Int(position.x, position.y, coordinateBrush.z);
             base.PaintPreview(grid, brushTarget, zPosition);
         }
 
-        public override void OnPaintSceneGUI(GridLayout grid, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
+        public override void OnPaintSceneGUI(GridLayout grid, UnityEngine.GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
         {
             base.OnPaintSceneGUI(grid, brushTarget, position, tool, executing);
             if (coordinateBrush.z != 0)

@@ -11,7 +11,7 @@ namespace UnityEditor
 	{
 		public TileBase[] randomTiles;
 		
-        public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position)
+        public override void Paint(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
 			if (randomTiles != null && randomTiles.Length > 0)
 			{
@@ -52,9 +52,9 @@ namespace UnityEditor
     public class RandomBrushEditor : UnityEditor.Tilemaps.GridBrushEditor
     {
         private RandomBrush randomBrush { get { return target as RandomBrush; } }
-		private GameObject lastBrushTarget;
+		private UnityEngine.GameObject lastBrushTarget;
 		
-		public override void PaintPreview(GridLayout grid, GameObject brushTarget, Vector3Int position)
+		public override void PaintPreview(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
             if (randomBrush.randomTiles != null && randomBrush.randomTiles.Length > 0)
 			{

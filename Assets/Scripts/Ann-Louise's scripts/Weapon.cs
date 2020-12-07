@@ -7,13 +7,13 @@ using UnityEngine;
     public class Weapon : ScriptableObject
     {
         public Sprite currentWeaponSpr;
-        public GameObject bulletPrefab;
+        public UnityEngine.GameObject bulletPrefab;
         public float fireRate = 1;
         public int damage = 20;
 
         public void Shoot()
         {
-            GameObject bullet = Instantiate(bulletPrefab, GameObject.Find("Firepoint").transform.position, Quaternion.identity);
+        UnityEngine.GameObject bullet = Instantiate(bulletPrefab, UnityEngine.GameObject.Find("Firepoint").transform.position, Quaternion.identity);
         
         }
     }

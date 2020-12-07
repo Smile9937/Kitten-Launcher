@@ -7,4 +7,5 @@ using UnityEngine;
 public class RoomArray : ScriptableObject
 {
     public RoomManager[] rooms;
+    public int roomType;
 }

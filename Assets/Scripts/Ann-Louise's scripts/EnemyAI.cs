@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] int MaxDist = 10;
     [SerializeField] int MinDist = 5;
 
-    [SerializeField] GameObject projectile;
+    [SerializeField] UnityEngine.GameObject projectile;
 
     float fireRate = 1f;
     float nextFire;
@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
         // Checking when it's time to fire/attack
         nextFire = Time.time;
 
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = UnityEngine.GameObject.FindGameObjectWithTag("Player").transform;
         
         
     }

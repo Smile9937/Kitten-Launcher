@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms:
   - {fileID: -1420573355640093278, guid: 8d2ad7a4c9390fe429e46844dc33cac2, type: 3}
+  roomType: 2

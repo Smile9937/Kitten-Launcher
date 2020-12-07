@@ -5,9 +5,8 @@ using UnityEngine;
 public class BetweenBattle : MonoBehaviour
 {
     [SerializeField] GameObject powerUpScreen;
-    [SerializeField] PowerupEdit[] cardPrefabs;
+    [SerializeField] GameObject[] cardPrefabs;
     [SerializeField] GameObject powerupScreen;
-    public int enemies;
     int index;
     float[] position;
     Player player;
@@ -44,7 +43,7 @@ public class BetweenBattle : MonoBehaviour
             list.RemoveAt(index);
 
 
-            PowerupEdit cardInstance = Instantiate(cardPrefabs[currentCard], Vector3.zero, transform.rotation);
+            GameObject cardInstance = Instantiate(cardPrefabs[currentCard], Vector3.zero, transform.rotation);
             cardInstance.transform.SetParent(powerUpScreen.transform, false);
 
             RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();

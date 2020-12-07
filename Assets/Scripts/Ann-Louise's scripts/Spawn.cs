@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     bool spawn = true;
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
-    [SerializeField] GameObject attackerPrefab;
+    [SerializeField] UnityEngine.GameObject attackerPrefab;
 
     IEnumerator Start()
     {

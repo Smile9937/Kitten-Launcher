@@ -14,7 +14,7 @@ namespace UnityEditor
         public bool fillGaps = false;
         public Vector3Int lineStart = Vector3Int.zero;
 
-        public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position)
+        public override void Paint(GridLayout grid, UnityEngine.GameObject brushTarget, Vector3Int position)
         {
             if (lineStartActive)
             {
@@ -163,7 +163,7 @@ namespace UnityEditor
     {
         private LineBrush lineBrush { get { return target as LineBrush; } }
 
-        public override void OnPaintSceneGUI(GridLayout grid, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
+        public override void OnPaintSceneGUI(GridLayout grid, UnityEngine.GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
         {
             base.OnPaintSceneGUI(grid, brushTarget, position, tool, executing);
             if (lineBrush.lineStartActive)

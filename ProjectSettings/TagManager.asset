@@ -8,6 +8,9 @@ TagManager:
   - SpawnPoint
   - Enemy
   - Room
+  - RoomExit
+  - Door
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -29,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Room
   - 
   - 
   - 

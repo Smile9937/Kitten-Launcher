@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit()
     {
-        health -= GameObject.Find("Player").GetComponent<PlayerController>().currentWeapon.damage;
+        health -= UnityEngine.GameObject.Find("Player").GetComponent<PlayerController>().currentWeapon.damage;
         //health -= damageDealer.GetDamage();
         if (health <= 0f)
         {

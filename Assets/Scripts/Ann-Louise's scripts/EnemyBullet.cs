@@ -14,7 +14,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindObjectOfType<PlayerController>();
+        target = UnityEngine.GameObject.FindObjectOfType<PlayerController>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 3f);
