@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art & Animations/Sprites/Tiles/Big Palette.prefab.meta
+guid: 0e5774cd147802d49af971cc58a3b4b4
+PrefabImporter:
+=======
 guid: c4ae5c14dc96e5d4f94253c369457acd
 folderAsset: yes
 DefaultImporter:
+>>>>>>> 9e79d04 (Sprites):Assets/Art & Animations/Animations.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
