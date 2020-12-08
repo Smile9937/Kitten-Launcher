@@ -11,6 +11,7 @@ TagManager:
   - RoomExit
   - Door
   - Ground
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - 
   - 
   - Room
-  - 
+  - Player Bullets
   - 
   - 
   - 
@@ -53,6 +54,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 3186362483
+    locked: 0
+  - name: Player Weapon
+    uniqueID: 3045142165
     locked: 0
   - name: Player
     uniqueID: 294300201

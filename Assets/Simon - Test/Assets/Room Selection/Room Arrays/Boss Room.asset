@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef4a081db0c216547a5068927098fa87, type: 3}
-  m_Name: Room 2,2
+  m_Script: {fileID: 11500000, guid: d3d0080efabf87942b7f57051dacd054, type: 3}
+  m_Name: Boss Room
   m_EditorClassIdentifier: 
-  roomArrays: {fileID: 11400000, guid: 393e1a89a3b3cef47b6cca22e97695fc, type: 2}
-  positionX: 2
-  positionY: 2
+  rooms:
+  - {fileID: 1095603399492924478, guid: 9e8907d6db44c2447baab43bb2b9ae8f, type: 3}
+  roomType: 5

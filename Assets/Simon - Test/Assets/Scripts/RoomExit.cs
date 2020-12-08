@@ -6,7 +6,7 @@ public class RoomExit : MonoBehaviour
 {
     [SerializeField] int direction;
 
-    int teleport = 8;
+    int teleport = 5;
 
     Player player;
     MoveCamera moveCamera;

@@ -12,20 +12,7 @@ public class Player : MonoBehaviour
     public float startMoveSpeed = 10f;
     public float moveSpeed = 10f;
 
-    Rigidbody2D myRigidbody;
-
     public float speedBonus;
-    void Start()
-    {
-        myRigidbody = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        Move();
-        Aim();
-    }
-
     public RoomManager GetClosestRoom()
     {
         RoomManager closestRoom = null;
@@ -42,21 +29,6 @@ public class Player : MonoBehaviour
             }
         }
         return closestRoom;
-    }
-    private void Move()
-    {
-        float verticalMove = Input.GetAxis("Vertical");
-        float horizontalMove = Input.GetAxis("Horizontal");
-
-        Vector2 playerVelocity = new Vector2(horizontalMove * (moveSpeed + speedBonus), verticalMove * (moveSpeed + speedBonus));
-        myRigidbody.velocity = playerVelocity;
-    }
-    private void Aim()
-    {
-        Vector2 dir = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10)) - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10 * Time.deltaTime);
     }
 
 }
