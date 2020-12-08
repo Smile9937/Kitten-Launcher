@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING};
+    public enum SpawnState { SPAWNING, WAITING, COUNTING, THEEND};
     
     [System.Serializable]
    public class Wave
@@ -40,6 +40,11 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        if(state == SpawnState.THEEND)
+        {
+            return;
+        }
+
         if(state == SpawnState.WAITING)
         {
             //Check if enemies are still alive
@@ -74,17 +79,15 @@ public class WaveSpawner : MonoBehaviour
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
+        nextWave++;
 
-        if(nextWave + 1 > waves.Length - 1)
+        if (nextWave >= waves.Length)
         {
-            //Game state complete. Now what? Fanfare? Next level?
-            //nextWave = 0;
-            Debug.Log("All waves complete! Looping...");
+            state = SpawnState.THEEND;
+       
+            Debug.Log("All waves complete! Stopping wave script...");
         }
-        else
-        {
-            nextWave++;
-        }
+       
     }
 
     bool EnemyIsAlive()
