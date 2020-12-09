@@ -55,6 +55,9 @@ TagManager:
   - name: Ground
     uniqueID: 3186362483
     locked: 0
+  - name: Details
+    uniqueID: 1988626701
+    locked: 0
   - name: Player Weapon
     uniqueID: 3045142165
     locked: 0
@@ -66,4 +69,7 @@ TagManager:
     locked: 0
   - name: Loot
     uniqueID: 4243355307
+    locked: 0
+  - name: Foreground
+    uniqueID: 4166796761
     locked: 0
