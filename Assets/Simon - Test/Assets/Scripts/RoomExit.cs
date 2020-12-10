@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,47 +9,100 @@ public class RoomExit : MonoBehaviour
 
     int teleport = 5;
 
-    Player player;
+    bool canOpenMenu = true;
+
+    Vector3 nextPos;
+
+    List<Transform> rooms;
+
+    PlayerController player;
     MoveCamera moveCamera;
     ShowMap showMap;
+    BetweenBattle betweenBattle;
     void Start()
     {
         moveCamera = FindObjectOfType<MoveCamera>();
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerController>();
+        betweenBattle = FindObjectOfType<BetweenBattle>();
         showMap = FindObjectOfType<ShowMap>();
+        rooms = player.rooms;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            //Bottom
-            if (direction == 1)
+            if(canOpenMenu)
             {
-                moveCamera.Move(0f, -17f);
-                player.transform.position += new Vector3(0, -teleport, 0);
-                showMap.Invoke("MovePlayerIcon", 0.1f);
+                canOpenMenu = false;
+                //Bottom
+                if (direction == 1)
+                {                
+                    moveCamera.Move(0f, -17f);
+                    nextPos = new Vector3(0, -teleport, 0);
+                    player.transform.position += nextPos;
+                    OpenCardSelect();
+                }
+                //Top
+                else if (direction == 2)
+                {
+                    moveCamera.Move(0f, 17);
+                    nextPos = new Vector3(0, teleport, 0);
+                    player.transform.position += nextPos;
+                    OpenCardSelect();
+                }
+                //Left
+                else if (direction == 3)
+                {
+                    moveCamera.Move(-29f, 0f);
+                    nextPos = new Vector3(-teleport, 0, 0);
+                    player.transform.position += nextPos;
+                    OpenCardSelect();
+                }
+                //Right
+                else if (direction == 4)
+                {
+                    moveCamera.Move(29f, 0f);
+                    nextPos = new Vector3(teleport, 0, 0);
+                    player.transform.position += nextPos;
+                    OpenCardSelect();
+                }
             }
-            //Top
-            else if (direction == 2)
+
+        }
+    }
+
+    private void OpenCardSelect()
+    {                
+        showMap.Invoke("MovePlayerIcon", 0.1f);
+        Debug.Log(player.GetClosestRoom().spawnerInRoom);
+        if(player.GetClosestRoom().spawnerInRoom) {
+            player.GetClosestRoom().inCardSelectMenu = true;
+            betweenBattle.OpenChooseCard();
+        }
+
+        Invoke("MenuCooldown", 0.1f);
+    }
+
+    /*public RoomManager GetNextRoom()
+    {
+        RoomManager nextRoom = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 nextPosition = transform.position + nextPos;
+        foreach (Transform potentialTarget in rooms)
+        {
+            Vector3 directionToTarget = potentialTarget.position - nextPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
             {
-                moveCamera.Move(0f, 17);
-                player.transform.position += new Vector3(0, teleport, 0);
-                showMap.Invoke("MovePlayerIcon", 0.1f);
-            }
-            //Left
-            else if (direction == 3)
-            {
-                moveCamera.Move(-29f, 0f);
-                player.transform.position += new Vector3(-teleport, 0, 0);
-                showMap.Invoke("MovePlayerIcon", 0.1f);
-            }
-            //Right
-            else if (direction == 4)
-            {
-                moveCamera.Move(29f, 0f);
-                player.transform.position += new Vector3(teleport, 0, 0);
-                showMap.Invoke("MovePlayerIcon", 0.1f);
+                closestDistanceSqr = dSqrToTarget;
+                nextRoom = potentialTarget.GetComponent<RoomManager>();
             }
         }
+        return nextRoom;
+    }*/
+
+    void MenuCooldown()
+    {
+        canOpenMenu = true;
     }
 }

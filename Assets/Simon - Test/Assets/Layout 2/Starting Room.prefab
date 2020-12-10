@@ -4604,7 +4604,7 @@ TilemapRenderer:
   m_MaxFrameAge: 16
   m_SortOrder: 0
   m_Mode: 0
-  m_DetectChunkCullingBounds: 0
+  m_DetectChunkCullingBounds: 1
   m_MaskInteraction: 0
 --- !u!1 &3714301324101457261
 GameObject:
@@ -4716,6 +4716,7 @@ MonoBehaviour:
   doors: {fileID: 7794531659553055131, guid: 95e8204436554f443a535bb873d820e4, type: 3}
   effectMultiplier: 1
   enemies: 0
+  spawnerInRoom: 0
 --- !u!50 &7384351623897767119
 Rigidbody2D:
   serializedVersion: 4
@@ -4779,7 +4780,7 @@ GameObject:
   - component: {fileID: 7701782779275863751}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

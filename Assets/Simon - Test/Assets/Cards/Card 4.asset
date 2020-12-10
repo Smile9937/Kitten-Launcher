@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e2e4490eb7fc14c8363e7aab0c710e, type: 3}
   m_Name: Card 4
   m_EditorClassIdentifier: 
+  id: 4
   roomText: Text 9
   activatedText: Text 10
   cardSprite: {fileID: -7832389824997676707, guid: 8efd3944ac6b3be40aaef46c40e132f1,

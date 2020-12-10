@@ -8,14 +8,52 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject doors;
     public float effectMultiplier;
     public int enemies;
-    Player player;
+    public bool spawnerInRoom = false;
+    bool roomCleared = false;
+
+    public bool inCardSelectMenu = false;
+    bool playerInRoom = false;
+    bool tempName = false;
+    public bool aquiredCard;
+    WaveSpawner waveSpawner;
+    PlayerController player;
     GameObject doorsInRoom;
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        waveSpawner = GetComponentInChildren<WaveSpawner>();
+        player = FindObjectOfType<PlayerController>();
         player.rooms.Add(transform);
+
+        if (waveSpawner != null)
+        {
+
+            spawnerInRoom = true;
+        }
+
         InstantiateDoors();
+
         CloseDoors();
+    }
+    private void Update()
+    {
+        if (spawnerInRoom == false && enemies <= 0)
+        {
+            OpenDoors();
+        } else
+        {
+            CloseDoors();
+        }
+
+        if (!inCardSelectMenu && spawnerInRoom && !roomCleared && playerInRoom)
+        {
+            if(!tempName)
+            {
+                tempName = true;
+                spawnerInRoom = true;
+                waveSpawner.canSpawn = true;
+            }
+
+        }
     }
 
     private void InstantiateDoors()
@@ -34,6 +72,26 @@ public class RoomManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.CompareTag("Player") && roomCleared == false)
+        {
+            playerInRoom = true;
+            /*if (waveSpawner != null) {
+
+                spawnerInRoom = true;
+                if(!inCardSelectMenu)
+                {
+                    waveSpawner.canSpawn = true;
+                }
+
+            }*/
+        }
+
+        if(other.CompareTag("EnemySpawner"))
+        {
+
+            spawnerInRoom = true;
+        }
+
         if(other.CompareTag("Enemy"))
         {
             enemies++;

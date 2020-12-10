@@ -170,10 +170,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4209430371325542670}
   - component: {fileID: 4209430371325542671}
-  - component: {fileID: 2163819379709317411}
+  - component: {fileID: 6202328286921610043}
   m_Layer: 5
-  m_Name: Powerup 6
-  m_TagString: Untagged
+  m_Name: Powerup 4
+  m_TagString: LootPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,8 +244,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2163819379709317411}
-        m_MethodName: GivePlayerCard
+      - m_Target: {fileID: 2163819379709317411, guid: 95f4b911251a61b4d967d79497bc9a14,
+          type: 3}
+        m_MethodName: SelectCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -255,7 +256,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2163819379709317411
+--- !u!114 &6202328286921610043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed5aab8bc31a2845bdd34eee86f9f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: f1b608ed8327c4b438ad1919a5f0e6f9, type: 2}
+  card: {fileID: 11400000, guid: 4cd2c400fa583e94da588dbe53644d1a, type: 2}
 --- !u!1 &4209430372050569824
 GameObject:
   m_ObjectHideFlags: 0

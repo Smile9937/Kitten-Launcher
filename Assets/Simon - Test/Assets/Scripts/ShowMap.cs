@@ -16,11 +16,11 @@ public class ShowMap : MonoBehaviour
     GameObject playerIconInstance;
 
     bool mapToggle = false;
-    Player player;
+    PlayerController player;
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerController>();
     }
     private void Update()
     {
@@ -30,12 +30,10 @@ public class ShowMap : MonoBehaviour
 
             if(mapToggle)
             {
-                player.moveSpeed = 0;
                 OpenMap();
             } 
             else if(!mapToggle)
             {
-                player.moveSpeed = player.startMoveSpeed;
                 CloseMap();
             }
         }
@@ -43,10 +41,12 @@ public class ShowMap : MonoBehaviour
 
     public void OpenMap()
     {
+        player.moveSpeed = 0;
         mapScreen.SetActive(true);
     }
     public void CloseMap()
     {
+        player.moveSpeed = player.startMoveSpeed;
         mapScreen.SetActive(false);
     }
 

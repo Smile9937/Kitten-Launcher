@@ -12,6 +12,10 @@ TagManager:
   - Door
   - Ground
   - PlayerBullet
+  - EnemyBullet
+  - EnemySpawner
+  - LootPrefab
+  - QuitButton
   layers:
   - Default
   - TransparentFX
@@ -28,7 +32,7 @@ TagManager:
   - Loot
   - Destroyer
   - Room Templates
-  - 
+  - Enemy Bullets
   - 
   - 
   - 
@@ -63,6 +67,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 294300201
+    locked: 0
+  - name: Player Weapon
+    uniqueID: 3045142165
     locked: 0
   - name: Enemies
     uniqueID: 2387977799

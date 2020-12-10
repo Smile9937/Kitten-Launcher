@@ -6,12 +6,12 @@ public class CardPrefab : MonoBehaviour
 {
     [SerializeField] Cards card;
 
-    Player player;
+    PlayerController player;
     BetweenBattle betweenBattle;
     RoomManager roomManager;
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
         roomManager = FindObjectOfType<RoomManager>();
 
@@ -32,6 +32,11 @@ public class CardPrefab : MonoBehaviour
         player.cards.Add(card);
         betweenBattle.ClosePowerupScreen();
         player.GetClosestRoom().OpenDoors();
+        player.GetClosestRoom().aquiredCard = true;
+    }
+
+    public void SelectCard()
+    {
 
     }
 }

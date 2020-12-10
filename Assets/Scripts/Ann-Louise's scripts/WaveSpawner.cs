@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING, THEEND};
+   public enum SpawnState { SPAWNING, WAITING, COUNTING};
     
     [System.Serializable]
    public class Wave
@@ -26,25 +26,27 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private float searchCountdown = 1f;
 
+    public bool canSpawn = false;
+
     private SpawnState state = SpawnState.COUNTING;
+    PlayerController player;
+    BetweenBattle betweenBattle;
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerController>();
+        betweenBattle = FindObjectOfType<BetweenBattle>();
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn point referenced.");
         }
 
         waveCountdown = timeBetweenWaves;
+
     }
 
     private void Update()
     {
-        if(state == SpawnState.THEEND)
-        {
-            return;
-        }
-
         if(state == SpawnState.WAITING)
         {
             //Check if enemies are still alive
@@ -61,7 +63,7 @@ public class WaveSpawner : MonoBehaviour
         //Check if spawning
         if (waveCountdown <= 0)
         {
-            if (state != SpawnState.SPAWNING)
+            if (state != SpawnState.SPAWNING && canSpawn)
             {
                 //start spawning wave
                 StartCoroutine(SpawnWave(waves[nextWave]));
@@ -79,15 +81,25 @@ public class WaveSpawner : MonoBehaviour
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
-        nextWave++;
 
-        if (nextWave >= waves.Length)
+        if(nextWave + 1 > waves.Length - 1)
         {
-            state = SpawnState.THEEND;
-       
-            Debug.Log("All waves complete! Stopping wave script...");
+            //Game state complete. Now what? Fanfare? Next level?
+            //nextWave = 0;
+            Debug.Log("All waves complete! Looping...");
+
+            player.GetClosestRoom().spawnerInRoom = false;
+            canSpawn = false;
+            if(player.GetClosestRoom().enemies <= 0)
+            {
+                betweenBattle.OpenPowerupScreen();
+            }
+
         }
-       
+        else
+        {
+            nextWave++;
+        }
     }
 
     bool EnemyIsAlive()
@@ -96,7 +108,7 @@ public class WaveSpawner : MonoBehaviour
         if(searchCountdown <= 0f)
         {
             searchCountdown = 1f;
-            if (UnityEngine.GameObject.FindGameObjectWithTag("Enemy") == null)
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)
             {
                 return false;
             }

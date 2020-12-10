@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2007934198871298315}
   - component: {fileID: 2039818734010655093}
   - component: {fileID: 120699379492301214}
-  - component: {fileID: 6057420490681435885}
   - component: {fileID: 2958084619496529972}
+  - component: {fileID: 1974046348655203954}
   m_Layer: 0
   m_Name: Next Scene
   m_TagString: Untagged
@@ -81,18 +81,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6057420490681435885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785869053139222980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec7350ef6523c444a28f1fb705a8797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2958084619496529972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -144,6 +132,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1974046348655203954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785869053139222980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a73eb213ae52a47a031ed74ed27678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1290900711770885289
 GameObject:
   m_ObjectHideFlags: 0

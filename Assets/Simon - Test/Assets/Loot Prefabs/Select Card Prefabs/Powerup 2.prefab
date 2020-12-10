@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2716147316089502570}
   m_Layer: 5
   m_Name: Powerup 2
-  m_TagString: Untagged
+  m_TagString: LootPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +84,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2716147316089502570}
-        m_MethodName: GivePlayerCard
+      - m_Target: {fileID: 2163819379709317411, guid: 95f4b911251a61b4d967d79497bc9a14,
+          type: 3}
+        m_MethodName: SelectCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

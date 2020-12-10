@@ -1,21 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    void Start()
+    public void GotoNextLevel()
     {
-        
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex + 1);
     }
 
-    void Update()
+    public void Restart()
     {
-        
-    }
-
-    private void GotoNextLevel()
-    {
-        
+        SceneManager.LoadScene(0);
     }
 }

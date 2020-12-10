@@ -7,17 +7,15 @@ public class Enemy : MonoBehaviour
     //REMEMBER to add a collider to enemies and make the projectile a trigger
 
     [SerializeField] float health = 100f;
-
-    
+    PlayerController player;
+    BetweenBattle betweenBattle;
+    SpriteRenderer spriteRenderer;
+    bool preventMultiDeath = false;
     void Start()
     {
-        
-    }
-
-    
-    void Update()
-    {
-        
+        player = FindObjectOfType<PlayerController>();
+        betweenBattle = FindObjectOfType<BetweenBattle>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,19 +23,31 @@ public class Enemy : MonoBehaviour
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
         if(damageDealer != null)
         {
-            health -= damageDealer.GetDamage();
+            ProcessHit(damageDealer);
         }
-        ProcessHit();
     }
 
-    private void ProcessHit()
+    private void ProcessHit(DamageDealer damageDealer)
     {
-        health -= UnityEngine.GameObject.Find("Player").GetComponent<PlayerController>().currentWeapon.damage;
-        //health -= damageDealer.GetDamage();
-        if (health <= 0f)
+
+        health -= damageDealer.GetDamage();
+
+        spriteRenderer.color = Color.red;
+        Invoke("ChangeBackColor", 0.1f);
+
+        if (health <= 0f && !preventMultiDeath)
         {
+            preventMultiDeath = true;
+            player.GetClosestRoom().enemies--;
+            if (player.GetClosestRoom().enemies <= 0 && player.GetClosestRoom().spawnerInRoom == false)
+            {
+                betweenBattle.OpenPowerupScreen();
+            }
             Destroy(gameObject);
         }
     }
-
+    void ChangeBackColor()
+    {
+        spriteRenderer.color = Color.white;
+    }
 }

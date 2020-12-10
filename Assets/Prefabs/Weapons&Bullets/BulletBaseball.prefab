@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 11
+  scatter: 0
+  scatterShot: {fileID: 0}
 --- !u!58 &2871302820273494691
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,3 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  destroyTime: 0.1
