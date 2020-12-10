@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art & Animations/Sprites/Other Objects.meta
+guid: d9f36c37895c4eb4d8625af4ec88185e
+folderAsset: yes
+DefaultImporter:
+=======
 guid: 172f2e90a6b180441bf05126544bc817
 NativeFormatImporter:
+>>>>>>> c356199 (sPRITES):Assets/Art & Animations/Animations/Boss2_0.controller.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
