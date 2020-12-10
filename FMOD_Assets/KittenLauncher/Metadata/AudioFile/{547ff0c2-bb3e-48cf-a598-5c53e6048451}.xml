@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{547ff0c2-bb3e-48cf-a598-5c53e6048451}">
+		<property name="assetPath">
+			<value>PoshUnicornFANCYSOMETEA.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.3090208333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c9c60a9-3aab-4420-a4fa-f2e89dc31f54}</destination>
+		</relationship>
+	</object>
+</objects>

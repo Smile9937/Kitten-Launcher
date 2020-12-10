@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{8ddb8e00-0a9f-44e8-85db-473fc4964abb}">
+		<property name="assetPath">
+			<value>PoshUnicornPISTOLSATDAWN.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.2808541666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c9c60a9-3aab-4420-a4fa-f2e89dc31f54}</destination>
+		</relationship>
+	</object>
+</objects>
