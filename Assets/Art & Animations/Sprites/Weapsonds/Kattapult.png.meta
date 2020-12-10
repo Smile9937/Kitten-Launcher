@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 4e1836b3554db0d4dba1f20d42f1291a
+guid: 3fc0f8d8222e76e4588c66e9e66c0b97
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2588053533905087897
-    second: 2d front sprite_0
-  - first:
-      213: 4411472358195565451
-    second: 2d front sprite_1
-  - first:
-      213: -4029998798866726330
-    second: 2d front sprite_2
-  - first:
-      213: -392575857570160754
-    second: 2d front sprite_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -74,7 +62,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -86,7 +74,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -110,7 +98,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -122,7 +110,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -134,7 +122,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -145,91 +133,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: 2d front sprite_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 3
-        width: 30
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76294e3e503651cd0800000000000000
-      internalID: -2588053533905087897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2d front sprite_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 3
-        width: 30
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8393be9cb2b83d30800000000000000
-      internalID: 4411472358195565451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2d front sprite_2
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 3
-        width: 30
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6424c4cb1719218c0800000000000000
-      internalID: -4029998798866726330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2d front sprite_3
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 3
-        width: 30
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8fd226665a4d8af0800000000000000
-      internalID: -392575857570160754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

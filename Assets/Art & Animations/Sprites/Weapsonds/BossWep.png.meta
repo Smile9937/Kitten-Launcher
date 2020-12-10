@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: bfb65c46043b93d418d78515b199f5b4
+guid: 7dfcb38ac8eac754498846a3649198b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6142486316523942364
-    second: SnotBlob sprite_0
+      213: 5673303062841606470
+    second: BossWep_0
   - first:
-      213: 5512926403455494686
-    second: SnotBlob sprite_1
+      213: 4564902651231336947
+    second: BossWep_1
   - first:
-      213: -6181485144756687551
-    second: SnotBlob sprite_2
-  - first:
-      213: 7047842695848645451
-    second: SnotBlob sprite_3
-  - first:
-      213: -2982962617965738837
-    second: SnotBlob sprite_4
-  - first:
-      213: 960049869091668187
-    second: SnotBlob sprite_5
+      213: 2035144035308856452
+    second: BossWep_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +71,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -92,7 +83,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -116,7 +107,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -128,7 +119,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -140,7 +131,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -153,118 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SnotBlob sprite_0
+      name: BossWep_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd17b16b2ce7e3550800000000000000
-      internalID: 6142486316523942364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_1
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 3
-        width: 44
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1a26deea59d18c40800000000000000
-      internalID: 5512926403455494686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_2
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 3
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d6c620304f63aa0800000000000000
-      internalID: -6181485144756687551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_3
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 2
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b43d3ee3797fec160800000000000000
-      internalID: 7047842695848645451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_4
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba402e9ad436a96d0800000000000000
-      internalID: -2982962617965738837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 274
-        height: 57
+        x: 2
+        y: 7
+        width: 13
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,8 +158,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd08ed5f448c25d00800000000000000
-      internalID: 960049869091668187
+      spriteID: 6414fc3c31f9bbe40800000000000000
+      internalID: 5673303062841606470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWep_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 9
+        width: 21
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9f1e086cac95f30800000000000000
+      internalID: 4564902651231336947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWep_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 14
+        width: 8
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484e65ba7b84e3c10800000000000000
+      internalID: 2035144035308856452
       vertices: []
       indices: 
       edges: []
@@ -281,7 +209,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f7bf3b000695d6a43ab6dfce505bbf95
     internalID: 0
     vertices: []
     indices: 

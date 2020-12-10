@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: bfb65c46043b93d418d78515b199f5b4
+guid: fd24e40f0e6ad924987a6997bb6dfdd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6142486316523942364
-    second: SnotBlob sprite_0
+      213: 2277483326539998165
+    second: 2d front sprite 2_0
   - first:
-      213: 5512926403455494686
-    second: SnotBlob sprite_1
+      213: -8219141803542085533
+    second: 2d front sprite 2_1
   - first:
-      213: -6181485144756687551
-    second: SnotBlob sprite_2
+      213: -3002167288300521181
+    second: 2d front sprite 2_2
   - first:
-      213: 7047842695848645451
-    second: SnotBlob sprite_3
-  - first:
-      213: -2982962617965738837
-    second: SnotBlob sprite_4
-  - first:
-      213: 960049869091668187
-    second: SnotBlob sprite_5
+      213: -8062805827586426966
+    second: 2d front sprite 2_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +74,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -92,7 +86,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -116,7 +110,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -128,7 +122,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -140,7 +134,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -153,118 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SnotBlob sprite_0
+      name: 2d front sprite 2_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd17b16b2ce7e3550800000000000000
-      internalID: 6142486316523942364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_1
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 3
-        width: 44
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1a26deea59d18c40800000000000000
-      internalID: 5512926403455494686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_2
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 3
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d6c620304f63aa0800000000000000
-      internalID: -6181485144756687551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_3
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 2
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b43d3ee3797fec160800000000000000
-      internalID: 7047842695848645451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_4
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba402e9ad436a96d0800000000000000
-      internalID: -2982962617965738837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 274
-        height: 57
+        width: 27
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,8 +161,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd08ed5f448c25d00800000000000000
-      internalID: 960049869091668187
+      spriteID: 5d3aa44d40f3b9f10800000000000000
+      internalID: 2277483326539998165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d front sprite 2_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 3
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3608f49931ebfed80800000000000000
+      internalID: -8219141803542085533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d front sprite 2_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 3
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329bc88e1c82656d0800000000000000
+      internalID: -3002167288300521181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d front sprite 2_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7f2c181d82b1090800000000000000
+      internalID: -8062805827586426966
       vertices: []
       indices: 
       edges: []
@@ -281,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a9d897b81f014514c87a913d83f75a05
     internalID: 0
     vertices: []
     indices: 

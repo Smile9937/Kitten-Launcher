@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: bfb65c46043b93d418d78515b199f5b4
+guid: 38d27e7d383a3114e8fd3fae9dfd381e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6142486316523942364
-    second: SnotBlob sprite_0
+      213: 3539828324426902789
+    second: Uniblob Sprite 2_0
   - first:
-      213: 5512926403455494686
-    second: SnotBlob sprite_1
+      213: 6374726451506401025
+    second: Uniblob Sprite 2_1
   - first:
-      213: -6181485144756687551
-    second: SnotBlob sprite_2
+      213: 7817587635344343591
+    second: Uniblob Sprite 2_2
   - first:
-      213: 7047842695848645451
-    second: SnotBlob sprite_3
+      213: 6078056338948612299
+    second: Uniblob Sprite 2_3
   - first:
-      213: -2982962617965738837
-    second: SnotBlob sprite_4
-  - first:
-      213: 960049869091668187
-    second: SnotBlob sprite_5
+      213: -330989323603424315
+    second: Uniblob Sprite 2_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +77,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -92,7 +89,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -116,7 +113,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -128,7 +125,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -140,7 +137,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -153,118 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SnotBlob sprite_0
+      name: Uniblob Sprite 2_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd17b16b2ce7e3550800000000000000
-      internalID: 6142486316523942364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_1
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 3
-        width: 44
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1a26deea59d18c40800000000000000
-      internalID: 5512926403455494686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_2
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 3
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d6c620304f63aa0800000000000000
-      internalID: -6181485144756687551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_3
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 2
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b43d3ee3797fec160800000000000000
-      internalID: 7047842695848645451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_4
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba402e9ad436a96d0800000000000000
-      internalID: -2982962617965738837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 274
-        height: 57
+        x: 12
+        y: 8
+        width: 56
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,8 +164,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd08ed5f448c25d00800000000000000
-      internalID: 960049869091668187
+      spriteID: 50de4533b1fff1130800000000000000
+      internalID: 3539828324426902789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Uniblob Sprite 2_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 8
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f4352dee3977850800000000000000
+      internalID: 6374726451506401025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Uniblob Sprite 2_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 8
+        width: 58
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7228f25f886ad7c60800000000000000
+      internalID: 7817587635344343591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Uniblob Sprite 2_3
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 8
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0e7df8908995450800000000000000
+      internalID: 6078056338948612299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Uniblob Sprite 2_4
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbcb2eb6f6186bf0800000000000000
+      internalID: -330989323603424315
       vertices: []
       indices: 
       edges: []
@@ -281,7 +257,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 782cf05eebf437745badb2084b565be8
     internalID: 0
     vertices: []
     indices: 

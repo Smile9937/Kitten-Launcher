@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: bfb65c46043b93d418d78515b199f5b4
+guid: c65fa6ffea9ceab449f314d4b2c3f618
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6142486316523942364
-    second: SnotBlob sprite_0
+      213: 3170537233275380327
+    second: Hagrid sprite_0
   - first:
-      213: 5512926403455494686
-    second: SnotBlob sprite_1
+      213: 2688135627466066448
+    second: Hagrid sprite_1
   - first:
-      213: -6181485144756687551
-    second: SnotBlob sprite_2
+      213: 3045039473943081697
+    second: Hagrid sprite_2
   - first:
-      213: 7047842695848645451
-    second: SnotBlob sprite_3
-  - first:
-      213: -2982962617965738837
-    second: SnotBlob sprite_4
-  - first:
-      213: 960049869091668187
-    second: SnotBlob sprite_5
+      213: -712464134235115873
+    second: Hagrid sprite_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +74,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -92,7 +86,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -116,7 +110,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -128,7 +122,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -140,7 +134,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -153,118 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SnotBlob sprite_0
+      name: Hagrid sprite_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd17b16b2ce7e3550800000000000000
-      internalID: 6142486316523942364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_1
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 3
-        width: 44
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1a26deea59d18c40800000000000000
-      internalID: 5512926403455494686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_2
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 3
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d6c620304f63aa0800000000000000
-      internalID: -6181485144756687551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_3
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 2
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b43d3ee3797fec160800000000000000
-      internalID: 7047842695848645451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_4
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 3
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba402e9ad436a96d0800000000000000
-      internalID: -2982962617965738837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnotBlob sprite_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 274
-        height: 57
+        x: 10
+        y: 6
+        width: 32
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,8 +161,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd08ed5f448c25d00800000000000000
-      internalID: 960049869091668187
+      spriteID: 7626780c0d2000c20800000000000000
+      internalID: 3170537233275380327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hagrid sprite_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 6
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01acf2f5c1d2e4520800000000000000
+      internalID: 2688135627466066448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hagrid sprite_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 6
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e27b6ba447224a20800000000000000
+      internalID: 3045039473943081697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hagrid sprite_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 6
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ea5bb05a1dc16f0800000000000000
+      internalID: -712464134235115873
       vertices: []
       indices: 
       edges: []
@@ -281,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4e537998bc35c5040ab3746b526a30a2
     internalID: 0
     vertices: []
     indices: 
