@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{776e86d7-0f56-48df-87f1-00235ff355de}">
+		<property name="name">
+			<value>BaseballGunContinuedFiring</value>
+		</property>
+		<relationship name="folder">
+			<destination>{131d309d-25f6-44be-b1c6-bdb8145b70e9}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ea2ffe0c-9ea5-485e-bbcd-fcd6eb70dcb0}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ea2ffe0c-9ea5-485e-bbcd-fcd6eb70dcb0}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

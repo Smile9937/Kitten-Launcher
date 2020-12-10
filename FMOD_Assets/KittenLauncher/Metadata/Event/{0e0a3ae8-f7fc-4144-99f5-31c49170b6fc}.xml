@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{ff6dd6c4-efc4-4f7f-9a37-2b4c7e2741c2}</destination>
+			<destination>{25d15deb-9011-497b-89f6-562f25195c63}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{dded81f2-0a42-4485-a586-77b63ae2576b}</destination>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{61f34890-e487-415b-9c99-016c99da58a3}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{2efefd85-908d-4e40-8b8d-a1bc583021c8}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{dded81f2-0a42-4485-a586-77b63ae2576b}">
@@ -57,7 +60,7 @@
 	<object class="MarkerTrack" id="{e5231d57-7907-43e9-bc15-791d1f4f04fa}" />
 	<object class="GroupTrack" id="{6086c1a1-deb9-4f1b-8b55-01c75af84a49}">
 		<relationship name="modules">
-			<destination>{0e632c4a-2abb-4169-b6e9-2c55d4dbf171}</destination>
+			<destination>{175a67b5-9680-46d1-bbf9-fce1a2b29dfa}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{31f8e27e-79d9-4f77-afa8-444ec2d3668e}</destination>
@@ -65,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{61f34890-e487-415b-9c99-016c99da58a3}">
 		<relationship name="modules">
-			<destination>{0e632c4a-2abb-4169-b6e9-2c55d4dbf171}</destination>
+			<destination>{175a67b5-9680-46d1-bbf9-fce1a2b29dfa}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9313b470-36cd-4275-b97a-5e0818c3e41d}">
@@ -85,9 +88,9 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9d409bf7-887c-4def-a7f7-1ae619204723}" />
-	<object class="SingleSound" id="{0e632c4a-2abb-4169-b6e9-2c55d4dbf171}">
+	<object class="SingleSound" id="{175a67b5-9680-46d1-bbf9-fce1a2b29dfa}">
 		<property name="length">
-			<value>1.8</value>
+			<value>2.0500000000000003</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6a927134-a5ea-4869-a0bf-79343a605ae6}</destination>

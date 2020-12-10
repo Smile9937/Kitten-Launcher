@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{222c427e-d0eb-4126-9da1-4d28410199e1}">
+		<property name="assetPath">
+			<value>Kitten launcher sounds_mixdown.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.7195416666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c9c60a9-3aab-4420-a4fa-f2e89dc31f54}</destination>
+		</relationship>
+	</object>
+</objects>
