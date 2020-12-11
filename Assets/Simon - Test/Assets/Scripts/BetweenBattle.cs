@@ -5,26 +5,27 @@ using UnityEngine;
 public class BetweenBattle : MonoBehaviour
 {
     [SerializeField] GameObject powerUpScreen;
+    [SerializeField] GameObject discardScreen;
     [SerializeField] GameObject[] lootPrefabs;
     [SerializeField] GameObject[] cards;
-    [SerializeField] GameObject powerupScreen;
     [SerializeField] GameObject closeButton;
     int index;
     float[] position;
-    bool canOpenScreen = true;
-    bool canOpenScreen2 = true;
+    public bool canOpenPowerupScreen = true;
+    public bool canOpenDiscardScreen = true;
     PlayerController player;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
         powerUpScreen.SetActive(false);
+        discardScreen.SetActive(false);
     }
 
     public void OpenPowerupScreen()
     {
-        if (canOpenScreen)
+        if (canOpenPowerupScreen)
         {
-            canOpenScreen = false;
+            canOpenPowerupScreen = false;
             player.moveSpeed = 0;
             powerUpScreen.SetActive(true);
 
@@ -54,56 +55,60 @@ public class BetweenBattle : MonoBehaviour
                 cardInstance.transform.SetParent(powerUpScreen.transform, false);
 
                 RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
-                rectTransform.anchoredPosition = new Vector2(position[i], 0f);
+                rectTransform.anchoredPosition = new Vector2(position[i], -30f);
             }
             Invoke("Cooldown", 1);
         }
     }
 
     public void OpenChooseCard()
-    {        if(canOpenScreen2)
+    {        if(canOpenDiscardScreen)
         {
-            canOpenScreen2 = false;
+            canOpenDiscardScreen = false;
             List<Cards> cardList = player.cards;
-            powerUpScreen.SetActive(true);
+            discardScreen.SetActive(true);
             player.moveSpeed = 0;
-            position = new float[cardList.Count - 1];
+            position = new float[cardList.Count + 1];
 
 
-            Debug.Log(cardList.Count);
 
             if(cardList.Count - 1 == 0)
             {
                 GameObject cardInstance = Instantiate(cards[cardList[0].id], Vector3.zero, transform.rotation);
-                Debug.Log(cardList[0].id.ToString());
-                cardInstance.transform.SetParent(powerUpScreen.transform, false);
+                cardInstance.transform.SetParent(discardScreen.transform, false);
 
                 RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
-                rectTransform.anchoredPosition = new Vector2(-220, 0f);
+                rectTransform.anchoredPosition = new Vector2(-280, -30);
             } else
             {
                 for (int i = 0; i < cardList.Count; i++)
                 {
                     position = new float[cardList.Count + 1];
 
-                    position[0] = -220f;
-                    position[1] = 0f;
-                    position[2] = 220f;
+                    position[0] = -280f;
+                    position[1] = -210f;
+                    position[2] = -140f;
+                    position[3] = -70f;
+                    position[4] = 0f;
+                    position[5] = 70f;
+                    position[6] = 140f;
+                    position[7] = 210f;
+                    position[8] = 280f;
+                    
 
                     GameObject cardInstance = Instantiate(cards[cardList[i].id], Vector3.zero, transform.rotation);
-                    Debug.Log(cardList[i].id.ToString());
-                    cardInstance.transform.SetParent(powerUpScreen.transform, false);
+                    cardInstance.transform.SetParent(discardScreen.transform, false);
 
                     RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
-                    rectTransform.anchoredPosition = new Vector2(position[i], 0f);
+                    rectTransform.anchoredPosition = new Vector2(position[i], -30f);
                 }
             }
 
             GameObject close = Instantiate(closeButton, Vector3.zero, transform.rotation);
-            close.transform.SetParent(powerUpScreen.transform, false);
+            close.transform.SetParent(discardScreen.transform, false);
 
             RectTransform rectTransform1 = close.GetComponent<RectTransform>();
-            rectTransform1.anchoredPosition = new Vector2(350, -150);
+            rectTransform1.anchoredPosition = new Vector2(330, -200);
             Invoke("Cooldown2", 1f);
         }
 
@@ -120,17 +125,23 @@ public class BetweenBattle : MonoBehaviour
         }
     }
 
-    public void CloseChooseCard()
+    public void CloseDiscardCard()
     {
         player.moveSpeed = player.startMoveSpeed;
-        Invoke("Test", 0.1f);
+        player.GetClosestRoom().inCardSelectMenu = false;
+        Invoke("Test", 1f);
 
 
         var cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
         var quitButton = GameObject.FindGameObjectWithTag("QuitButton");
-        powerUpScreen.SetActive(false);
-        Debug.Log(cardPrefabs.Length);
-        if(cardPrefabs.Length == 0) { Destroy(cardPrefabs[0]); }
+        discardScreen.SetActive(false);
+        if(cardPrefabs.Length - 1 == 0 && cardPrefabs[0] != null) {
+            if(cardPrefabs[0] != null)
+            {
+            Destroy(cardPrefabs[0]);
+            }
+
+        }
         else
         {
             for (int i = 0; i < cardPrefabs.Length; i++)
@@ -146,10 +157,10 @@ public class BetweenBattle : MonoBehaviour
     }
     void Cooldown()
     {
-        canOpenScreen = true;
+        canOpenPowerupScreen = true;
     }    
     void Cooldown2()
     {
-        canOpenScreen = true;
+        canOpenDiscardScreen = true;
     }
 }

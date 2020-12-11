@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public int damage = 100;
+    public float damage = 100;
     public float destroyTime = 0.1f;
+    PlayerController player;
 
-    public int GetDamage()
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+        damage += player.attackDamage;
+    }
+    public float GetDamage()
     {
         return damage;
     }

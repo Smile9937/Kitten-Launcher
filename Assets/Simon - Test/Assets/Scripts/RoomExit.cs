@@ -37,7 +37,7 @@ public class RoomExit : MonoBehaviour
                 //Bottom
                 if (direction == 1)
                 {                
-                    moveCamera.Move(0f, -17f);
+                    moveCamera.Move(0f, -18f);
                     nextPos = new Vector3(0, -teleport, 0);
                     player.transform.position += nextPos;
                     OpenCardSelect();
@@ -45,7 +45,7 @@ public class RoomExit : MonoBehaviour
                 //Top
                 else if (direction == 2)
                 {
-                    moveCamera.Move(0f, 17);
+                    moveCamera.Move(0f, 18);
                     nextPos = new Vector3(0, teleport, 0);
                     player.transform.position += nextPos;
                     OpenCardSelect();
@@ -53,7 +53,7 @@ public class RoomExit : MonoBehaviour
                 //Left
                 else if (direction == 3)
                 {
-                    moveCamera.Move(-29f, 0f);
+                    moveCamera.Move(-30f, 0f);
                     nextPos = new Vector3(-teleport, 0, 0);
                     player.transform.position += nextPos;
                     OpenCardSelect();
@@ -61,45 +61,25 @@ public class RoomExit : MonoBehaviour
                 //Right
                 else if (direction == 4)
                 {
-                    moveCamera.Move(29f, 0f);
+                    moveCamera.Move(30f, 0f);
                     nextPos = new Vector3(teleport, 0, 0);
                     player.transform.position += nextPos;
                     OpenCardSelect();
                 }
             }
-
         }
     }
 
     private void OpenCardSelect()
-    {                
+    {
         showMap.Invoke("MovePlayerIcon", 0.1f);
-        Debug.Log(player.GetClosestRoom().spawnerInRoom);
         if(player.GetClosestRoom().spawnerInRoom) {
             player.GetClosestRoom().inCardSelectMenu = true;
             betweenBattle.OpenChooseCard();
         }
-
+        player.ResetStats();
         Invoke("MenuCooldown", 0.1f);
     }
-
-    /*public RoomManager GetNextRoom()
-    {
-        RoomManager nextRoom = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 nextPosition = transform.position + nextPos;
-        foreach (Transform potentialTarget in rooms)
-        {
-            Vector3 directionToTarget = potentialTarget.position - nextPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
-                closestDistanceSqr = dSqrToTarget;
-                nextRoom = potentialTarget.GetComponent<RoomManager>();
-            }
-        }
-        return nextRoom;
-    }*/
 
     void MenuCooldown()
     {

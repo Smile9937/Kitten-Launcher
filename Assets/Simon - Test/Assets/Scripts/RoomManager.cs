@@ -72,26 +72,10 @@ public class RoomManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player") && roomCleared == false)
+        if (other.CompareTag("Player") && roomCleared == false)
         {
             playerInRoom = true;
-            /*if (waveSpawner != null) {
-
-                spawnerInRoom = true;
-                if(!inCardSelectMenu)
-                {
-                    waveSpawner.canSpawn = true;
-                }
-
-            }*/
         }
-
-        if(other.CompareTag("EnemySpawner"))
-        {
-
-            spawnerInRoom = true;
-        }
-
         if(other.CompareTag("Enemy"))
         {
             enemies++;

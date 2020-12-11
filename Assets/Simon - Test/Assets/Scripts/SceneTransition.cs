@@ -15,4 +15,9 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Lose()
+    {
+        SceneManager.LoadScene("Lose Screen");
+    }
 }

@@ -10,15 +10,29 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player")]
     public float moveSpeed = 10f;
-    [SerializeField] int health = 200;
+    public float startingMoveSpeed = 10f;
+    public float startMoveSpeedBonus = 0;
+    [SerializeField] float health = 200;
 
     public List<Cards> cards;
 
     public List<Transform> rooms;
 
-    public float startMoveSpeed = 10f;
+    public float attackDamage;
+    public float attackSpeed;
 
     public float speedBonus;
+
+    public float attackBonus;
+
+    public float attackSpeedBonus;
+
+    public float passiveAttackSpeedBonus;
+    public float passiveAttackBonus;
+
+    float startingAttackBonus = 0;
+    float startingAttackSpeed = 0;
+    public float startMoveSpeed = 10f;
 
     bool canBeHit = true;
 
@@ -29,11 +43,14 @@ public class PlayerController : MonoBehaviour
     Animator myAnimator;
 
     SpriteRenderer spriteRenderer;
+
+    SceneTransition sceneTransition;
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        sceneTransition = FindObjectOfType<SceneTransition>();
         gun = GameObject.Find("Gun_Placeholder");
     }
     
@@ -44,8 +61,28 @@ public class PlayerController : MonoBehaviour
         VerticalAnimation();
         Shoot();
         FlipSpriteHorizontal();
-
+        GainPassiveStats();
         gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
+        moveSpeed = startingMoveSpeed + speedBonus;
+        attackDamage = startingAttackBonus + attackBonus + passiveAttackBonus;
+        attackSpeed = startingAttackSpeed + attackSpeedBonus + passiveAttackSpeedBonus;
+    }
+
+    private void GainPassiveStats()
+    {
+        if(cards.Count + 1 == 0)
+        {
+            passiveAttackBonus = cards[0].passiveAttackDamage;
+            passiveAttackSpeedBonus = cards[0].passiveAttackSpeed;
+        } else
+        {
+            for(int i = 0; i < cards.Count; i++)
+            {
+                passiveAttackBonus = cards[i].passiveAttackDamage;
+                passiveAttackSpeedBonus = cards[i].passiveAttackSpeed;
+            }
+        }
+
     }
 
     private void FlipSpriteHorizontal()
@@ -101,11 +138,12 @@ public class PlayerController : MonoBehaviour
     {
         if (!canBeHit) { return; }
         canBeHit = false;
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
         health -= damageDealer.GetDamage();
         if (health <= 0)
         {
+            sceneTransition.Lose();
             Destroy(gameObject);
         }
         StartCoroutine(MultiHitPrevention());
@@ -129,7 +167,7 @@ public class PlayerController : MonoBehaviour
             if (Time.time >= nextTimeOfFire)
             {
                 currentWeapon.Shoot();
-                nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
+                nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
             }
         }
     }
@@ -150,6 +188,15 @@ public class PlayerController : MonoBehaviour
             }
         }
         return closestRoom;
+    }
+
+    public void ResetStats()
+    {
+        attackBonus = startingAttackBonus;
+        passiveAttackBonus = startingAttackBonus;
+        attackSpeedBonus = startingAttackSpeed;
+        passiveAttackSpeedBonus = startingAttackBonus;
+        speedBonus = startMoveSpeedBonus;
     }
 
 }

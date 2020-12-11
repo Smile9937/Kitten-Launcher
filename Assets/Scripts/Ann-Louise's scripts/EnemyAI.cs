@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     Vector3 velocity;
     Vector3 previous;
 
-    float fireRate = 1f;
+    public float fireRate = 1f;
     float nextFire;
 
     void Start()

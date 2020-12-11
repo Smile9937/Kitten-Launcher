@@ -13,6 +13,6 @@ public class QuitButton : MonoBehaviour
 
     public void QuitMenu()
     {
-        betweenBattle.CloseChooseCard();
+        betweenBattle.CloseDiscardCard();
     }
 }

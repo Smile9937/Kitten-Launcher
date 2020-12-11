@@ -14,21 +14,15 @@ public class CardPrefab : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
         roomManager = FindObjectOfType<RoomManager>();
-
-        //Change text
-        UnityEngine.UI.Text roomEffectTextField = gameObject.transform.GetChild(1).GetComponent<UnityEngine.UI.Text>();
-        roomEffectTextField.text = card.roomText;
-        
-        UnityEngine.UI.Text activatedEffectTextField = gameObject.transform.GetChild(2).GetComponent<UnityEngine.UI.Text>();
-        activatedEffectTextField.text = card.activatedText;
         
         //Change image
-        UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(3).GetComponent<UnityEngine.UI.Image>();
+        UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         currentSprite.sprite = card.cardSprite;
     }
 
     public void GivePlayerCard()
     {
+        Debug.Log("Give Prefab Button Working");
         player.cards.Add(card);
         betweenBattle.ClosePowerupScreen();
         player.GetClosestRoom().OpenDoors();
@@ -37,6 +31,11 @@ public class CardPrefab : MonoBehaviour
 
     public void SelectCard()
     {
-
+        Debug.Log("Select Prefab Button Working");
+        player.attackBonus += card.attackDamage * player.GetClosestRoom().effectMultiplier;
+        player.attackSpeedBonus += card.attackSpeed * player.GetClosestRoom().effectMultiplier;
+        player.speedBonus += card.moveSpeed * player.GetClosestRoom().effectMultiplier;
+        player.cards.Remove(card);
+        betweenBattle.CloseDiscardCard();
     }
 }

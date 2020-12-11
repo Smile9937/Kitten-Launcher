@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Simon - Test/Assets/Scenes/Win Screen.unity
     guid: 63080158a22dca541b88c2e96ade76ea
+  - enabled: 1
+    path: Assets/Simon - Test/Assets/Scenes/Lose Screen.unity
+    guid: 4dceb394e4cb6ac48a5f5648b6f70347
   m_configObjects: {}

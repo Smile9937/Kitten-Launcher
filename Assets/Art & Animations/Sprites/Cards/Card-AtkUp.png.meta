@@ -14,6 +14,30 @@ TextureImporter:
   - first:
       213: 905663095702889489
     second: KortPower2X_3
+  - first:
+      213: 3935687332956863941
+    second: Card-AtkUp_0
+  - first:
+      213: -971948494575867256
+    second: Card-AtkUp_1
+  - first:
+      213: 3341591429013863274
+    second: Card-AtkUp_2
+  - first:
+      213: -5410762864681816765
+    second: Card-AtkUp_3
+  - first:
+      213: 7185651944309166776
+    second: Card-AtkUp_0
+  - first:
+      213: 5671462287521135892
+    second: Card-AtkUp_1
+  - first:
+      213: -6929624896474120869
+    second: Card-AtkUp_2
+  - first:
+      213: 7296824310554393092
+    second: Card-AtkUp_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -57,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,7 +100,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +112,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,7 +171,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KortPower2X_0
+      name: Card-AtkUp_0
       rect:
         serializedVersion: 2
         x: 16
@@ -161,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6429e405f6acbeab0800000000000000
-      internalID: -4977662383690444218
+      spriteID: 8b294244f5098b360800000000000000
+      internalID: 7185651944309166776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KortPower2X_1
+      name: Card-AtkUp_1
       rect:
         serializedVersion: 2
         x: 190
@@ -182,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5439e4a53048c10f0800000000000000
-      internalID: -1144895055324081339
+      spriteID: 41db8bcd6e415be40800000000000000
+      internalID: 5671462287521135892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KortPower2X_2
+      name: Card-AtkUp_2
       rect:
         serializedVersion: 2
         x: 362
@@ -203,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa178bb9e79e44ca0800000000000000
-      internalID: -6033440870781914705
+      spriteID: b5df4f21fd605df90800000000000000
+      internalID: -6929624896474120869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KortPower2X_3
+      name: Card-AtkUp_3
       rect:
         serializedVersion: 2
         x: 538
@@ -224,8 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1142d8189cf819c00800000000000000
-      internalID: 905663095702889489
+      spriteID: 40a770bdc07834560800000000000000
+      internalID: 7296824310554393092
       vertices: []
       indices: 
       edges: []

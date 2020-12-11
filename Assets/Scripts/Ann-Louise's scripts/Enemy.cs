@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     //REMEMBER to add a collider to enemies and make the projectile a trigger
 
     [SerializeField] float health = 100f;
+    [SerializeField] GameObject enemyReward;
     PlayerController player;
     BetweenBattle betweenBattle;
     SpriteRenderer spriteRenderer;
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
 
         health -= damageDealer.GetDamage();
 
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
 
         if (health <= 0f && !preventMultiDeath)
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
             {
                 betweenBattle.OpenPowerupScreen();
             }
+            if (enemyReward != null) { Instantiate(enemyReward, transform.position, transform.rotation); }
             Destroy(gameObject);
         }
     }
