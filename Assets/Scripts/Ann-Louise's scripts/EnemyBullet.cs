@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    [SerializeField] List<Sprite> sprites;
-
     float moveSpeed = 10f;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
+    Rigidbody2D myRigidbody2D;
 
     PlayerController target;
-    Vector2 moveDirection;
+    public Vector3 moveDirection;
+
+    public Vector3 rotationTarget;
+    public bool targetPlayer = true;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        myRigidbody2D = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<PlayerController>();
-        int currentSprite = Random.Range(0, sprites.Count - 1);
-        spriteRenderer.sprite = sprites[currentSprite];
-        moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+      
+        if (targetPlayer) {
+            moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
+            rotationTarget = target.transform.position;
+        }
+        Vector3 targetDirection = new Vector3(moveDirection.x, moveDirection.y, transform.position.z);
+        myRigidbody2D.velocity = targetDirection;
         Destroy(gameObject, 3f);
+
+        Vector3 direction = rotationTarget - transform.position; float angle = Mathf.Atan2(direction.y, direction.x);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - 90);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

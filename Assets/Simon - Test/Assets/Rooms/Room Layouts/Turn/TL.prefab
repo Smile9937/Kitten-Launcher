@@ -4813,7 +4813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9cbdba4b453f43b8b70566dd14a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors: {fileID: 9096050272358552934, guid: 7a7a22ebd4c9ada4693a57b89ba2dfe9, type: 3}
+  doors: {fileID: 8796715549379097123, guid: 2085f051716151d4f947e672f87172ab, type: 3}
   effectMultiplier: 0
   enemies: 0
   spawnerInRoom: 0

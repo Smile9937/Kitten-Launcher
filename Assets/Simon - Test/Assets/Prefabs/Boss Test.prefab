@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3405304211917776597}
   - component: {fileID: 6847004494191016572}
   - component: {fileID: 4003016995817600075}
+  - component: {fileID: 8493268059916130247}
   m_Layer: 11
   m_Name: Boss Test
   m_TagString: Enemy
@@ -67,9 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2907a8a4ec294448b67ff1c200e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20000
+  startHealth: 20000
   enemyReward: {fileID: 4681404652690547, guid: 4ca765ece86c9ed44b89ef36a6999da6,
     type: 3}
+  health: 0
 --- !u!58 &3405304211917776597
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,6 +128,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8493268059916130247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987946421691705040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c60c690354ece418c90012aebcf6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  middleOfRoom: {fileID: 0}
+  projectile: {fileID: 0}
+  moveSpeed: 2
+  fireRate: 1
+  shots: 0
 --- !u!1 &3470106175394640234
 GameObject:
   m_ObjectHideFlags: 0

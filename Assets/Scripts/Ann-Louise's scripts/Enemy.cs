@@ -5,15 +5,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //REMEMBER to add a collider to enemies and make the projectile a trigger
-
-    [SerializeField] float health = 100f;
+    public float startHealth = 100f;
     [SerializeField] GameObject enemyReward;
+    public float health;
     PlayerController player;
     BetweenBattle betweenBattle;
     SpriteRenderer spriteRenderer;
     bool preventMultiDeath = false;
     void Start()
     {
+        health = startHealth;
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();

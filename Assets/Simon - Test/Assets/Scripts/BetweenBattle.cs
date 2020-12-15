@@ -14,9 +14,11 @@ public class BetweenBattle : MonoBehaviour
     public bool canOpenVictoryScreen = true;
     public bool canOpenDiscardScreen = true;
     PlayerController player;
+    GameSession gameSession;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        gameSession = GameSession.Instance;
         victoryScreen.SetActive(false);
         discardScreen.SetActive(false);
     }
@@ -25,6 +27,7 @@ public class BetweenBattle : MonoBehaviour
     {
         if (canOpenVictoryScreen)
         {
+            gameSession.HideCanvas();
             canOpenVictoryScreen = false;
             player.moveSpeed = 0;
             victoryScreen.SetActive(true);
@@ -64,6 +67,7 @@ public class BetweenBattle : MonoBehaviour
     public void OpenChooseCard()
     {        if(canOpenDiscardScreen)
         {
+            gameSession.HideCanvas();
             canOpenDiscardScreen = false;
             List<Cards> cardList = player.cards;
             discardScreen.SetActive(true);

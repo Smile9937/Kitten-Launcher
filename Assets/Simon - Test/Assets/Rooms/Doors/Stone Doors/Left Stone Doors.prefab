@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3911376870349288054}
   m_Layer: 0
-  m_Name: Top Stone Doors (1)
+  m_Name: Left Stone Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

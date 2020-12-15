@@ -114,6 +114,14 @@ public class PlayerController : MonoBehaviour
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float verticalMove = Input.GetAxisRaw("Vertical");
 
+        bool hasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        bool hasVerticalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
+
+        if(hasHorizontalSpeed && hasVerticalSpeed)
+        {
+            moveSpeed /= 1.2f;
+        }
+
         Vector2 playerVelocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
         myRigidbody.velocity = playerVelocity;
     }
@@ -153,6 +161,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
         gameSession.DecreasePlayerHealth(damageDealer.GetDamage());
+        gameSession.ChangeHealthText();
         if (gameSession.GetPlayerHealth() <= 0)
         {
             sceneTransition.Lose();

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
+    [SerializeField] Text healthText;
     public List<Cards> playerCards;
     float playerHealth;
     PlayerController player;
@@ -26,6 +28,7 @@ public class GameSession : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         playerHealth = player.health;
+        ChangeHealthText();
     }
 
     public float GetPlayerHealth()
@@ -43,18 +46,19 @@ public class GameSession : MonoBehaviour
         playerHealth -= healthDecrease;
     }
 
-    public List<Cards> GetPlayerCards()
+    public void ChangeHealthText()
     {
-        return playerCards;
+        healthText.text = playerHealth.ToString();
     }
 
-    public void IncreasePlayerCards(Cards card)
+    public void HideCanvas()
     {
-        playerCards.Add(card);
+        GameObject canvas = gameObject.transform.GetChild(0).gameObject;
+        canvas.SetActive(false);
     }
-
-    public void DecreasePlayerCards(Cards card)
+    public void OpenCanvas()
     {
-        playerCards.Remove(card);
+        GameObject canvas = gameObject.transform.GetChild(0).gameObject;
+        canvas.SetActive(true);
     }
 }
