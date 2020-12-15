@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviour
     public float effectMultiplier;
     public int enemies;
     public bool spawnerInRoom = false;
-    bool roomCleared = false;
+    public bool roomCleared = false;
 
     public bool inCardSelectMenu = false;
     bool playerInRoom = false;
@@ -52,7 +52,6 @@ public class RoomManager : MonoBehaviour
                 spawnerInRoom = true;
                 waveSpawner.canSpawn = true;
             }
-
         }
     }
 

@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class BetweenBattle : MonoBehaviour
 {
-    [SerializeField] GameObject powerUpScreen;
+    [SerializeField] GameObject victoryScreen;
     [SerializeField] GameObject discardScreen;
     [SerializeField] GameObject[] lootPrefabs;
     [SerializeField] GameObject[] cards;
     [SerializeField] GameObject closeButton;
     int index;
     float[] position;
-    public bool canOpenPowerupScreen = true;
+    public bool canOpenVictoryScreen = true;
     public bool canOpenDiscardScreen = true;
     PlayerController player;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        powerUpScreen.SetActive(false);
+        victoryScreen.SetActive(false);
         discardScreen.SetActive(false);
     }
 
     public void OpenPowerupScreen()
     {
-        if (canOpenPowerupScreen)
+        if (canOpenVictoryScreen)
         {
-            canOpenPowerupScreen = false;
+            canOpenVictoryScreen = false;
             player.moveSpeed = 0;
-            powerUpScreen.SetActive(true);
+            victoryScreen.SetActive(true);
 
             position = new float[3];
 
@@ -52,7 +52,7 @@ public class BetweenBattle : MonoBehaviour
 
 
                 GameObject cardInstance = Instantiate(lootPrefabs[currentLoot], Vector3.zero, transform.rotation);
-                cardInstance.transform.SetParent(powerUpScreen.transform, false);
+                cardInstance.transform.SetParent(victoryScreen.transform, false);
 
                 RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector2(position[i], -30f);
@@ -68,9 +68,6 @@ public class BetweenBattle : MonoBehaviour
             List<Cards> cardList = player.cards;
             discardScreen.SetActive(true);
             player.moveSpeed = 0;
-            position = new float[cardList.Count + 1];
-
-
 
             if(cardList.Count - 1 == 0)
             {
@@ -83,7 +80,7 @@ public class BetweenBattle : MonoBehaviour
             {
                 for (int i = 0; i < cardList.Count; i++)
                 {
-                    position = new float[cardList.Count + 1];
+                    position = new float[9];
 
                     position[0] = -280f;
                     position[1] = -210f;
@@ -117,8 +114,8 @@ public class BetweenBattle : MonoBehaviour
     public void ClosePowerupScreen()
     {
         var cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
-        player.moveSpeed = player.startMoveSpeed;
-        powerUpScreen.SetActive(false);
+        player.moveSpeed = player.startingMoveSpeed;
+        victoryScreen.SetActive(false);
         for(int i = 0; i < cardPrefabs.Length; i++)
         {
             Destroy(cardPrefabs[i]);
@@ -127,7 +124,7 @@ public class BetweenBattle : MonoBehaviour
 
     public void CloseDiscardCard()
     {
-        player.moveSpeed = player.startMoveSpeed;
+        player.moveSpeed = player.startingMoveSpeed;
         player.GetClosestRoom().inCardSelectMenu = false;
         Invoke("Test", 1f);
 
@@ -157,7 +154,7 @@ public class BetweenBattle : MonoBehaviour
     }
     void Cooldown()
     {
-        canOpenPowerupScreen = true;
+        canOpenVictoryScreen = true;
     }    
     void Cooldown2()
     {

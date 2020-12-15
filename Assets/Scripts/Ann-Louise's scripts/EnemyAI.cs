@@ -18,18 +18,20 @@ public class EnemyAI : MonoBehaviour
 
     public float fireRate = 1f;
     float nextFire;
-
+    bool waitForPlayer = true;
     void Start()
     {
         // Checking when it's time to fire/attack
         nextFire = Time.time;
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        Invoke("WaitForPlayer", 0.5f);
     }
 
     void Update()
     {
-        if (Player != null)
+        if (Player != null && !waitForPlayer)
         {
             if(moving)
             {
@@ -83,6 +85,11 @@ public class EnemyAI : MonoBehaviour
             Instantiate(projectile, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
+    }
+
+    void WaitForPlayer()
+    {
+        waitForPlayer = false;
     }
 
     /*void OnCollisionEnter2D(Collision2D other)

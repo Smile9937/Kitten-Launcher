@@ -8,12 +8,13 @@ public class CardPrefab : MonoBehaviour
 
     PlayerController player;
     BetweenBattle betweenBattle;
-    RoomManager roomManager;
+    GameSession gameSession;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
-        roomManager = FindObjectOfType<RoomManager>();
+        //gameSession = FindObjectOfType<GameSession>();
+        gameSession = GameSession.Instance;
         
         //Change image
         UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
@@ -23,7 +24,9 @@ public class CardPrefab : MonoBehaviour
     public void GivePlayerCard()
     {
         Debug.Log("Give Prefab Button Working");
-        player.cards.Add(card);
+        //player.cards.Add(card);
+        //gameSession.IncreasePlayerCards(card);
+        gameSession.playerCards.Add(card);
         betweenBattle.ClosePowerupScreen();
         player.GetClosestRoom().OpenDoors();
         player.GetClosestRoom().aquiredCard = true;
@@ -35,7 +38,9 @@ public class CardPrefab : MonoBehaviour
         player.attackBonus += card.attackDamage * player.GetClosestRoom().effectMultiplier;
         player.attackSpeedBonus += card.attackSpeed * player.GetClosestRoom().effectMultiplier;
         player.speedBonus += card.moveSpeed * player.GetClosestRoom().effectMultiplier;
-        player.cards.Remove(card);
+        //player.cards.Remove(card);
+        gameSession.playerCards.Remove(card);
+        //gameSession.DecreasePlayerCards(card);
         betweenBattle.CloseDiscardCard();
     }
 }

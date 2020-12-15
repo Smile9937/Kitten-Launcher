@@ -89,6 +89,7 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("All waves complete! Looping...");
 
             player.GetClosestRoom().spawnerInRoom = false;
+            player.GetClosestRoom().roomCleared = true;
             canSpawn = false;
             if(player.GetClosestRoom().enemies <= 0)
             {

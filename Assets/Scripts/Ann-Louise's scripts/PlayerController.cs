@@ -8,49 +8,47 @@ public class PlayerController : MonoBehaviour
     private float nextTimeOfFire = 0;
     public Weapon currentWeapon;
 
-    [Header("Player")]
-    public float moveSpeed = 10f;
+    [Header("Player Stats")]
     public float startingMoveSpeed = 10f;
-    public float startMoveSpeedBonus = 0;
-    [SerializeField] float health = 200;
 
+    public float health = 200;
+
+    [Header("Do not edit unless debugging or testing")]
     public List<Cards> cards;
 
-    public List<Transform> rooms;
-
+    public float moveSpeed;
     public float attackDamage;
     public float attackSpeed;
 
     public float speedBonus;
-
     public float attackBonus;
-
     public float attackSpeedBonus;
 
     public float passiveAttackSpeedBonus;
     public float passiveAttackBonus;
 
+     
+    float startMoveSpeedBonus = 0;
     float startingAttackBonus = 0;
     float startingAttackSpeed = 0;
-    public float startMoveSpeed = 10f;
+
+    public List<Transform> rooms;
 
     bool canBeHit = true;
 
     GameObject gun;
-
     Rigidbody2D myRigidbody;
-
     Animator myAnimator;
-
     SpriteRenderer spriteRenderer;
-
     SceneTransition sceneTransition;
+    GameSession gameSession;
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         sceneTransition = FindObjectOfType<SceneTransition>();
+        gameSession = GameSession.Instance;
         gun = GameObject.Find("Gun_Placeholder");
     }
     
@@ -61,30 +59,44 @@ public class PlayerController : MonoBehaviour
         VerticalAnimation();
         Shoot();
         FlipSpriteHorizontal();
-        GainPassiveStats();
         gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
+        ChangeStats();
+    }
+    private void ChangeStats()
+    {
+        if (cards != gameSession.playerCards)
+        {
+            cards = gameSession.playerCards;
+        }
+
+        GainPassiveStats();
+
         moveSpeed = startingMoveSpeed + speedBonus;
         attackDamage = startingAttackBonus + attackBonus + passiveAttackBonus;
         attackSpeed = startingAttackSpeed + attackSpeedBonus + passiveAttackSpeedBonus;
     }
-
     private void GainPassiveStats()
     {
+        if(cards == null) { return; }
         if(cards.Count + 1 == 0)
         {
             passiveAttackBonus = cards[0].passiveAttackDamage;
             passiveAttackSpeedBonus = cards[0].passiveAttackSpeed;
-        } else
+        }
+        else
         {
+            float tempAttackBonus = 0;
+            float tempAttackSpeedBonus = 0;
+
             for(int i = 0; i < cards.Count; i++)
             {
-                passiveAttackBonus = cards[i].passiveAttackDamage;
-                passiveAttackSpeedBonus = cards[i].passiveAttackSpeed;
+                tempAttackBonus += cards[i].passiveAttackDamage;
+                tempAttackSpeedBonus += cards[i].passiveAttackSpeed;
             }
+            passiveAttackBonus = tempAttackBonus;
+            passiveAttackSpeedBonus = tempAttackSpeedBonus;
         }
-
     }
-
     private void FlipSpriteHorizontal()
     {
         bool hasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
@@ -140,8 +152,8 @@ public class PlayerController : MonoBehaviour
         canBeHit = false;
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
-        health -= damageDealer.GetDamage();
-        if (health <= 0)
+        gameSession.DecreasePlayerHealth(damageDealer.GetDamage());
+        if (gameSession.GetPlayerHealth() <= 0)
         {
             sceneTransition.Lose();
             Destroy(gameObject);
@@ -192,11 +204,12 @@ public class PlayerController : MonoBehaviour
 
     public void ResetStats()
     {
-        attackBonus = startingAttackBonus;
-        passiveAttackBonus = startingAttackBonus;
-        attackSpeedBonus = startingAttackSpeed;
-        passiveAttackSpeedBonus = startingAttackBonus;
         speedBonus = startMoveSpeedBonus;
+        attackBonus = startingAttackBonus;
+        attackSpeedBonus = startingAttackSpeed;
+
+        passiveAttackBonus = startingAttackBonus;
+        passiveAttackSpeedBonus = startingAttackBonus;
     }
 
 }

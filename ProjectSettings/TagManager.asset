@@ -56,11 +56,11 @@ TagManager:
   - name: Background
     uniqueID: 450177335
     locked: 0
-  - name: Ground
-    uniqueID: 3186362483
-    locked: 0
   - name: Details
     uniqueID: 1988626701
+    locked: 0
+  - name: Ground
+    uniqueID: 3186362483
     locked: 0
   - name: Player Weapon
     uniqueID: 3045142165
