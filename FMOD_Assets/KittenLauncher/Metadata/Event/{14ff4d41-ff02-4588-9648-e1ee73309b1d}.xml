@@ -56,7 +56,11 @@
 			<destination>{7a84e508-098a-49ca-857c-8715379d3aec}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b01aae71-d6ae-4fd7-a199-e42364cf930b}" />
+	<object class="EventAutomatableProperties" id="{b01aae71-d6ae-4fd7-a199-e42364cf930b}">
+		<property name="maxVoices">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{40341879-265b-4b35-a365-67cb27c4d592}" />
 	<object class="GroupTrack" id="{47daa5a5-2420-49d0-9672-01ef3eec7cd9}">
 		<relationship name="modules">
@@ -90,8 +94,12 @@
 	<object class="MixerBusPanner" id="{9ca47aa6-576e-42ae-84e6-2c9fe108b916}" />
 	<object class="SingleSound" id="{757654bd-e944-4fc6-9cd8-3f7b5c2ea84b}">
 		<property name="length">
-			<value>3.7195416666666667</value>
+			<value>2.7000000000000002</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{0f0ceb79-d650-4a19-9400-11c9fd0b9b0c}</destination>
+			<destination>{20518d10-f2db-4ec7-8b6c-fb5d2baea7e6}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{222c427e-d0eb-4126-9da1-4d28410199e1}</destination>
 		</relationship>
@@ -117,6 +125,22 @@
 	</object>
 	<object class="MixerBusPanner" id="{104a8093-90ba-483a-bdf7-927da894b38d}" />
 	<object class="MixerBusFader" id="{335debc2-ffa3-43d2-b01a-2fe5e2396759}" />
+	<object class="RandomizerModulator" id="{0f0ceb79-d650-4a19-9400-11c9fd0b9b0c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{20518d10-f2db-4ec7-8b6c-fb5d2baea7e6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6.5</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{a644af46-ac43-475b-ab32-b6f78cc8ba9e}">
 		<relationship name="effects">
 			<destination>{015ccf99-3cc2-4c48-8ab2-ce3eb400ba58}</destination>

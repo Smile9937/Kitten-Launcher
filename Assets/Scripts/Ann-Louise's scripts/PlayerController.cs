@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     SceneTransition sceneTransition;
     GameSession gameSession;
+    SoundLibrary soundLibrary;
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         sceneTransition = FindObjectOfType<SceneTransition>();
         gameSession = GameSession.Instance;
         gun = GameObject.Find("Gun_Placeholder");
+        soundLibrary = FindObjectOfType<SoundLibrary>();
     }
     
     void Update()
@@ -189,6 +191,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentWeapon.Shoot();
                 nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
+                soundLibrary.PlayerHitSFX();
             }
         }
     }

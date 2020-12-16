@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{10ca10e3-6206-4693-aef0-aaf6db3e4cfc}">
+		<property name="name">
+			<value>Uniblob</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9484e84e-460a-4a48-9aac-4f7073f98c71}</destination>
+		</relationship>
+	</object>
+</objects>
