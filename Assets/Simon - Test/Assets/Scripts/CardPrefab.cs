@@ -16,7 +16,7 @@ public class CardPrefab : MonoBehaviour
         gameSession = GameSession.Instance;
         
         //Change image
-        UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+        UnityEngine.UI.Image currentSprite = gameObject.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         currentSprite.sprite = card.cardSprite;
     }
 

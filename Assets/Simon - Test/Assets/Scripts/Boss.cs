@@ -9,7 +9,10 @@ public class Boss : MonoBehaviour
     [SerializeField] Transform middleOfRoom;
     [SerializeField] EnemyBullet[] projectiles;
     [SerializeField] float moveSpeed = 2f;
-    public float fireRate = 1f;
+    [SerializeField] bool randomMovement;
+    [SerializeField] float randomAttackFactor = 0f;
+    public float attack1FireRate = 1f;
+    public float attack2FireRate = 1f;
     public int shots = 0;
     int waypointIndex = 0;
     bool attack2;
@@ -54,8 +57,7 @@ public class Boss : MonoBehaviour
             halfHealth = enemy.health / 2;
             Invoke("ReturnToFirstAttack", 8f);
             attack2 = true;
-            fireRate *= 2;
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + attack2FireRate;
         }
         else if(!attack2)
         {
@@ -65,12 +67,15 @@ public class Boss : MonoBehaviour
 
                 if (transform.position == waypoints[waypointIndex].transform.position)
                 {
-                    waypointIndex++;
+                    if(!randomMovement)
+                    {
+                        waypointIndex++;
+                    }
                 }
             }
             else
             {
-                waypointIndex = 0;
+                waypointIndex = 1;
             }
 
             Attack1();
@@ -81,15 +86,28 @@ public class Boss : MonoBehaviour
         }
 
     }
-
+    private void RandomMove()
+    {
+        List<int> list = new List<int>();
+        for (int i = 0; i < waypoints.Length + 1; i++)
+        {
+            list.Add(i);
+        }
+        var index = UnityEngine.Random.Range(1, list.Count - 1);
+        int currentWaypoint = list[index];
+        list.RemoveAt(index);
+        waypointIndex = currentWaypoint;
+    }
     private void Attack1()
     {
         currentProjectile = projectiles[UnityEngine.Random.Range(0, projectiles.Length)];
         if (Time.time > nextFire)
         {
             //Creating the projectile and then resetting the nextfire
-            Instantiate(currentProjectile, transform.position, Quaternion.identity);
-            nextFire = Time.time + fireRate;
+            EnemyBullet bullet = Instantiate(currentProjectile, transform.position, Quaternion.identity);
+            Vector3 direction = new Vector3(UnityEngine.Random.Range(-randomAttackFactor, randomAttackFactor), UnityEngine.Random.Range(-randomAttackFactor, randomAttackFactor), 0f);
+            bullet.randomAttackSpread += direction;
+            nextFire = Time.time + attack1FireRate;
         }
     }
 
@@ -115,7 +133,7 @@ public class Boss : MonoBehaviour
                 bullet.rotationTarget = direction;
 
 
-                nextFire = Time.time + fireRate;
+                nextFire = Time.time + attack1FireRate;
             }
             changeBulletDir = !changeBulletDir;
 
@@ -125,7 +143,6 @@ public class Boss : MonoBehaviour
     void ReturnToFirstAttack()
     {
         attack2 = false;
-        fireRate /= 2;
     }
 
     void WaitForPlayer()

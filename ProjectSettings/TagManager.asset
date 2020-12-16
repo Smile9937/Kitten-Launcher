@@ -16,6 +16,7 @@ TagManager:
   - EnemySpawner
   - LootPrefab
   - QuitButton
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Destroyer
   - Room Templates
   - Enemy Bullets
-  - 
+  - Heart
   - 
   - 
   - 

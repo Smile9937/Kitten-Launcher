@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4012602620057220933}
   - component: {fileID: 6140261390283271823}
   - component: {fileID: -630144219672261639}
-  - component: {fileID: 8105622191349269362}
+  - component: {fileID: 8487959151792395213}
   m_Layer: 15
-  m_Name: Bullet_Placeholder
-  m_TagString: PlayerBullet
+  m_Name: EnemyBullet
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,9 +134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641485e071bf58a47b080be9da15e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
---- !u!114 &8105622191349269362
+  bulletRotation: 90
+  moveSpeed: 10
+  homing: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+  rotationTarget: {x: 0, y: 0, z: 0}
+  targetPlayer: 1
+  randomAttackSpread: {x: 0, y: 0, z: 0}
+--- !u!114 &8487959151792395213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

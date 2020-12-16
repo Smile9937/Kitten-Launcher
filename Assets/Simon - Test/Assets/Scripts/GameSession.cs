@@ -39,11 +39,13 @@ public class GameSession : MonoBehaviour
     public void IncreasePlayerHealth(float healthIncrease)
     {
         playerHealth += healthIncrease;
+        ChangeHealthText();
     }
 
     public void DecreasePlayerHealth(float healthDecrease)
     {
         playerHealth -= healthDecrease;
+        ChangeHealthText();
     }
 
     public void ChangeHealthText()

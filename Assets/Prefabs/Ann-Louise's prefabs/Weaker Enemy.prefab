@@ -133,9 +133,10 @@ MonoBehaviour:
   MoveSpeed: 4
   MaxDist: 8
   MinDist: 2
-  projectile: {fileID: 6838767965607174904, guid: ae49dbac349e3194e974e8f7ff2b2018,
+  projectile: {fileID: 6838767965607174904, guid: 966f4ff58ff2776489b32797cd97bf8a,
     type: 3}
   moving: 1
+  attackAnimation: 0
   fireRate: 1
 --- !u!114 &1586195477071280311
 MonoBehaviour:
@@ -149,8 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2907a8a4ec294448b67ff1c200e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 400
+  startHealth: 100
   enemyReward: {fileID: 0}
+  health: 400
 --- !u!58 &2175521886311050422
 CircleCollider2D:
   m_ObjectHideFlags: 0

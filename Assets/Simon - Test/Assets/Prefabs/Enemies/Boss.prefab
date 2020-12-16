@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7636876702913729921, guid: 5a1b5e3e6c389e144adc73a9a3f4841d,
+        type: 3}
+      propertyPath: m_Name
+      value: Middle Of Room
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1b5e3e6c389e144adc73a9a3f4841d, type: 3}
 --- !u!4 &4397552202620120209 stripped
@@ -213,15 +218,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss Test
       objectReference: {fileID: 0}
+    - target: {fileID: 4003016995817600075, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7d829f058d57bfb44a47241284798e93, type: 2}
     - target: {fileID: 7070221641743818217, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.3127403
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7070221641743818217, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9135442
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7070221641743818217, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
@@ -271,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: waypoints.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
@@ -282,12 +292,12 @@ PrefabInstance:
         type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 3617390244872558576}
+      objectReference: {fileID: 1008881813362307413}
     - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 3864152118329103447}
+      objectReference: {fileID: 3617390244872558576}
     - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: middleOfRoom
@@ -327,6 +337,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -630144219672261639, guid: 15d353f12ae3d5942bbee0f40bb57b27,
         type: 3}
+    - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 3864152118329103447}
+    - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3749147933714098393, guid: 834f612e6841d1a41a508c0807f6291c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 834f612e6841d1a41a508c0807f6291c, type: 3}

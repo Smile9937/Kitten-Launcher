@@ -163,7 +163,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
         gameSession.DecreasePlayerHealth(damageDealer.GetDamage());
-        gameSession.ChangeHealthText();
         if (gameSession.GetPlayerHealth() <= 0)
         {
             sceneTransition.Lose();
