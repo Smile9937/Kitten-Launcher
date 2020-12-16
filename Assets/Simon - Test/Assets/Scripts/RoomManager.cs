@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviour
     public float effectMultiplier;
     public int enemies;
     public bool spawnerInRoom = false;
-    bool roomCleared = false;
+    public bool roomCleared = false;
 
     public bool inCardSelectMenu = false;
     bool playerInRoom = false;
@@ -52,7 +52,6 @@ public class RoomManager : MonoBehaviour
                 spawnerInRoom = true;
                 waveSpawner.canSpawn = true;
             }
-
         }
     }
 
@@ -72,26 +71,10 @@ public class RoomManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player") && roomCleared == false)
+        if (other.CompareTag("Player") && roomCleared == false)
         {
             playerInRoom = true;
-            /*if (waveSpawner != null) {
-
-                spawnerInRoom = true;
-                if(!inCardSelectMenu)
-                {
-                    waveSpawner.canSpawn = true;
-                }
-
-            }*/
         }
-
-        if(other.CompareTag("EnemySpawner"))
-        {
-
-            spawnerInRoom = true;
-        }
-
         if(other.CompareTag("Enemy"))
         {
             enemies++;

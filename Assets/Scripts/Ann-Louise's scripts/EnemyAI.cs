@@ -13,23 +13,28 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] GameObject projectile;
     [SerializeField] bool moving;
+    [SerializeField] bool attackAnimation;
     Vector3 velocity;
     Vector3 previous;
 
-    float fireRate = 1f;
+    public float fireRate = 1f;
     float nextFire;
-
+    bool waitForPlayer = true;
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         // Checking when it's time to fire/attack
         nextFire = Time.time;
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        Invoke("WaitForPlayer", 0.5f);
     }
 
     void Update()
     {
-        if (Player != null)
+        if (Player != null && !waitForPlayer)
         {
             if(moving)
             {
@@ -79,10 +84,20 @@ public class EnemyAI : MonoBehaviour
     {
         if(Time.time > nextFire)
         {
+            if (attackAnimation) { animator.SetBool("Attacking", true); }
             //Creating the projectile and then resetting the nextfire
             Instantiate(projectile, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
+    }
+
+    void StopAttackAnimation()
+    {
+        animator.SetBool("Attacking", false);
+    }
+    void WaitForPlayer()
+    {
+        waitForPlayer = false;
     }
 
     /*void OnCollisionEnter2D(Collision2D other)

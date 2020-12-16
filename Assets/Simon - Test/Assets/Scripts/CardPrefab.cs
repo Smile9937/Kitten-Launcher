@@ -8,35 +8,34 @@ public class CardPrefab : MonoBehaviour
 
     PlayerController player;
     BetweenBattle betweenBattle;
-    RoomManager roomManager;
+    GameSession gameSession;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
-        roomManager = FindObjectOfType<RoomManager>();
-
-        //Change text
-        UnityEngine.UI.Text roomEffectTextField = gameObject.transform.GetChild(1).GetComponent<UnityEngine.UI.Text>();
-        roomEffectTextField.text = card.roomText;
-        
-        UnityEngine.UI.Text activatedEffectTextField = gameObject.transform.GetChild(2).GetComponent<UnityEngine.UI.Text>();
-        activatedEffectTextField.text = card.activatedText;
+        gameSession = GameSession.Instance;
         
         //Change image
-        UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(3).GetComponent<UnityEngine.UI.Image>();
+        UnityEngine.UI.Image  currentSprite = gameObject.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         currentSprite.sprite = card.cardSprite;
     }
 
     public void GivePlayerCard()
     {
-        player.cards.Add(card);
+        gameSession.playerCards.Add(card);
         betweenBattle.ClosePowerupScreen();
         player.GetClosestRoom().OpenDoors();
         player.GetClosestRoom().aquiredCard = true;
+        gameSession.OpenCanvas();
     }
 
     public void SelectCard()
     {
-
+        player.attackBonus += card.attackDamage * player.GetClosestRoom().effectMultiplier;
+        player.attackSpeedBonus += card.attackSpeed * player.GetClosestRoom().effectMultiplier;
+        player.speedBonus += card.moveSpeed * player.GetClosestRoom().effectMultiplier;
+        gameSession.playerCards.Remove(card);
+        betweenBattle.CloseDiscardCard();
+        gameSession.OpenCanvas();
     }
 }

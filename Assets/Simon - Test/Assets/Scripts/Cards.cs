@@ -12,6 +12,12 @@ public class Cards : ScriptableObject
     public string activatedText;
     public Sprite cardSprite;
 
-    [Header("Effects")]
-    public int moveSpeedBonus = 1;
+    [Header("Passive Effects")]
+    public float passiveAttackDamage = 0;
+    public float passiveAttackSpeed = 0;
+
+    [Header("Activated Effects")]
+    public float attackDamage = 0;
+    public float moveSpeed = 0;
+    public float attackSpeed = 0;
 }

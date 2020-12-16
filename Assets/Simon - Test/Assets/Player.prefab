@@ -114,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 294300201
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 8192317916702117217}
   - component: {fileID: 8192317916702117216}
   - component: {fileID: 6245541847098810950}
-  - component: {fileID: 5321935803318625210}
   - component: {fileID: 127080804}
   - component: {fileID: 127080803}
   m_Layer: 10
@@ -202,7 +201,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 294300201
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -2588053533905087897, guid: 4e1836b3554db0d4dba1f20d42f1291a,
     type: 3}
@@ -232,7 +231,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b60d37fad826cdc4d869da787a391628, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -249,9 +248,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fafb2860f9e0df4cb8b2b0128e13898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: c5c2616a228406a45b9edb3ba320c611, type: 2}
-  moveSpeed: 10
-  health: 500
+  currentWeapon: {fileID: 11400000, guid: 76de7295e684ac04a9998b69abe58dfc, type: 2}
+  startingMoveSpeed: 10
+  health: 5000
+  cards: []
+  moveSpeed: 0
+  attackDamage: 0
+  attackSpeed: 0
+  speedBonus: 0
+  attackBonus: 0
+  attackSpeedBonus: 0
+  passiveAttackSpeedBonus: 0
+  passiveAttackBonus: 0
+  rooms: []
 --- !u!114 &6245541847098810950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,23 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
---- !u!114 &5321935803318625210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192317916702117219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cd5eb1897e02c41bf702f50e1ea056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cards: []
-  rooms: []
-  startMoveSpeed: 10
-  moveSpeed: 10
-  speedBonus: 0
+  destroyTime: 0.1
 --- !u!70 &127080804
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -296,7 +289,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.46875, y: 0.71875}
+  m_Size: {x: 0.25, y: 0.58}
   m_Direction: 0
 --- !u!95 &127080803
 Animator:
@@ -340,9 +333,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8192317918116629289}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.167, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 739505644}
   m_RootOrder: 0
@@ -372,7 +365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8192317918189613120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.102, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.59506035, y: 0.59506035, z: 0}
   m_Children: []
   m_Father: {fileID: 739505644}
@@ -415,7 +408,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249825131
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0d9eae97347ed04488ed9648bcab3671, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

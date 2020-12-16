@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1906989497
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 3975483856097406780, guid: 7f02d6fd236a6ea41866cb22eb1efc27,
     type: 3}
@@ -130,11 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0491de0c633f99e448561b02c3e74beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 3
-  MaxDist: 5
+  MoveSpeed: 4
+  MaxDist: 8
   MinDist: 2
   projectile: {fileID: 6838767965607174904, guid: ae49dbac349e3194e974e8f7ff2b2018,
     type: 3}
+  moving: 1
+  fireRate: 0.3
 --- !u!114 &1586195477071280311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 400
+  enemyReward: {fileID: 0}
 --- !u!58 &2175521886311050422
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,9 +164,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07, y: -0.03}
   serializedVersion: 2
-  m_Radius: 0.39
+  m_Radius: 0.32008556
 --- !u!50 &7959656924904583199
 Rigidbody2D:
   serializedVersion: 4

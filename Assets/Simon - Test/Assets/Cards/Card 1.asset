@@ -15,6 +15,10 @@ MonoBehaviour:
   id: 1
   roomText: Text 3
   activatedText: Text 4
-  cardSprite: {fileID: -2488111991826676060, guid: 8efd3944ac6b3be40aaef46c40e132f1,
+  cardSprite: {fileID: 2326212092109238025, guid: 6bb27a7fe3d3451459f6f96122140e46,
     type: 3}
-  moveSpeedBonus: 1
+  passiveAttackDamage: 0
+  passiveAttackSpeed: 3
+  attackDamage: 50
+  moveSpeed: 0
+  attackSpeed: 0

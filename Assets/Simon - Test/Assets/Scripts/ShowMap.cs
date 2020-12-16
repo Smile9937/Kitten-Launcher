@@ -46,7 +46,7 @@ public class ShowMap : MonoBehaviour
     }
     public void CloseMap()
     {
-        player.moveSpeed = player.startMoveSpeed;
+        player.moveSpeed = player.startingMoveSpeed;
         mapScreen.SetActive(false);
     }
 

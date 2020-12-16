@@ -14,6 +14,30 @@ TextureImporter:
   - first:
       213: -6067378234671113272
     second: KortAtkSpeed2X_3
+  - first:
+      213: 2326212092109238025
+    second: Card-AtkSpeed_0
+  - first:
+      213: -5547543617732793867
+    second: Card-AtkSpeed_1
+  - first:
+      213: -5844623585712173087
+    second: Card-AtkSpeed_2
+  - first:
+      213: -9176207030000527850
+    second: Card-AtkSpeed_3
+  - first:
+      213: -337651683603128912
+    second: Card-AtkSpeed_0
+  - first:
+      213: -6419417508950011698
+    second: Card-AtkSpeed_1
+  - first:
+      213: 6176669847037729005
+    second: Card-AtkSpeed_2
+  - first:
+      213: -6190042646087579781
+    second: Card-AtkSpeed_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -57,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,7 +100,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +112,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,7 +171,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KortAtkSpeed2X_0
+      name: Card-AtkSpeed_0
       rect:
         serializedVersion: 2
         x: 16
@@ -161,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: babf74ce04761a8e0800000000000000
-      internalID: -1683951257120146517
+      spriteID: 0bdd50d259b605bf0800000000000000
+      internalID: -337651683603128912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KortAtkSpeed2X_1
+      name: Card-AtkSpeed_1
       rect:
         serializedVersion: 2
         x: 190
@@ -182,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d34ef947f05d257f0800000000000000
-      internalID: -625203135893216195
+      spriteID: ec09c1289c5a9e6a0800000000000000
+      internalID: -6419417508950011698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KortAtkSpeed2X_2
+      name: Card-AtkSpeed_2
       rect:
         serializedVersion: 2
         x: 362
@@ -203,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e09c0f314c28ec70800000000000000
-      internalID: 9000492514042220774
+      spriteID: de8dc8f1080f7b550800000000000000
+      internalID: 6176669847037729005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KortAtkSpeed2X_3
+      name: Card-AtkSpeed_3
       rect:
         serializedVersion: 2
         x: 538
@@ -224,8 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cbdd7454a75ccba0800000000000000
-      internalID: -6067378234671113272
+      spriteID: b774e67720d881aa0800000000000000
+      internalID: -6190042646087579781
       vertices: []
       indices: 
       edges: []

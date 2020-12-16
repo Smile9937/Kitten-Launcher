@@ -1,0 +1,260 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5179283817126846048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5179283817126846049}
+  m_Layer: 0
+  m_Name: Grass BRL Doors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5179283817126846049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179283817126846048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5123768571918504677}
+  - {fileID: 402187162415291335}
+  - {fileID: 8200059027037292250}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1485705516670630566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5179283817126846049}
+    m_Modifications:
+    - target: {fileID: 720539146373790557, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_Name
+      value: Left Grass Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9584818
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5739262
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.3710938
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eac87d5bf2054004f963bb59e09de29d, type: 3}
+--- !u!4 &402187162415291335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1227954773806932321, guid: eac87d5bf2054004f963bb59e09de29d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1485705516670630566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5888877946309553917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5179283817126846049}
+    m_Modifications:
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022080256997513767, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+        type: 3}
+      propertyPath: m_Name
+      value: Top Grass door
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e0635e98ec27184bb28dab7369a2d4d, type: 3}
+--- !u!4 &5123768571918504677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1630926574837234712, guid: 5e0635e98ec27184bb28dab7369a2d4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5888877946309553917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8702141941977958742
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5179283817126846049}
+    m_Modifications:
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906576985182783646, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Right Grass Door
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d31c9a2420ae5743a90567a015fb9ac, type: 3}
+--- !u!4 &8200059027037292250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 650842442388787084, guid: 9d31c9a2420ae5743a90567a015fb9ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 8702141941977958742}
+  m_PrefabAsset: {fileID: 0}
