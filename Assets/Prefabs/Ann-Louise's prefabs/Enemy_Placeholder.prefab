@@ -136,6 +136,7 @@ MonoBehaviour:
   projectile: {fileID: 6838767965607174904, guid: ae49dbac349e3194e974e8f7ff2b2018,
     type: 3}
   moving: 1
+  attackAnimation: 0
   fireRate: 0.3
 --- !u!114 &1586195477071280311
 MonoBehaviour:
@@ -149,8 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2907a8a4ec294448b67ff1c200e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 400
+  startHealth: 100
   enemyReward: {fileID: 0}
+  health: 400
 --- !u!58 &2175521886311050422
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,9 +166,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07, y: -0.03}
+  m_Offset: {x: -0.07, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.32008556
+  m_Radius: 0.29
 --- !u!50 &7959656924904583199
 Rigidbody2D:
   serializedVersion: 4
