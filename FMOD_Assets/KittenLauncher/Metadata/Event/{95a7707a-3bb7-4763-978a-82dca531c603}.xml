@@ -94,10 +94,10 @@
 	<object class="MixerBusPanner" id="{8816203f-7685-4f03-b0a8-4c20558a7b7d}" />
 	<object class="MultiSound" id="{f7a50ba2-9dbd-45d3-bd70-166ed117d30e}">
 		<property name="length">
-			<value>4.3619374999999998</value>
+			<value>3.6000000000000001</value>
 		</property>
 		<property name="volume">
-			<value>6</value>
+			<value>8.5</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -151,7 +151,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>2.5</value>
+			<value>6</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{de2e9c75-978d-4e4a-aec9-6d5f12646762}">

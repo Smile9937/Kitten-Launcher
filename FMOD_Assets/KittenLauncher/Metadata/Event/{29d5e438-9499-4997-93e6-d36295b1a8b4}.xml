@@ -58,7 +58,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{92f719a9-46f7-43ce-8c5b-d887d504f8ee}">
 		<property name="maxVoices">
-			<value>3</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{708e920a-7f2c-4cb8-82a8-1f2932fa34cf}" />
@@ -94,7 +94,7 @@
 	<object class="MixerBusPanner" id="{cdf58e7f-f95c-4a9f-8f12-cade027e93dc}" />
 	<object class="MultiSound" id="{af1927c9-2f82-4c33-a4df-5af8a6477191}">
 		<property name="length">
-			<value>5</value>
+			<value>4.75</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>

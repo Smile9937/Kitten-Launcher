@@ -99,6 +99,9 @@
 		<property name="timelockedOffset">
 			<value>0.14000000000000001</value>
 		</property>
+		<property name="volume">
+			<value>7</value>
+		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
@@ -136,7 +139,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>4</value>
+			<value>4.5</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{a3aae318-1523-48c0-ae35-b0156b60c00b}">
