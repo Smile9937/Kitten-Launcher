@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7959656924904583199}
   - component: {fileID: 503982311007026728}
   m_Layer: 11
-  m_Name: Enemy_Placeholder
+  m_Name: Uniblob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   MoveSpeed: 4
   MaxDist: 8
   MinDist: 2
-  projectile: {fileID: 6838767965607174904, guid: 42711c6011edfff4b85c854d04837b7a,
+  projectile: {fileID: 6838767965607174904, guid: 7ec2f239ab59c414d9e352db07761770,
     type: 3}
   moving: 1
   attackAnimation: 0
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2907a8a4ec294448b67ff1c200e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyIndex: 1
   startHealth: 300
   enemyReward: {fileID: 0}
   health: 0
