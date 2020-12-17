@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1661679922909898786}
   - component: {fileID: 4784093551177439062}
   m_Layer: 21
-  m_Name: CatShot
+  m_Name: Peraya
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: -1249825131
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 88fe8f69b4840b043b470f4aef4238fe, type: 3}
+  m_Sprite: {fileID: -8366373587631569526, guid: 7b1e2fa638ca55740822c9210c5f5f8a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCatLauncher: 1
-  damage: 0
+  isCatLauncher: 0
+  damage: 10
   destroyTime: 0.1
 --- !u!114 &4784093551177439062
 MonoBehaviour:
@@ -152,13 +153,13 @@ MonoBehaviour:
   speed: 11
   bulletRotation: 90
   direction: {x: 0, y: 0, z: 0}
-  shotIndex: 1
-  scatterShot: {fileID: 4784093551177439062}
-  numberOfScatters: 0
-  scatterObjects: 0
-  scattersFromScatters: 0
-  isCatLauncher: 1
-  cat: {fileID: 4189049134331705177, guid: f05da78c7b6d40c46b7a3ac26b3d2975, type: 3}
-  catAttackParticle: {fileID: 7192191868698900421, guid: ed77429785378cc4f98fb7f070aa1f80,
+  shotIndex: 2
+  scatterShot: {fileID: 4784093551177439062, guid: 6ae8df043e5d79547b62ba4c7a70f56c,
     type: 3}
+  numberOfScatters: 1
+  scatterObjects: 4
+  scattersFromScatters: 0
+  isCatLauncher: 0
+  cat: {fileID: 0}
+  catAttackParticle: {fileID: 0}
   extraCatDamage: 0

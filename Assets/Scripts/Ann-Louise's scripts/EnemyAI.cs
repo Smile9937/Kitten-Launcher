@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 { 
     private Transform Player;
-    
+    [SerializeField] int enemyIndex;
     [SerializeField] float MoveSpeed = 4f;
     [SerializeField] int MaxDist = 10;
     [SerializeField] int MinDist = 5;
@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     bool waitForPlayer = true;
     Animator animator;
     Enemy enemy;
+    SoundLibrary soundLibrary;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -30,6 +31,7 @@ public class EnemyAI : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = GetComponent<Enemy>();
+        soundLibrary = FindObjectOfType<SoundLibrary>();
         Invoke("WaitForPlayer", 0.5f);
     }
 
@@ -86,7 +88,7 @@ public class EnemyAI : MonoBehaviour
         if(Time.time > nextFire)
         {
             if (attackAnimation) { animator.SetBool("Attacking", true); }
-            //Creating the projectile and then resetting the nextfire
+            soundLibrary.PlayEnemyAttack(enemyIndex);
             Instantiate(projectile, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
@@ -100,20 +102,6 @@ public class EnemyAI : MonoBehaviour
     {
         waitForPlayer = false;
     }
-
-    /*void OnCollisionEnter2D(Collision2D other)
-    {
-
-        if (other.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Collision");
-            float force = 3;
-            Vector3 dir = transform.position - other.transform.position;
-            //dir = -dir.normalized;
-            myRigidbody.AddForce(dir * force);
-        }
-    }*/
-
 }
 
 

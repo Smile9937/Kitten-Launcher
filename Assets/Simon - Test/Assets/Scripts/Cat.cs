@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    [SerializeField] float damage;
-    [SerializeField] float damageSpeed;
+    public float damage;
+    [Range(1f, 0.1f)][SerializeField] float damageSpeed;
     [SerializeField] float timeOnEnemy;
     void Start()
     {

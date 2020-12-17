@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    [SerializeField] int bossIndex;
     [SerializeField] Transform[] waypoints;
     [SerializeField] Transform middleOfRoom;
     [SerializeField] EnemyBullet[] projectiles;
@@ -20,13 +21,17 @@ public class Boss : MonoBehaviour
     bool changeBulletDir = false;
     float halfHealth;
     bool waitForPlayer = true;
+    int teeAlternateSpeech = 4;
+    int devilcornAlternateSpeech = 3;
     EnemyBullet currentProjectile;
     Enemy enemy;
     PlayerController target;
+    SoundLibrary soundLibrary;
     void Start()
     {
         target = FindObjectOfType<PlayerController>();
         enemy = GetComponent<Enemy>();
+        soundLibrary = FindObjectOfType<SoundLibrary>();
         nextFire = Time.time;
         halfHealth = enemy.startHealth / 2;
         transform.position = waypoints[waypointIndex].transform.position;
@@ -52,7 +57,7 @@ public class Boss : MonoBehaviour
     private void Move()
     {
 
-        if(enemy.health == halfHealth && !attack2)
+        if(enemy.health <= halfHealth && !attack2)
         {
             halfHealth = enemy.health / 2;
             Invoke("ReturnToFirstAttack", 8f);
@@ -93,7 +98,7 @@ public class Boss : MonoBehaviour
         {
             list.Add(i);
         }
-        var index = UnityEngine.Random.Range(1, list.Count - 1);
+        int index = UnityEngine.Random.Range(1, list.Count - 1);
         int currentWaypoint = list[index];
         list.RemoveAt(index);
         waypointIndex = currentWaypoint;
@@ -103,7 +108,43 @@ public class Boss : MonoBehaviour
         currentProjectile = projectiles[UnityEngine.Random.Range(0, projectiles.Length)];
         if (Time.time > nextFire)
         {
+            if (bossIndex == 0)
+            {
+                if(currentProjectile != projectiles[2])
+                {
+                    soundLibrary.PlayBossAttack(bossIndex);
+                }
+            }
+            else
+            {
+                soundLibrary.PlayBossAttack(bossIndex);
+            }
+
+
             //Creating the projectile and then resetting the nextfire
+            if(bossIndex == 0)
+            {
+                if (teeAlternateSpeech == 5)
+                {
+                    teeAlternateSpeech = 0;
+                    soundLibrary.PlayBossAttackSpeech(bossIndex);
+                }
+                else
+                {
+                    teeAlternateSpeech++;
+                }
+            } else if (bossIndex == 1)
+            {                    
+                if (devilcornAlternateSpeech == 3){
+                    devilcornAlternateSpeech = 0;
+                    soundLibrary.PlayBossAttackSpeech(bossIndex);
+                } else
+                {
+                    devilcornAlternateSpeech++;
+                }
+            }
+
+            
             EnemyBullet bullet = Instantiate(currentProjectile, transform.position, Quaternion.identity);
             Vector3 direction = new Vector3(UnityEngine.Random.Range(-randomAttackFactor, randomAttackFactor), UnityEngine.Random.Range(-randomAttackFactor, randomAttackFactor), 0f);
             bullet.randomAttackSpread += direction;
@@ -140,6 +181,10 @@ public class Boss : MonoBehaviour
         }
     }
 
+    void WingFlapSound()
+    {
+        soundLibrary.BossDevilcornWingflapSFX();
+    }
     void ReturnToFirstAttack()
     {
         attack2 = false;

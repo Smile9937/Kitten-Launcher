@@ -78,9 +78,9 @@ TagManager:
   - name: Loot
     uniqueID: 4243355307
     locked: 0
-  - name: Foreground
-    uniqueID: 4166796761
-    locked: 0
   - name: Cat
     uniqueID: 1963304087
+    locked: 0
+  - name: Foreground
+    uniqueID: 4166796761
     locked: 0

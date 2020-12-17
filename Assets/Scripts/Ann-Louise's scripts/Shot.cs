@@ -8,7 +8,7 @@ public class Shot : MonoBehaviour
     [SerializeField] private float speed = 50f;
     [SerializeField] int bulletRotation = 90;
     public Vector3 direction;
-
+    [SerializeField] int shotIndex = 0;
 
     [Header("Scatter Options", order = 0)]
     [Space(-10, order = 1)]
@@ -24,9 +24,15 @@ public class Shot : MonoBehaviour
     [Header("Cat options")]
     [SerializeField] bool isCatLauncher;
     [SerializeField] Cat cat;
+    [SerializeField] GameObject catAttackParticle;
+    public float extraCatDamage;
 
+    bool preventMultiHit = false;
+
+    SoundLibrary soundLibrary;
     void Start()
     {
+        soundLibrary = FindObjectOfType<SoundLibrary>();
         if (!isScatter)
         {
             direction = GameObject.Find("Direction").transform.position;
@@ -58,17 +64,31 @@ public class Shot : MonoBehaviour
         {
             if (scatter) { Scatter(); }
 
-            if(isCatLauncher && other.CompareTag("Enemy"))
+            soundLibrary.PlayProjectileHit(shotIndex);
+
+            if (isCatLauncher && other.CompareTag("Enemy"))
             {
-                Debug.Log("Cat hit");
-                Cat catInstance = Instantiate(cat, other.transform.position, transform.rotation);
-                catInstance.transform.parent = other.gameObject.transform;
+                if(!preventMultiHit)
+                {
+                    preventMultiHit = true;
+                    Invoke("MultiHitCooldown", 0.1f);
+                    Cat catInstance = Instantiate(cat, other.transform.position, transform.rotation);
+                    catInstance.transform.parent = other.gameObject.transform;
+                    catInstance.damage += extraCatDamage;
+                    GameObject particles = Instantiate(catAttackParticle, other.transform.position, transform.rotation);
+                    particles.transform.parent = catInstance.gameObject.transform;
+                }
+
             }
 
             Destroy(gameObject);
         }
     }
 
+    void MultiHitCooldown()
+    {
+        preventMultiHit = false;
+    }
     private void Scatter()
     {
         if(numberOfScatters > 0)

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //REMEMBER to add a collider to enemies and make the projectile a trigger
-    public int enemyIndex = 0;
     public float startHealth = 100f;
     [SerializeField] GameObject enemyReward;
     public float health;

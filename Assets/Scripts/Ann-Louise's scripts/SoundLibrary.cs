@@ -98,19 +98,15 @@ public class SoundLibrary : MonoBehaviour
     }
 
     //Projectile hit
-    //Not finished
     public void PlayProjectileHit(int projectileSoundIndex)
     {
         switch (projectileSoundIndex)
         {
-            case 0: //BaseballGun
-                FMODUnity.RuntimeManager.PlayOneShot(baseballGunSFX, GetComponent<Transform>().position);
-                break;
             case 1: //KittenLauncher
-                FMODUnity.RuntimeManager.PlayOneShot(kittenLauncherSFX, GetComponent<Transform>().position);
+                FMODUnity.RuntimeManager.PlayOneShot(kittenParticleSFX, GetComponent<Transform>().position);
                 break;
             case 2: //PiranhaGun
-                FMODUnity.RuntimeManager.PlayOneShot(piranhaGunSFX, GetComponent<Transform>().position);
+                FMODUnity.RuntimeManager.PlayOneShot(piranhaParticleSFX, GetComponent<Transform>().position);
                 break;
         }
     }
@@ -120,14 +116,41 @@ public class SoundLibrary : MonoBehaviour
     {
         switch (enemyAttackSoundIndex)
         {
-            case 0:
-                FMODUnity.RuntimeManager.PlayOneShot(baseballGunSFX, GetComponent<Transform>().position);
+            case 0: //Clown
+                FMODUnity.RuntimeManager.PlayOneShot(clownAttackSFX, GetComponent<Transform>().position);
                 break;
-            case 1:
-                FMODUnity.RuntimeManager.PlayOneShot(kittenLauncherSFX, GetComponent<Transform>().position);
+            case 1: // Uniblob
+                FMODUnity.RuntimeManager.PlayOneShot(uniblobRainbowFart, GetComponent<Transform>().position);
                 break;
-            case 2:
-                FMODUnity.RuntimeManager.PlayOneShot(piranhaGunSFX, GetComponent<Transform>().position);
+            case 2: // Blob
+                FMODUnity.RuntimeManager.PlayOneShot(snotblobAttackSFX, GetComponent<Transform>().position);
+                break;
+        }
+    }
+
+    public void PlayBossAttack(int bossAttackSoundIndex)
+    {
+        switch (bossAttackSoundIndex)
+        {
+
+            case 0: //Poshicorn Boss
+                FMODUnity.RuntimeManager.PlayOneShot(poshicornAttackTeacupSFX, GetComponent<Transform>().position);
+                break;
+            case 1: // Devilcorn Boss
+                FMODUnity.RuntimeManager.PlayOneShot(devilcornRandomAttackSFX, GetComponent<Transform>().position);
+                break;
+        }
+    }
+    public void PlayBossAttackSpeech(int bossAttackSoundIndex)
+    {
+        switch (bossAttackSoundIndex)
+        {
+
+            case 0: //Poshicorn Boss
+                FMODUnity.RuntimeManager.PlayOneShot(poshicornAttackSpeachSFX, GetComponent<Transform>().position);
+                break;
+            case 1: // Devilcorn Boss
+                FMODUnity.RuntimeManager.PlayOneShot(devilcornRandomSpeechSFX, GetComponent<Transform>().position);
                 break;
         }
     }
@@ -174,9 +197,6 @@ public class SoundLibrary : MonoBehaviour
 
     public void BossDevilcornWingflapSFX()
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(devilcornWingflapSFX);
-
         FMODUnity.RuntimeManager.PlayOneShot(devilcornWingflapSFX, GetComponent<Transform>().position);
     }
 

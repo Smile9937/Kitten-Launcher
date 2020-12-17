@@ -7,9 +7,11 @@ using UnityEngine;
     public class Weapon : ScriptableObject
     {
         public Sprite currentWeaponSpr;
+        public Sprite secondarySprite;
         public DamageDealer bulletPrefab;
         public float fireRate = 1;
         public int weaponSoundIndex;
+        public bool isCatLauncher;
 
         public void Shoot()
         {

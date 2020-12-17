@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         gameSession = GameSession.Instance;
         gun = GameObject.Find("Gun_Placeholder");
         soundLibrary = FindObjectOfType<SoundLibrary>();
+        gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
     }
     
     void Update()
@@ -62,8 +63,9 @@ public class PlayerController : MonoBehaviour
         ChangeStats();
         Shoot();
         FlipSpriteHorizontal();
-        gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
-
+        if (!currentWeapon.isCatLauncher) {
+            gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
+        }
     }
     private void ChangeStats()
     {
@@ -76,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
         moveSpeed = startingMoveSpeed + speedBonus;
         attackDamage = startingAttackBonus + attackBonus + passiveAttackBonus;
+        attackSpeed = startingAttackSpeed + attackSpeedBonus + passiveAttackSpeedBonus;
     }
     private void GainPassiveStats()
     {
@@ -185,10 +188,12 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
        {
+        if(Time.time >= nextTimeOfFire) { gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr; }
         if (Input.GetMouseButton(0))
         {
             if (Time.time >= nextTimeOfFire)
             {
+                if(currentWeapon.isCatLauncher) { gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.secondarySprite; }
                 currentWeapon.Shoot();
                 soundLibrary.PlayWeaponSound(currentWeapon.weaponSoundIndex);
                 nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
