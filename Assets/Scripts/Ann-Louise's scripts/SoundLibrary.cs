@@ -20,13 +20,16 @@ public class SoundLibrary : MonoBehaviour
     [FMODUnity.EventRef]
     string kittenParticleSFX = "event:/SFX/Weapons/Catfight";
 
+    [FMODUnity.EventRef]
+    string piranhaParticleSFX = "event:/SFX/Weapons/PiranhaEffect";
+
     //The Living Health Heart
 
     [FMODUnity.EventRef]
-    string healthScreamingNoSFX = "event:/SFX/Health/HealthNO";
+    string healthScreamingNoSFX = "event:/SFX/Health/HealthNO"; // To trigger when caught
 
     [FMODUnity.EventRef]
-    string healthScreamingSFX = "event:/SFX/Health/HealthSCREAM";
+    string healthScreamingSFX = "event:/SFX/Health/HealthSCREAM"; // To trigger when being chased
 
     // Enemy - Clown
 
@@ -38,29 +41,29 @@ public class SoundLibrary : MonoBehaviour
     // Enemy - Poshicorn boss
 
     [FMODUnity.EventRef]
-    string poshicornAttackSpeachSFX = "event:/SFX/Enemies/Poshicorn/PoshicornALLTRACKSRANDOM";
+    string poshicornAttackSpeachSFX = "event:/SFX/Enemies/Poshicorn/PoshicornALLTRACKSRANDOM"; // To trigger when fighting, 1 instance of speech randomized.
 
     [FMODUnity.EventRef]
-    string poshicornAttackTeacupSFX = "event:/SFX/Enemies/Poshicorn/TeacupShot";
+    string poshicornAttackTeacupSFX = "event:/SFX/Enemies/Poshicorn/TeacupShot"; // To trigger when fighting, tea cup/projectile rattle.
 
     // Enemy - Devilcorn boss
 
     [FMODUnity.EventRef]
-    string devilcornWingflapSFX = "event:/SFX/Enemies/Devilcorn/DevilcornWINGFLAP";
+    string devilcornWingflapSFX = "event:/SFX/Enemies/Devilcorn/DevilcornWINGFLAP"; // To trigger when moving
 
     [FMODUnity.EventRef]
-    string devilcornRandomSpeechSFX = "event:/SFX/Enemies/Devilcorn/DevilcornAttackRANDOMS";
+    string devilcornRandomSpeechSFX = "event:/SFX/Enemies/Devilcorn/DevilcornAttackRANDOMS"; // To trigger when fighting, speech
 
     [FMODUnity.EventRef]
-    string devilcornRandomAttackSFX = "event:/SFX/Enemies/Devilcorn/DevilcornAttackWeaponRANDOM";
+    string devilcornRandomAttackSFX = "event:/SFX/Enemies/Devilcorn/DevilcornAttackWeaponRANDOM"; // To trigger when fighting, weapon attack sounds
 
     // Enemy Uniblob
 
     [FMODUnity.EventRef]
-    string uniblobNeighSFX = "event:/SFX/Enemies/Uniblob/UniblobNEIGH";
+    string uniblobNeighSFX = "event:/SFX/Enemies/Uniblob/UniblobNEIGH";  // To trigger on death
 
     [FMODUnity.EventRef]
-    string uniblobRainbowFart = "event:/SFX/Enemies/Uniblob/Rainbowfart";
+    string uniblobRainbowFart = "event:/SFX/Enemies/Uniblob/Rainbowfart";  // To trigger when fighting
 
     // Enemy Snotblob
 
