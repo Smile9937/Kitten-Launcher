@@ -14,10 +14,11 @@ public class SoundLibrary : MonoBehaviour
     string kittenLauncherSFX = "event:/SFX/Weapons/KittenLauncher";
 
     [FMODUnity.EventRef]
-    string kittenParticleSFX = "event:/SFX/Weapons/Catfight";
-
-    [FMODUnity.EventRef]
     string piranhaGunSFX = "event:/SFX/Weapons/PiranhaGun";
+
+    //Weapon Hit Effect
+    [FMODUnity.EventRef]
+    string kittenParticleSFX = "event:/SFX/Weapons/Catfight";
 
     //The Living Health Heart
 
@@ -76,29 +77,56 @@ public class SoundLibrary : MonoBehaviour
     [FMODUnity.EventRef]
     string playerHitSFX = "event:/SFX/PlayerHit";
 
-   
-    public void BaseballGunSFX()
+    //Weapon sounds
+    public void PlayWeaponSound(int weaponSoundIndex)
     {
-        
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(baseballGunSFX);
-       
-        FMODUnity.RuntimeManager.PlayOneShot(baseballGunSFX, GetComponent<Transform>().position);
+        switch (weaponSoundIndex)
+        {
+            case 0: //BaseballGun
+                FMODUnity.RuntimeManager.PlayOneShot(baseballGunSFX, GetComponent<Transform>().position);
+                break;
+            case 1: //KittenLauncher
+                FMODUnity.RuntimeManager.PlayOneShot(kittenLauncherSFX, GetComponent<Transform>().position);
+                break;
+            case 2: //PiranhaGun
+                FMODUnity.RuntimeManager.PlayOneShot(piranhaGunSFX, GetComponent<Transform>().position);
+                break;
+        }
     }
 
-    public void KittenLauncherSFX()
+    //Projectile hit
+    //Not finished
+    public void PlayProjectileHit(int projectileSoundIndex)
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(kittenLauncherSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(kittenLauncherSFX, GetComponent<Transform>().position);
+        switch (projectileSoundIndex)
+        {
+            case 0: //BaseballGun
+                FMODUnity.RuntimeManager.PlayOneShot(baseballGunSFX, GetComponent<Transform>().position);
+                break;
+            case 1: //KittenLauncher
+                FMODUnity.RuntimeManager.PlayOneShot(kittenLauncherSFX, GetComponent<Transform>().position);
+                break;
+            case 2: //PiranhaGun
+                FMODUnity.RuntimeManager.PlayOneShot(piranhaGunSFX, GetComponent<Transform>().position);
+                break;
+        }
     }
 
-    public void PiranhaGunSFX()
+    //Enemy Attack
+    public void PlayEnemyAttack(int enemyAttackSoundIndex)
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(piranhaGunSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(piranhaGunSFX, GetComponent<Transform>().position);
+        switch (enemyAttackSoundIndex)
+        {
+            case 0:
+                FMODUnity.RuntimeManager.PlayOneShot(baseballGunSFX, GetComponent<Transform>().position);
+                break;
+            case 1:
+                FMODUnity.RuntimeManager.PlayOneShot(kittenLauncherSFX, GetComponent<Transform>().position);
+                break;
+            case 2:
+                FMODUnity.RuntimeManager.PlayOneShot(piranhaGunSFX, GetComponent<Transform>().position);
+                break;
+        }
     }
 
     public void HealthHeartNoSFX()

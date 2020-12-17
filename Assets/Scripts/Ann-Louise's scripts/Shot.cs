@@ -6,7 +6,9 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     [SerializeField] private float speed = 50f;
-    public Vector2 direction;
+    [SerializeField] int bulletRotation = 90;
+    public Vector3 direction;
+
 
     [Header("Scatter Options", order = 0)]
     [Space(-10, order = 1)]
@@ -19,6 +21,10 @@ public class Shot : MonoBehaviour
     bool isScatter;
     Vector2[] scatterDir;
 
+    [Header("Cat options")]
+    [SerializeField] bool isCatLauncher;
+    [SerializeField] Cat cat;
+
     void Start()
     {
         if (!isScatter)
@@ -26,7 +32,11 @@ public class Shot : MonoBehaviour
             direction = GameObject.Find("Direction").transform.position;
             transform.position = GameObject.Find("Firepoint").transform.position;
         }
-        transform.eulerAngles = new Vector3(0, 0, GameObject.Find("Player").transform.eulerAngles.z);
+        //var rotationTarget = direction;
+        Vector3 rotationDirection = direction - transform.position;
+        float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - bulletRotation);
+        //transform.eulerAngles = new Vector3(0, 0, GameObject.Find("Player").transform.eulerAngles.z);
     }
 
     void Update()
@@ -36,6 +46,7 @@ public class Shot : MonoBehaviour
         {
             if(scatter) { Scatter(); }
             Destroy(gameObject);
+
         }
     }
 
@@ -46,6 +57,14 @@ public class Shot : MonoBehaviour
         if(other.CompareTag("Enemy") || other.CompareTag("Ground"))
         {
             if (scatter) { Scatter(); }
+
+            if(isCatLauncher && other.CompareTag("Enemy"))
+            {
+                Debug.Log("Cat hit");
+                Cat catInstance = Instantiate(cat, other.transform.position, transform.rotation);
+                catInstance.transform.parent = other.gameObject.transform;
+            }
+
             Destroy(gameObject);
         }
     }

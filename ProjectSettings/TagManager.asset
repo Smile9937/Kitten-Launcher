@@ -81,3 +81,6 @@ TagManager:
   - name: Foreground
     uniqueID: 4166796761
     locked: 0
+  - name: Cat
+    uniqueID: 1963304087
+    locked: 0

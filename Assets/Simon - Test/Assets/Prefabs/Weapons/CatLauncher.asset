@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e30abcf5cae95a4a8450beb3d5e7edb, type: 3}
-  m_Name: BaseballGun
+  m_Name: CatLauncher
   m_EditorClassIdentifier: 
-  currentWeaponSpr: {fileID: 21300000, guid: 0d9eae97347ed04488ed9648bcab3671, type: 3}
-  bulletPrefab: {fileID: 1661679922909898786, guid: 2dcbf8da4cbcb7c4183095dac293fdfb,
+  currentWeaponSpr: {fileID: 21300000, guid: 2ab5fd5cd50a30241bfd33fd1e41581f, type: 3}
+  bulletPrefab: {fileID: 1661679922909898786, guid: 777fb059ce3565343830c386dee71267,
     type: 3}
-  fireRate: 2
-  weaponSoundIndex: 0
+  fireRate: 0.5
+  weaponSoundIndex: 1

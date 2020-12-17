@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68e2e4490eb7fc14c8363e7aab0c710e, type: 3}
-  m_Name: Card 1
+  m_Name: Tier1AttackSpeedCard
   m_EditorClassIdentifier: 
   id: 1
   roomText: Text 3
@@ -18,7 +18,7 @@ MonoBehaviour:
   cardSprite: {fileID: 2326212092109238025, guid: 6bb27a7fe3d3451459f6f96122140e46,
     type: 3}
   passiveAttackDamage: 0
-  passiveAttackSpeed: 3
+  passiveAttackSpeed: 0
   attackDamage: 50
   moveSpeed: 0
   attackSpeed: 0

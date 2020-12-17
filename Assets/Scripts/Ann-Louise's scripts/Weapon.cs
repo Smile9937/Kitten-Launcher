@@ -9,6 +9,7 @@ using UnityEngine;
         public Sprite currentWeaponSpr;
         public DamageDealer bulletPrefab;
         public float fireRate = 1;
+        public int weaponSoundIndex;
 
         public void Shoot()
         {

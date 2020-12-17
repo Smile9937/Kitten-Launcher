@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1661679922909898786}
   - component: {fileID: 4784093551177439062}
   m_Layer: 21
-  m_Name: Baseball
+  m_Name: CatShot
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1249825131
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f08781fdba8d24f4c803ba757946a379, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88fe8f69b4840b043b470f4aef4238fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,5 +154,5 @@ MonoBehaviour:
   numberOfScatters: 0
   scatterObjects: 0
   scattersFromScatters: 0
-  isCatLauncher: 0
-  cat: {fileID: 0}
+  isCatLauncher: 1
+  cat: {fileID: 4189049134331705177, guid: f05da78c7b6d40c46b7a3ac26b3d2975, type: 3}

@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     //REMEMBER to add a collider to enemies and make the projectile a trigger
+    public int enemyIndex = 0;
     public float startHealth = 100f;
     [SerializeField] GameObject enemyReward;
     public float health;
@@ -32,8 +34,14 @@ public class Enemy : MonoBehaviour
     private void ProcessHit(DamageDealer damageDealer)
     {
 
-        health -= damageDealer.GetDamage();
+        //health -= damageDealer.GetDamage();
+        TakeDamage(damageDealer.GetDamage());
 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
 
@@ -49,6 +57,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void ChangeBackColor()
     {
         spriteRenderer.color = Color.white;

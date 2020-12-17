@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
     float nextFire;
     bool waitForPlayer = true;
     Animator animator;
+    Enemy enemy;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,7 +29,7 @@ public class EnemyAI : MonoBehaviour
         nextFire = Time.time;
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        enemy = GetComponent<Enemy>();
         Invoke("WaitForPlayer", 0.5f);
     }
 

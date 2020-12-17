@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour
     public float attackDamage;
     public float attackSpeed;
 
-    public float speedBonus;
-    public float attackBonus;
-    public float attackSpeedBonus;
+    public float speedBonus = 1;
+    public float attackBonus = 1;
+    public float attackSpeedBonus = 1;
 
     public float passiveAttackSpeedBonus;
     public float passiveAttackBonus;
@@ -59,10 +59,11 @@ public class PlayerController : MonoBehaviour
         Move();
         HorizontalAnimation();
         VerticalAnimation();
+        ChangeStats();
         Shoot();
         FlipSpriteHorizontal();
         gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
-        ChangeStats();
+
     }
     private void ChangeStats()
     {
@@ -75,7 +76,6 @@ public class PlayerController : MonoBehaviour
 
         moveSpeed = startingMoveSpeed + speedBonus;
         attackDamage = startingAttackBonus + attackBonus + passiveAttackBonus;
-        attackSpeed = startingAttackSpeed + attackSpeedBonus + passiveAttackSpeedBonus;
     }
     private void GainPassiveStats()
     {
@@ -163,6 +163,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
         gameSession.DecreasePlayerHealth(damageDealer.GetDamage());
+        soundLibrary.PlayerHitSFX();
         if (gameSession.GetPlayerHealth() <= 0)
         {
             sceneTransition.Lose();
@@ -189,8 +190,8 @@ public class PlayerController : MonoBehaviour
             if (Time.time >= nextTimeOfFire)
             {
                 currentWeapon.Shoot();
+                //soundLibrary.PlayWeaponSound(currentWeapon.weaponSoundIndex);
                 nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
-                soundLibrary.PlayerHitSFX();
             }
         }
     }
