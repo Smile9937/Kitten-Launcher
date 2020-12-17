@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
             if (Time.time >= nextTimeOfFire)
             {
                 currentWeapon.Shoot();
-                //soundLibrary.PlayWeaponSound(currentWeapon.weaponSoundIndex);
+                soundLibrary.PlayWeaponSound(currentWeapon.weaponSoundIndex);
                 nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
             }
         }
