@@ -10,23 +10,31 @@ public class Heart : MonoBehaviour
     [SerializeField] int minDistance = 6;
     [SerializeField] float healingAmount = 300;
     [SerializeField] Text healthText;
-    //[SerializeField] GameObject healthCanvas;
+    bool preventMultiSound = false;
     PlayerController player;
     Rigidbody2D myRigidbody;
     GameSession gameSession;
     GameObject healthCanvas;
+    SoundLibrary soundLibrary;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
         myRigidbody = GetComponent<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
         healthCanvas = gameSession.transform.GetChild(0).gameObject;
+        soundLibrary = FindObjectOfType<SoundLibrary>();
         Invoke("DestroyTimer", destroyTimer);
     }
     void Update()
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= minDistance)
         {
+
+            if (!preventMultiSound) {
+                preventMultiSound = true;
+                soundLibrary.HealthHeartScreamSFX();
+                Invoke("PreventMultiSoundCooldown", 2f);
+            }
             Vector3 dir = (transform.position - player.transform.position).normalized * moveSpeed;
             myRigidbody.velocity = dir;
         }
@@ -53,11 +61,17 @@ public class Heart : MonoBehaviour
             Text text = healthText.GetComponent<Text>();
 
             text.text = healingAmount.ToString();
+            soundLibrary.HealthHeartNoSFX();
             Destroy(gameObject);
         }
     }
     void DestroyTimer()
     {
         Destroy(gameObject);
+    }
+
+    void PreventMultiSoundCooldown()
+    {
+        preventMultiSound = false;
     }
 }

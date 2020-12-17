@@ -7,11 +7,13 @@ public class Enemy : MonoBehaviour
 {
     //REMEMBER to add a collider to enemies and make the projectile a trigger
     public float startHealth = 100f;
+    [SerializeField] int enemyIndex = 0;
     [SerializeField] GameObject enemyReward;
     public float health;
     PlayerController player;
     BetweenBattle betweenBattle;
     SpriteRenderer spriteRenderer;
+    SoundLibrary soundLibrary;
     bool preventMultiDeath = false;
     void Start()
     {
@@ -19,6 +21,7 @@ public class Enemy : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        soundLibrary = FindObjectOfType<SoundLibrary>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,10 +35,7 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-
-        //health -= damageDealer.GetDamage();
         TakeDamage(damageDealer.GetDamage());
-
     }
 
     public void TakeDamage(float damage)
@@ -53,6 +53,10 @@ public class Enemy : MonoBehaviour
                 betweenBattle.OpenPowerupScreen();
             }
             if (enemyReward != null) { Instantiate(enemyReward, transform.position, transform.rotation); }
+            if(enemyIndex == 1)
+            {
+                soundLibrary.UniblobNeighSFX();
+            }
             Destroy(gameObject);
         }
     }

@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0491de0c633f99e448561b02c3e74beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyIndex: 0
+  enemyIndex: 1
   MoveSpeed: 4
   MaxDist: 8
   MinDist: 2
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 300
+  enemyIndex: 1
   enemyReward: {fileID: 0}
   health: 0
 --- !u!58 &2175521886311050422

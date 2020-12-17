@@ -157,42 +157,12 @@ public class SoundLibrary : MonoBehaviour
 
     public void HealthHeartNoSFX()
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(healthScreamingNoSFX);
-
         FMODUnity.RuntimeManager.PlayOneShot(healthScreamingNoSFX, GetComponent<Transform>().position);
     }
 
     public void HealthHeartScreamSFX()
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(healthScreamingSFX);
-
         FMODUnity.RuntimeManager.PlayOneShot(healthScreamingSFX, GetComponent<Transform>().position);
-    }
-
-    public void EnemyClownSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(clownAttackSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(clownAttackSFX, GetComponent<Transform>().position);
-    }
-
-    public void BossPoshicornSpeechSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(poshicornAttackSpeachSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(poshicornAttackSpeachSFX, GetComponent<Transform>().position);
-    }
-
-    public void BossPoshicornTeacupAttackSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(poshicornAttackTeacupSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(poshicornAttackTeacupSFX, GetComponent<Transform>().position);
     }
 
     public void BossDevilcornWingflapSFX()
@@ -200,59 +170,18 @@ public class SoundLibrary : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(devilcornWingflapSFX, GetComponent<Transform>().position);
     }
 
-    public void BossDevilcornRandomSpeechSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(devilcornRandomSpeechSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(devilcornRandomSpeechSFX, GetComponent<Transform>().position);
-    }
-
-    public void BossDevilcornWeaponSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(devilcornRandomAttackSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(devilcornRandomAttackSFX, GetComponent<Transform>().position);
-    }
-
     public void UniblobNeighSFX()
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(uniblobNeighSFX);
-
         FMODUnity.RuntimeManager.PlayOneShot(uniblobNeighSFX, GetComponent<Transform>().position);
-    }
-
-    public void UniblobFartSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(uniblobRainbowFart);
-
-        FMODUnity.RuntimeManager.PlayOneShot(uniblobRainbowFart, GetComponent<Transform>().position);
-    }
-
-    public void SnotblobAttackSFX()
-    {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(snotblobAttackSFX);
-
-        FMODUnity.RuntimeManager.PlayOneShot(snotblobAttackSFX, GetComponent<Transform>().position);
     }
 
     public void GameOverSFX()
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(gameOverSFX);
-
         FMODUnity.RuntimeManager.PlayOneShot(gameOverSFX, GetComponent<Transform>().position);
     }
 
     public void PlayerHitSFX()
     {
-
-        FMOD.Studio.EventInstance musicEv = FMODUnity.RuntimeManager.CreateInstance(playerHitSFX);
-
         FMODUnity.RuntimeManager.PlayOneShot(playerHitSFX, GetComponent<Transform>().position);
     }
 

@@ -158,6 +158,33 @@ public class Boss : MonoBehaviour
 
         if (Time.time > nextFire && transform.position == middleOfRoom.transform.position)
         {
+            soundLibrary.PlayBossAttack(bossIndex);
+
+            if (bossIndex == 0)
+            {
+                if (teeAlternateSpeech == 5)
+                {
+                    teeAlternateSpeech = 0;
+                    soundLibrary.PlayBossAttackSpeech(bossIndex);
+                }
+                else
+                {
+                    teeAlternateSpeech++;
+                }
+            }
+            else if (bossIndex == 1)
+            {
+                if (devilcornAlternateSpeech == 3)
+                {
+                    devilcornAlternateSpeech = 0;
+                    soundLibrary.PlayBossAttackSpeech(bossIndex);
+                }
+                else
+                {
+                    devilcornAlternateSpeech++;
+                }
+            }
+
             Debug.Log("Got here");
             for(int i = 0; i < shots; i++)
             {
