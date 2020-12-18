@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss Test
       objectReference: {fileID: 0}
+    - target: {fileID: 2841876795815523028, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: startHealth
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 4003016995817600075, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: m_Controller

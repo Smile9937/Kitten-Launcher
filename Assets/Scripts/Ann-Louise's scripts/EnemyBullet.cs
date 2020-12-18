@@ -13,7 +13,6 @@ public class EnemyBullet : MonoBehaviour
     PlayerController target;
     public Vector3 moveDirection;
 
-    float rotationleft = 360;
     float rotationspeed = 10f;
 
     public Vector3 rotationTarget;
@@ -32,9 +31,19 @@ public class EnemyBullet : MonoBehaviour
         myRigidbody2D.velocity = targetDirection;
         Destroy(gameObject, 3f);
 
-        Vector3 direction = rotationTarget - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x);
-        transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - bulletRotation);
+        if(targetPlayer)
+        {
+            Vector3 direction = rotationTarget - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - bulletRotation);
+        } else
+        {
+            Vector3 direction = rotationTarget;
+            float angle = Mathf.Atan2(direction.y, direction.x);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - bulletRotation);
+        }
+
+
 
     }
     private void Update()

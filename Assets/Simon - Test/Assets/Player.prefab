@@ -114,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 294300201
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 8192317916702117222}
   - component: {fileID: 8192317916702117217}
   - component: {fileID: 8192317916702117216}
-  - component: {fileID: 6245541847098810950}
   - component: {fileID: 127080804}
   - component: {fileID: 127080803}
   m_Layer: 10
@@ -201,7 +200,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 294300201
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2588053533905087897, guid: 4e1836b3554db0d4dba1f20d42f1291a,
     type: 3}
@@ -248,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fafb2860f9e0df4cb8b2b0128e13898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: 76de7295e684ac04a9998b69abe58dfc, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 8cfc7b662746fd44d87fa7871f7db2a1, type: 2}
   startingMoveSpeed: 10
   health: 5000
   cards: []
@@ -261,20 +260,7 @@ MonoBehaviour:
   passiveAttackSpeedBonus: 0
   passiveAttackBonus: 0
   rooms: []
---- !u!114 &6245541847098810950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192317916702117219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  destroyTime: 0.1
+  canShoot: 1
 --- !u!70 &127080804
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -408,7 +394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249825131
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0d9eae97347ed04488ed9648bcab3671, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

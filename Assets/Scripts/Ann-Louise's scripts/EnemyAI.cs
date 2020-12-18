@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
     public float fireRate = 1f;
     float nextFire;
     bool waitForPlayer = true;
+    bool isPaused = false;
     Animator animator;
     Enemy enemy;
     SoundLibrary soundLibrary;
@@ -37,26 +38,30 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (Player != null && !waitForPlayer)
+        if (!isPaused)
         {
-            if(moving)
+            if (Player != null && !waitForPlayer)
             {
-              ChasePlayer();
-            }
+                if(moving)
+                {
+                  ChasePlayer();
+                }
           
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+                if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
         
-            AttackPlayer();
+                AttackPlayer();
         
-            bool hasHorizontalSpeed = Mathf.Abs(velocity.x) > Mathf.Epsilon;
+                bool hasHorizontalSpeed = Mathf.Abs(velocity.x) > Mathf.Epsilon;
 
-            if (hasHorizontalSpeed)
-            {
-                float xVelocity = Mathf.Sign(velocity.x);
-                float localScaleCheck = -Mathf.Sign(transform.localScale.x);
-                transform.localScale = new Vector2(xVelocity * transform.localScale.x * localScaleCheck, transform.localScale.y);
+                if (hasHorizontalSpeed)
+                {
+                    float xVelocity = Mathf.Sign(velocity.x);
+                    float localScaleCheck = -Mathf.Sign(transform.localScale.x);
+                    transform.localScale = new Vector2(xVelocity * transform.localScale.x * localScaleCheck, transform.localScale.y);
+                }
             }
         }
+
     }
 
     private void ChasePlayer()
@@ -101,6 +106,11 @@ public class EnemyAI : MonoBehaviour
     void WaitForPlayer()
     {
         waitForPlayer = false;
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
     }
 }
 

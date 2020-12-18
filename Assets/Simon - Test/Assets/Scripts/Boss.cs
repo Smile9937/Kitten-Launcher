@@ -21,6 +21,7 @@ public class Boss : MonoBehaviour
     bool changeBulletDir = false;
     float halfHealth;
     bool waitForPlayer = true;
+    bool isPaused = false;
     int teeAlternateSpeech = 4;
     int devilcornAlternateSpeech = 3;
     EnemyBullet currentProjectile;
@@ -39,7 +40,7 @@ public class Boss : MonoBehaviour
     }
     void Update()
     {
-        if(target != null && !waitForPlayer)
+        if(target != null && !waitForPlayer && !isPaused)
         {
             FlipSprite();
             Move();
@@ -195,7 +196,7 @@ public class Boss : MonoBehaviour
                 if (changeBulletDir) { Directions2(bulletDir); }
 
                 EnemyBullet bullet = Instantiate(currentProjectile, new Vector3(transform.position.x + bulletDir[i].x, transform.position.y + bulletDir[i].y, transform.position.z), transform.rotation);
-                Vector3 direction = new Vector3(transform.position.x + bulletDir[i].x * 5, transform.position.y + bulletDir[i].y * 5, transform.position.z);
+                Vector3 direction = new Vector3(bulletDir[i].x * 5, bulletDir[i].y * 5, transform.position.z);
                 bullet.moveDirection = direction;
                 bullet.targetPlayer = false;
                 bullet.rotationTarget = direction;
@@ -242,5 +243,10 @@ public class Boss : MonoBehaviour
         bulletDir[5] = new Vector2(-0.5f, 1f);
         bulletDir[6] = new Vector2(0.5f, 1f);
         bulletDir[7] = new Vector2(1f, 0.5f);
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
     }
 }

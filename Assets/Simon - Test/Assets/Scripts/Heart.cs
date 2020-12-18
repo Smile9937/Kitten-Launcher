@@ -11,6 +11,7 @@ public class Heart : MonoBehaviour
     [SerializeField] float healingAmount = 300;
     [SerializeField] Text healthText;
     bool preventMultiSound = false;
+    bool isPaused = false;
     PlayerController player;
     Rigidbody2D myRigidbody;
     GameSession gameSession;
@@ -27,17 +28,21 @@ public class Heart : MonoBehaviour
     }
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= minDistance)
+        if(!isPaused)
         {
+            if (Vector3.Distance(transform.position, player.transform.position) <= minDistance)
+            {
 
-            if (!preventMultiSound) {
-                preventMultiSound = true;
-                soundLibrary.HealthHeartScreamSFX();
-                Invoke("PreventMultiSoundCooldown", 2f);
+                if (!preventMultiSound) {
+                    preventMultiSound = true;
+                    soundLibrary.HealthHeartScreamSFX();
+                    Invoke("PreventMultiSoundCooldown", 2f);
+                }
+                Vector3 dir = (transform.position - player.transform.position).normalized * moveSpeed;
+                myRigidbody.velocity = dir;
             }
-            Vector3 dir = (transform.position - player.transform.position).normalized * moveSpeed;
-            myRigidbody.velocity = dir;
         }
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -65,7 +70,26 @@ public class Heart : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void DestroyTimer()
+
+    public void DestroyTimer()
+    {
+
+        if (isPaused == false)
+        {
+            DestroyObject();
+        }
+        else
+        {
+            StartCoroutine(AsyncPrepareForPlay());
+        }
+    }
+    IEnumerator AsyncPrepareForPlay()
+    {
+        yield return !isPaused;
+        DestroyTimer();
+    }
+
+    void DestroyObject()
     {
         Destroy(gameObject);
     }
@@ -73,5 +97,9 @@ public class Heart : MonoBehaviour
     void PreventMultiSoundCooldown()
     {
         preventMultiSound = false;
+    }
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
     }
 }

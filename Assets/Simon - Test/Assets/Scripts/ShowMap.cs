@@ -13,18 +13,25 @@ public class ShowMap : MonoBehaviour
     public List<int> roomType;
     public List<float> roomText;
 
+    bool spawnersCanSpawn = false;
+
     GameObject playerIconInstance;
 
-    bool mapToggle = false;
+    public bool mapToggle = false;
     PlayerController player;
+    WaveSpawner waveSpawners;
+    EnemyAI[] enemies;
+    Heart[] hearts;
+    ShowMenuScreen showMenuScreen;
 
     private void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        showMenuScreen = FindObjectOfType<ShowMenuScreen>();
     }
     private void Update()
     {
-        if(Input.GetButtonDown("Toggle Map"))
+        if(Input.GetButtonDown("Toggle Map") && !showMenuScreen.menuToggle)
         {
             mapToggle = !mapToggle;
 
@@ -41,12 +48,48 @@ public class ShowMap : MonoBehaviour
 
     public void OpenMap()
     {
-        player.moveSpeed = 0;
+        waveSpawners = player.GetClosestRoom().GetComponentInChildren<WaveSpawner>();
+
+        if (waveSpawners != null)
+        {
+            if (waveSpawners.canSpawn == true) { spawnersCanSpawn = true; }
+            waveSpawners.canSpawn = false;
+        }
+        enemies = FindObjectsOfType<EnemyAI>();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].TogglePause();
+        }
+
+        hearts = FindObjectsOfType<Heart>();
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].TogglePause();
+        }
+        player.TogglePause();
         mapScreen.SetActive(true);
     }
     public void CloseMap()
     {
-        player.moveSpeed = player.startingMoveSpeed;
+        if(spawnersCanSpawn)
+        {
+            waveSpawners = player.GetClosestRoom().GetComponentInChildren<WaveSpawner>();
+
+                waveSpawners.canSpawn = true;
+        }
+
+        enemies = FindObjectsOfType<EnemyAI>();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].TogglePause();
+        }
+
+        hearts = FindObjectsOfType<Heart>();
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].TogglePause();
+        }
+        player.TogglePause();
         mapScreen.SetActive(false);
     }
 

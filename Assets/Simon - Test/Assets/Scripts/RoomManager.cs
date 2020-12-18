@@ -15,16 +15,16 @@ public class RoomManager : MonoBehaviour
     bool playerInRoom = false;
     bool tempName = false;
     public bool aquiredCard;
-    WaveSpawner waveSpawner;
+    WaveSpawner waveSpawners;
     PlayerController player;
     GameObject doorsInRoom;
     void Start()
     {
-        waveSpawner = GetComponentInChildren<WaveSpawner>();
+        waveSpawners = GetComponentInChildren<WaveSpawner>();
         player = FindObjectOfType<PlayerController>();
         player.rooms.Add(transform);
 
-        if (waveSpawner != null)
+        if (waveSpawners != null)
         {
 
             spawnerInRoom = true;
@@ -35,9 +35,11 @@ public class RoomManager : MonoBehaviour
         CloseDoors();
     }
     private void Update()
-    {
+
+    {          Debug.Log(player.GetClosestRoom().spawnerInRoom);
         if (spawnerInRoom == false && enemies <= 0)
         {
+  
             OpenDoors();
         } else
         {
@@ -50,7 +52,7 @@ public class RoomManager : MonoBehaviour
             {
                 tempName = true;
                 spawnerInRoom = true;
-                waveSpawner.canSpawn = true;
+                waveSpawners.canSpawn = true;
             }
         }
     }

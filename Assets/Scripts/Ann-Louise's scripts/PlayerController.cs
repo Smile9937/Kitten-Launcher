@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     public List<Transform> rooms;
 
     bool canBeHit = true;
+    public bool canShoot = true;
+
+    bool isPaused = false;
 
     GameObject gun;
     Rigidbody2D myRigidbody;
@@ -57,15 +60,20 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Move();
-        HorizontalAnimation();
-        VerticalAnimation();
-        ChangeStats();
-        Shoot();
-        FlipSpriteHorizontal();
-        if (!currentWeapon.isCatLauncher) {
-            gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
+        if(!isPaused)
+        {
+            Move();
+            HorizontalAnimation();
+            VerticalAnimation();
+            ChangeStats();
+            Shoot();
+            FlipSpriteHorizontal();
+            if (!currentWeapon.isCatLauncher)
+            {
+                gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
+            }
         }
+
     }
     private void ChangeStats()
     {
@@ -188,17 +196,21 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
        {
-        if(Time.time >= nextTimeOfFire) { gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr; }
-        if (Input.GetMouseButton(0))
+        if (canShoot)
         {
-            if (Time.time >= nextTimeOfFire)
+            if(Time.time >= nextTimeOfFire) { gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr; }
+            if (Input.GetMouseButton(0))
             {
-                if(currentWeapon.isCatLauncher) { gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.secondarySprite; }
-                currentWeapon.Shoot();
-                soundLibrary.PlayWeaponSound(currentWeapon.weaponSoundIndex);
-                nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
+                if (Time.time >= nextTimeOfFire)
+                {
+                    if(currentWeapon.isCatLauncher) { gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.secondarySprite; }
+                    currentWeapon.Shoot();
+                    soundLibrary.PlayWeaponSound(currentWeapon.weaponSoundIndex);
+                    nextTimeOfFire = Time.time + 1 / (currentWeapon.fireRate + attackSpeed);
+                }
             }
         }
+
     }
 
     public RoomManager GetClosestRoom()
@@ -227,6 +239,11 @@ public class PlayerController : MonoBehaviour
 
         passiveAttackBonus = startingAttackBonus;
         passiveAttackSpeedBonus = startingAttackBonus;
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
     }
 
 }
