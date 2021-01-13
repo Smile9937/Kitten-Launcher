@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float attackDamage;
     public float attackSpeed;
+    public float defence = 0;
 
     public float speedBonus = 1;
     public float attackBonus = 1;

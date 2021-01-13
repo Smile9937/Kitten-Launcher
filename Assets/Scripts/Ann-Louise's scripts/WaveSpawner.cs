@@ -90,6 +90,7 @@ public class WaveSpawner : MonoBehaviour
 
             player.GetClosestRoom().spawnerInRoom = false;
             player.GetClosestRoom().roomCleared = true;
+            player.GetClosestRoom().activeSpawners--;
             canSpawn = false;
             if(player.GetClosestRoom().enemies <= 0)
             {

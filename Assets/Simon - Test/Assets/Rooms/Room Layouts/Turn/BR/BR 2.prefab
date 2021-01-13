@@ -7147,7 +7147,7 @@ PrefabInstance:
     - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
       propertyPath: waves.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
@@ -7235,16 +7235,37 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[3].enemy
       value: 
-      objectReference: {fileID: 6011578304216373130, guid: 9fca0afeedd5618499600c0b8c32202e,
+      objectReference: {fileID: 7459881690274875934, guid: e3cc82d44f3fbdd4a960076ad73c82f8,
         type: 3}
     - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
       propertyPath: waves.Array.data[3].count
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
       propertyPath: waves.Array.data[3].rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
+        type: 3}
+      propertyPath: waves.Array.data[4].name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
+        type: 3}
+      propertyPath: waves.Array.data[4].enemy
+      value: 
+      objectReference: {fileID: 2086016041111273367, guid: 98ff987474f3e194985ffb298701f9ac,
+        type: 3}
+    - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
+        type: 3}
+      propertyPath: waves.Array.data[4].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
+        type: 3}
+      propertyPath: waves.Array.data[4].rate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6825355863004162522, guid: 2abe925cda94dcf4db6ddbafa809544a,

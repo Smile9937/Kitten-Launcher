@@ -9411,17 +9411,22 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[1].enemy
       value: 
-      objectReference: {fileID: 6011578304216373130, guid: 9fca0afeedd5618499600c0b8c32202e,
+      objectReference: {fileID: 6988845804503930666, guid: 3de6f4491b8d5ce4c87c466a83c34cb0,
         type: 3}
     - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
       propertyPath: waves.Array.data[1].count
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
       propertyPath: waves.Array.data[1].rate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
+        type: 3}
+      propertyPath: timeBetweenWaves
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6825355863004162522, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}

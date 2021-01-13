@@ -315,6 +315,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuScreen: {fileID: 1624450814}
+  cards:
+  - {fileID: 3269545515912559504, guid: 8274cbd8abd5d3442a7dfdbde3905e83, type: 3}
+  - {fileID: 2399709444320338863, guid: 0bf90b97a133d7648924605f8ca152fd, type: 3}
+  - {fileID: 3269545515912559504, guid: 4ce0b4fc17b2c75458a69d4b22d17466, type: 3}
+  quitButton: {fileID: 3269545515912559504, guid: c7c284489583acd44ac5df9dbb9747ac,
+    type: 3}
+  backButton: {fileID: 3269545515912559504, guid: 3758d81cd8b6a0a428cc05849ce166cf,
+    type: 3}
   menuToggle: 0
 --- !u!4 &447593181
 Transform:
@@ -536,6 +544,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7629704198018397735}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1624450815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624450814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c04051a3ace0a4085d1ac0831dd657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1701703338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
         type: 3}
       propertyPath: roomEdits.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
         type: 3}
@@ -618,25 +638,25 @@ PrefabInstance:
         type: 3}
       propertyPath: roomEdits.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 5336e3458030fc74c9da840f02be71de,
+      objectReference: {fileID: 11400000, guid: 0445ff34a1e0ac34c9ecb8225a33145e,
         type: 2}
     - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
         type: 3}
       propertyPath: roomEdits.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 12b0546ed60232e418aa8093bec210b2,
+      objectReference: {fileID: 11400000, guid: f69506145164f1142adb1394d41068dd,
         type: 2}
     - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
         type: 3}
       propertyPath: roomEdits.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 5336e3458030fc74c9da840f02be71de,
+      objectReference: {fileID: 11400000, guid: 12b0546ed60232e418aa8093bec210b2,
         type: 2}
     - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
         type: 3}
       propertyPath: roomEdits.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: f69506145164f1142adb1394d41068dd,
+      objectReference: {fileID: 11400000, guid: 5336e3458030fc74c9da840f02be71de,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237d1e9ab036fd44ea5e46b8a69b0edf, type: 3}
@@ -716,6 +736,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8192317916702117216, guid: 6b9998f5ed058f34fbf6abf998222e7a,
+        type: 3}
+      propertyPath: defence
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192317916702117216, guid: 6b9998f5ed058f34fbf6abf998222e7a,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 76de7295e684ac04a9998b69abe58dfc,
+        type: 2}
     - target: {fileID: 8192317916702117219, guid: 6b9998f5ed058f34fbf6abf998222e7a,
         type: 3}
       propertyPath: m_Name
@@ -851,13 +882,13 @@ PrefabInstance:
         type: 3}
       propertyPath: playerCards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a41fcc3946131444091ed491b25966e7,
+      objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
         type: 2}
     - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}
       propertyPath: playerCards.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
+      objectReference: {fileID: 11400000, guid: a41fcc3946131444091ed491b25966e7,
         type: 2}
     - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}
@@ -881,7 +912,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerCards.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
+      objectReference: {fileID: 11400000, guid: 272e7432564981d44ac9fb7a1757fdf0,
         type: 2}
     - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}
@@ -893,11 +924,17 @@ PrefabInstance:
         type: 3}
       propertyPath: playerCards.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
+      objectReference: {fileID: 11400000, guid: a41fcc3946131444091ed491b25966e7,
         type: 2}
     - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}
       propertyPath: playerCards.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
+        type: 2}
+    - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
+        type: 3}
+      propertyPath: playerCards.Array.data[9]
       value: 
       objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
         type: 2}
@@ -1195,10 +1232,6 @@ PrefabInstance:
     - target: {fileID: 1624450814, guid: 3bb7b215d44de4f4d836aa76ace8cb78, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1624450814, guid: 3bb7b215d44de4f4d836aa76ace8cb78, type: 3}
-      propertyPath: m_Name
-      value: Menu Screen
       objectReference: {fileID: 0}
     - target: {fileID: 7629704197401679377, guid: 3bb7b215d44de4f4d836aa76ace8cb78,
         type: 3}
