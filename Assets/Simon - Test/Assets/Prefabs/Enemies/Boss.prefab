@@ -352,6 +352,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8493268059916130247, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: bossIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3749147933714098393, guid: 834f612e6841d1a41a508c0807f6291c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 834f612e6841d1a41a508c0807f6291c, type: 3}

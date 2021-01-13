@@ -7,7 +7,7 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] Text healthText;
     public List<Cards> playerCards;
-    float playerHealth;
+    public float playerHealth;
     PlayerController player;
 
     public static GameSession Instance { get; private set; }

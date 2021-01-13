@@ -65,7 +65,8 @@ public class BetweenBattle : MonoBehaviour
     }
 
     public void OpenChooseCard()
-    {        if(canOpenDiscardScreen)
+    {
+        if (canOpenDiscardScreen)
         {
             gameSession.HideCanvas();
             canOpenDiscardScreen = false;
@@ -84,17 +85,18 @@ public class BetweenBattle : MonoBehaviour
             {
                 for (int i = 0; i < cardList.Count; i++)
                 {
-                    position = new float[9];
+                    position = new float[10];
 
-                    position[0] = -280f;
-                    position[1] = -210f;
-                    position[2] = -140f;
-                    position[3] = -70f;
-                    position[4] = 0f;
-                    position[5] = 70f;
-                    position[6] = 140f;
-                    position[7] = 210f;
-                    position[8] = 280f;
+                    position[0] = -340f;
+                    position[1] = -265f;
+                    position[2] = -190f;
+                    position[3] = -115f;
+                    position[4] = -40f;
+                    position[5] = 35f;
+                    position[6] = 110f;
+                    position[7] = 185f;
+                    position[8] = 260f;
+                    position[9] = 335f;
                     
 
                     GameObject cardInstance = Instantiate(cards[cardList[i].id], Vector3.zero, transform.rotation);
@@ -117,7 +119,7 @@ public class BetweenBattle : MonoBehaviour
 
     public void ClosePowerupScreen()
     {
-        var cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
+        GameObject[] cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
         player.moveSpeed = player.startingMoveSpeed;
         victoryScreen.SetActive(false);
         for(int i = 0; i < cardPrefabs.Length; i++)
@@ -133,8 +135,8 @@ public class BetweenBattle : MonoBehaviour
         Invoke("Test", 1f);
 
 
-        var cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
-        var quitButton = GameObject.FindGameObjectWithTag("QuitButton");
+        GameObject[] cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
+        GameObject button = GameObject.FindGameObjectWithTag("Button");
         discardScreen.SetActive(false);
         if(cardPrefabs.Length - 1 == 0 && cardPrefabs[0] != null) {
             if(cardPrefabs[0] != null)
@@ -150,7 +152,7 @@ public class BetweenBattle : MonoBehaviour
                 Destroy(cardPrefabs[i]);
             }
         }
-        Destroy(quitButton);
+        Destroy(button);
     }
     void Test()
     {

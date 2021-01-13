@@ -49,12 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0491de0c633f99e448561b02c3e74beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyIndex: 0
   MoveSpeed: 3
   MaxDist: 20
   MinDist: 1
   projectile: {fileID: 6838767965607174904, guid: ae49dbac349e3194e974e8f7ff2b2018,
     type: 3}
   moving: 0
+  attackAnimation: 0
   fireRate: 0.1
 --- !u!114 &2841876795815523028
 MonoBehaviour:
@@ -69,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 20000
+  enemyIndex: 0
   enemyReward: {fileID: 4681404652690547, guid: 4ca765ece86c9ed44b89ef36a6999da6,
     type: 3}
   health: 0
@@ -119,7 +122,7 @@ Animator:
   m_GameObject: {fileID: 987946421691705040}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67ec58242ad9730408a923f5c496535a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -140,11 +143,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c60c690354ece418c90012aebcf6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossIndex: 0
   waypoints: []
   middleOfRoom: {fileID: 0}
-  projectile: {fileID: 0}
+  projectiles: []
   moveSpeed: 2
-  fireRate: 1
+  randomMovement: 0
+  randomAttackFactor: 0
+  attack1FireRate: 1
+  attack2FireRate: 1
   shots: 0
 --- !u!1 &3470106175394640234
 GameObject:
