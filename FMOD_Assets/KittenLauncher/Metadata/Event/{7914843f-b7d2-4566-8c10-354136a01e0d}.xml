@@ -92,6 +92,9 @@
 		<property name="length">
 			<value>0.75230316091954008</value>
 		</property>
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{ddd999e8-f810-4ace-abf5-ab1644ae19c6}</destination>
 			<destination>{fc05dec2-b2c4-4732-bc4c-f7588e24a488}</destination>
@@ -124,9 +127,6 @@
 	<object class="RandomizerModulator" id="{ddd999e8-f810-4ace-abf5-ab1644ae19c6}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
-		</property>
-		<property name="amount">
-			<value>4</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{fc05dec2-b2c4-4732-bc4c-f7588e24a488}">
