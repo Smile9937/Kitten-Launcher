@@ -10,10 +10,13 @@ public class WaveSpawner : MonoBehaviour
    public class Wave
     {
         public string name;
-        public Transform enemy;
+        public Transform[] enemies;
+        //Transform enemy;
         public int count;
         public float rate;
     }
+
+    [SerializeField] GameObject portal;
 
     public Wave[] waves;
     private int nextWave = 0;
@@ -27,6 +30,7 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     public bool canSpawn = false;
+    public bool stopSpawning = false;
 
     private SpawnState state = SpawnState.COUNTING;
     PlayerController player;
@@ -63,7 +67,7 @@ public class WaveSpawner : MonoBehaviour
         //Check if spawning
         if (waveCountdown <= 0)
         {
-            if (state != SpawnState.SPAWNING && canSpawn)
+            if (state != SpawnState.SPAWNING && canSpawn && !stopSpawning)
             {
                 //start spawning wave
                 StartCoroutine(SpawnWave(waves[nextWave]));
@@ -92,11 +96,11 @@ public class WaveSpawner : MonoBehaviour
             player.GetClosestRoom().roomCleared = true;
             player.GetClosestRoom().activeSpawners--;
             canSpawn = false;
+            stopSpawning = true;
             if(player.GetClosestRoom().enemies <= 0)
             {
                 betweenBattle.OpenPowerupScreen();
             }
-
         }
         else
         {
@@ -127,7 +131,8 @@ public class WaveSpawner : MonoBehaviour
 
         for(int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy);
+            var enemyIndex = Random.Range(0, _wave.enemies.Length);
+            SpawnEnemy(_wave.enemies[enemyIndex]);
             yield return new WaitForSeconds(1f / _wave.rate);
         }
 
@@ -142,8 +147,7 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Spawning enemy" + _enemy.name);
 
         Transform _spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(portal, _spawnPoint.position, _spawnPoint.rotation);
         Instantiate(_enemy, _spawnPoint.position, _spawnPoint.rotation);
-        
     }
-
 }

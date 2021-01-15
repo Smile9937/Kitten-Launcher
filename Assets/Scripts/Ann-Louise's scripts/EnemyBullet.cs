@@ -57,10 +57,12 @@ public class EnemyBullet : MonoBehaviour
 
         if(homing)
         {
-            var homeMoveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-            Vector3 targetDirection = new Vector3(homeMoveDirection.x, homeMoveDirection.y, transform.position.z);
-            myRigidbody2D.velocity = targetDirection;
-            Invoke("StopHoming", 0.65f);
+            if(target != null) {
+                Vector3 homeMoveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
+                Vector3 targetDirection = new Vector3(homeMoveDirection.x, homeMoveDirection.y, transform.position.z);
+                myRigidbody2D.velocity = targetDirection;
+                Invoke("StopHoming", 0.65f);
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

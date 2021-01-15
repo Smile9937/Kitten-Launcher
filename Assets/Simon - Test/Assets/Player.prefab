@@ -247,13 +247,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fafb2860f9e0df4cb8b2b0128e13898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: 8cfc7b662746fd44d87fa7871f7db2a1, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 76de7295e684ac04a9998b69abe58dfc, type: 2}
+  damageParticles: {fileID: 7007095446927607047, guid: b3ea3f86f51188940bbb82d341d86b30,
+    type: 3}
   startingMoveSpeed: 10
-  health: 5000
   cards: []
   moveSpeed: 0
   attackDamage: 0
   attackSpeed: 0
+  defence: 0
   speedBonus: 0
   attackBonus: 0
   attackSpeedBonus: 0

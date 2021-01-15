@@ -114,5 +114,5 @@ Material:
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 869.43396, g: 299.38055, b: 865.7456, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
-    - _SpecColor: {r: 0.9811321, g: 0.060148716, b: 0.6852869, a: 0.41}
+    - _SpecColor: {r: 0.9811321, g: 0.060148694, b: 0.6852869, a: 0.41}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5882353}

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Cards : ScriptableObject
 {
     public int id;
+    public GameObject summon;
 
     [Header("Text and image")]
     public string roomText;
@@ -15,9 +16,11 @@ public class Cards : ScriptableObject
     [Header("Passive Effects")]
     public float passiveAttackDamage = 0;
     public float passiveAttackSpeed = 0;
+    public float healthIncrease = 0;
 
     [Header("Activated Effects")]
     public float attackDamage = 0;
     public float moveSpeed = 0;
     public float attackSpeed = 0;
+    public float objectsToSummon = 0;
 }

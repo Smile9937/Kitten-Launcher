@@ -15,7 +15,7 @@ public class SetMenuText : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        gameSession = FindObjectOfType<GameSession>();
+        gameSession = GameSession.Instance;
 
         healthText = gameObject.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>();
         attackText = gameObject.transform.GetChild(1).GetComponent<UnityEngine.UI.Text>();

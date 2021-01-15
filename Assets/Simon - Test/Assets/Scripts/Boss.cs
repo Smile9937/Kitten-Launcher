@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour
     float halfHealth;
     bool waitForPlayer = true;
     bool isPaused = false;
-    int teeAlternateSpeech = 4;
+    int teeAlternateSpeech = 3;
     int devilcornAlternateSpeech = 3;
     EnemyBullet currentProjectile;
     Enemy enemy;
@@ -32,7 +32,7 @@ public class Boss : MonoBehaviour
     {
         target = FindObjectOfType<PlayerController>();
         enemy = GetComponent<Enemy>();
-        soundLibrary = FindObjectOfType<SoundLibrary>();
+        soundLibrary = SoundLibrary.Instance;
         nextFire = Time.time;
         halfHealth = enemy.startHealth / 2;
         transform.position = waypoints[waypointIndex].transform.position;
@@ -125,7 +125,7 @@ public class Boss : MonoBehaviour
             //Creating the projectile and then resetting the nextfire
             if(bossIndex == 0)
             {
-                if (teeAlternateSpeech == 5)
+                if (teeAlternateSpeech == 3)
                 {
                     teeAlternateSpeech = 0;
                     soundLibrary.PlayBossAttackSpeech(bossIndex);

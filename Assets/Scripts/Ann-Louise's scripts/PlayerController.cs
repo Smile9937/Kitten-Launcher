@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
     private float nextTimeOfFire = 0;
     public Weapon currentWeapon;
 
+    [SerializeField] GameObject damageParticles;
+
     [Header("Player Stats")]
     public float startingMoveSpeed = 10f;
-
-    public float health = 200;
 
     [Header("Do not edit unless debugging or testing")]
     public List<Cards> cards;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         sceneTransition = FindObjectOfType<SceneTransition>();
         gameSession = GameSession.Instance;
         gun = GameObject.Find("Gun_Placeholder");
-        soundLibrary = FindObjectOfType<SoundLibrary>();
+        soundLibrary = SoundLibrary.Instance;
         gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
     }
     
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!isPaused)
         {
+            myAnimator.SetBool("Idle", false);
             Move();
             HorizontalAnimation();
             VerticalAnimation();
@@ -73,6 +74,13 @@ public class PlayerController : MonoBehaviour
             {
                 gun.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
             }
+        } else
+        {
+            myRigidbody.velocity = new Vector2(0, 0);
+            myAnimator.SetBool("Idle", true);
+            myAnimator.SetBool("Side", false);
+            myAnimator.SetBool("Back", false);
+            myAnimator.SetBool("Front", false);  
         }
 
     }
@@ -81,6 +89,10 @@ public class PlayerController : MonoBehaviour
         if (cards != gameSession.playerCards)
         {
             cards = gameSession.playerCards;
+        }
+        if (currentWeapon != gameSession.currentPlayerWeapon)
+        {
+            currentWeapon = gameSession.currentPlayerWeapon;
         }
 
         GainPassiveStats();
@@ -172,6 +184,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!canBeHit) { return; }
         canBeHit = false;
+        if (damageParticles != null) { Instantiate(damageParticles, transform.position, transform.rotation); }
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
         gameSession.DecreasePlayerHealth(damageDealer.GetDamage());

@@ -10,6 +10,7 @@ public class Heart : MonoBehaviour
     [SerializeField] int minDistance = 6;
     [SerializeField] float healingAmount = 300;
     [SerializeField] Text healthText;
+    [SerializeField] GameObject damageParticles;
     bool preventMultiSound = false;
     bool isPaused = false;
     PlayerController player;
@@ -17,13 +18,14 @@ public class Heart : MonoBehaviour
     GameSession gameSession;
     GameObject healthCanvas;
     SoundLibrary soundLibrary;
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
         myRigidbody = GetComponent<Rigidbody2D>();
-        gameSession = FindObjectOfType<GameSession>();
+        gameSession = GameSession.Instance;
         healthCanvas = gameSession.transform.GetChild(0).gameObject;
-        soundLibrary = FindObjectOfType<SoundLibrary>();
+        soundLibrary = SoundLibrary.Instance;
         Invoke("DestroyTimer", destroyTimer);
     }
     void Update()
@@ -42,7 +44,6 @@ public class Heart : MonoBehaviour
                 myRigidbody.velocity = dir;
             }
         }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -56,6 +57,7 @@ public class Heart : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            if (damageParticles != null) { Instantiate(damageParticles, transform.position, Quaternion.identity); }
             gameSession.IncreasePlayerHealth(healingAmount);
             Text healthTextInstance = Instantiate(healthText, player.transform.position, transform.rotation);
             healthTextInstance.transform.SetParent(healthCanvas.transform, false);
@@ -98,6 +100,7 @@ public class Heart : MonoBehaviour
     {
         preventMultiSound = false;
     }
+
     public void TogglePause()
     {
         isPaused = !isPaused;

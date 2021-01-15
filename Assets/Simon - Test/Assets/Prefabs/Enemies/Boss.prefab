@@ -223,6 +223,23 @@ PrefabInstance:
       propertyPath: startHealth
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 2841876795815523028, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: enemyIndex
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841876795815523028, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: weaponReward
+      value: 
+      objectReference: {fileID: 510172207862501698, guid: b28e3eb15d1f59d4da37b0a64282584d,
+        type: 3}
+    - target: {fileID: 2841876795815523028, guid: 834f612e6841d1a41a508c0807f6291c,
+        type: 3}
+      propertyPath: damageParticle
+      value: 
+      objectReference: {fileID: 2918828938950922924, guid: 9151fd0ce60f9fc4d8739879981962ae,
+        type: 3}
     - target: {fileID: 4003016995817600075, guid: 834f612e6841d1a41a508c0807f6291c,
         type: 3}
       propertyPath: m_Controller

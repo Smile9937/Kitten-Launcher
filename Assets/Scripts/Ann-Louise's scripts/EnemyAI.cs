@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = GetComponent<Enemy>();
-        soundLibrary = FindObjectOfType<SoundLibrary>();
+        soundLibrary = SoundLibrary.Instance;
         Invoke("WaitForPlayer", 0.5f);
     }
 
@@ -70,18 +70,17 @@ public class EnemyAI : MonoBehaviour
             {
                 if (Vector3.Distance(transform.position, Player.position) >= MinDist)
                 {
-                var dif = Player.transform.position - transform.position;
-                if (dif.magnitude > 1)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, Player.position, MoveSpeed * Time.deltaTime);
-                    velocity = (transform.position - previous) / Time.deltaTime;
-                    previous = transform.position;
-                }
-                else
-                {
-                    velocity = Vector2.zero;
-                }
-                //Debug.Log("Looking at player");
+                    var dif = Player.transform.position - transform.position;
+                    if (dif.magnitude > 1)
+                    {
+                        transform.position = Vector2.MoveTowards(transform.position, Player.position, MoveSpeed * Time.deltaTime);
+                        velocity = (transform.position - previous) / Time.deltaTime;
+                        previous = transform.position;
+                    }
+                    else
+                    {
+                        velocity = Vector2.zero;
+                    }
                 }
                     
             }

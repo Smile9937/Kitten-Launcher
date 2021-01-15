@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoundLibrary : MonoBehaviour
 {
-    
     // Weapons
 
     [FMODUnity.EventRef]
@@ -79,6 +78,21 @@ public class SoundLibrary : MonoBehaviour
 
     [FMODUnity.EventRef]
     string playerHitSFX = "event:/SFX/PlayerHit";
+
+    public static SoundLibrary Instance { get; private set; }
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     //Weapon sounds
     public void PlayWeaponSound(int weaponSoundIndex)

@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Simon - Test/Assets/Scenes/Level Patterns.unity
+    path: Assets/Simon - Test/Assets/Scenes/Start Screen.unity
+    guid: 0dfd165fe3b321c40929e1d422e032a0
+  - enabled: 1
+    path: Assets/Simon - Test/Assets/Scenes/Level 1.unity
     guid: 15fbdace59b06d149ab1885bdd69ea36
   - enabled: 1
-    path: Assets/Simon - Test/Assets/Scenes/Level Patterns 2.unity
-    guid: e22a4c3cd90f7c5459215ae84a8f0fef
+    path: Assets/Simon - Test/Assets/Scenes/Level 2.unity
+    guid: 6dfb6b357ecbac540ad04159124d3e2c
   - enabled: 1
     path: Assets/Simon - Test/Assets/Scenes/Win Screen.unity
     guid: 63080158a22dca541b88c2e96ade76ea
   - enabled: 1
     path: Assets/Simon - Test/Assets/Scenes/Lose Screen.unity
     guid: 4dceb394e4cb6ac48a5f5648b6f70347
+  - enabled: 1
+    path: Assets/Simon - Test/Assets/Scenes/Credits.unity
+    guid: 535820c981363cd45ba588a2025f30e1
   m_configObjects: {}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2409714623731454662}
   - component: {fileID: 2409714623731454661}
   - component: {fileID: 2409714623731454660}
+  - component: {fileID: 8894512138529980505}
   m_Layer: 0
   m_Name: Part - Petals-StartScreen (1)
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2409714623731454683}
   m_LocalRotation: {x: 0.6177723, y: 0.34403116, z: 0.34403116, w: 0.6177723}
-  m_LocalPosition: {x: -10.64, y: 13.49, z: -343.20898}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4799,3 +4800,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8894512138529980505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409714623731454683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25ec795e5e2d8a43aedcd094e1e004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public float startHealth = 100f;
     [SerializeField] int enemyIndex = 0;
     [SerializeField] GameObject enemyReward;
+    [SerializeField] WeaponPickup weaponReward;
+    [SerializeField] GameObject damageParticle;
     public float health;
     PlayerController player;
     BetweenBattle betweenBattle;
@@ -21,7 +23,7 @@ public class Enemy : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        soundLibrary = FindObjectOfType<SoundLibrary>();
+        soundLibrary = SoundLibrary.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +43,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        if (damageParticle != null) { Instantiate(damageParticle, transform.position, Quaternion.identity); }
         spriteRenderer.color = Color.blue;
         Invoke("ChangeBackColor", 0.1f);
 
@@ -53,6 +56,7 @@ public class Enemy : MonoBehaviour
                 betweenBattle.OpenPowerupScreen();
             }
             if (enemyReward != null) { Instantiate(enemyReward, transform.position, transform.rotation); }
+            if (weaponReward != null) { Instantiate(weaponReward, new Vector3(transform.position.x, transform.position.y - 3, transform.position.z), transform.rotation); }
             if(enemyIndex == 1)
             {
                 soundLibrary.UniblobNeighSFX();

@@ -135,9 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRotation: -90
+  moveSpeed: 10
+  homing: 0
+  rotating: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationTarget: {x: 0, y: 0, z: 0}
   targetPlayer: 1
+  randomAttackSpread: {x: 0, y: 0, z: 0}
 --- !u!114 &8105622191349269362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,5 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  isCatLauncher: 0
+  isPlayerBullet: 0
+  damage: 150
   destroyTime: 0.1

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7459881690274875928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1906989497
   m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3170537233275380327, guid: c65fa6ffea9ceab449f314d4b2c3f618,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,7 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 260
+  enemyIndex: 0
   enemyReward: {fileID: 0}
+  weaponReward: {fileID: 0}
+  damageParticle: {fileID: 5754221266405699019, guid: e7c1ec25570db8b4c82cc86a81b9df32,
+    type: 3}
   health: 0
 --- !u!114 &7459881690274875933
 MonoBehaviour:
@@ -133,8 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0491de0c633f99e448561b02c3e74beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyIndex: 0
   MoveSpeed: 4
-  MaxDist: 10
+  MaxDist: 7
   MinDist: 5
   projectile: {fileID: 6838767965607174904, guid: 76e1e33133120dd498b0c76f16d7e0af,
     type: 3}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1661679922909898786}
   - component: {fileID: 4784093551177439062}
   m_Layer: 21
-  m_Name: Scatter Shot
+  m_Name: Dev Bullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249825131
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c841f74be6a5d1a4985f973972fc4951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCatLauncher: 0
+  isPlayerBullet: 1
   damage: 100
   destroyTime: 0.1
 --- !u!114 &4784093551177439062
@@ -149,8 +151,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 11
-  direction: {x: 0, y: 0}
+  bulletRotation: 90
+  direction: {x: 0, y: 0, z: 0}
+  shotIndex: 0
   scatterShot: {fileID: 4784093551177439062}
   numberOfScatters: 3
   scatterObjects: 4
   scattersFromScatters: 8
+  isCatLauncher: 0
+  cat: {fileID: 0}
+  catAttackParticle: {fileID: 0}
+  extraCatDamage: 0

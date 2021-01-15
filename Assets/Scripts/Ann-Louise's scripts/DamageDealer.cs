@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
     [SerializeField] bool isCatLauncher;
+    [SerializeField] bool isPlayerBullet;
     public float damage = 100;
     public float destroyTime = 0.1f;
     PlayerController player;
@@ -14,13 +15,8 @@ public class DamageDealer : MonoBehaviour
     {
         shot = GetComponent<Shot>();
         player = FindObjectOfType<PlayerController>();
-        damage += player.attackDamage;
-        Debug.Log(player.attackDamage);
-        if(isCatLauncher)
-        {
-            shot.extraCatDamage = damage / 10;
-            Debug.Log(shot.extraCatDamage);
-        }
+        if (isPlayerBullet) { damage += player.attackDamage; }
+        if(isCatLauncher) {shot.extraCatDamage = damage / 10; }
     }
     public float GetDamage()
     {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8105622191349269362}
   - component: {fileID: 7241422147122680091}
   m_Layer: 15
-  m_Name: Boss_Bullet_Placeholder 2
+  m_Name: Boss_Bullet_2
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,9 +119,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641485e071bf58a47b080be9da15e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletRotation: 90
+  moveSpeed: 10
+  homing: 0
+  rotating: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationTarget: {x: 0, y: 0, z: 0}
   targetPlayer: 1
+  randomAttackSpread: {x: 0, y: 0, z: 0}
 --- !u!114 &8105622191349269362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  isCatLauncher: 0
+  isPlayerBullet: 0
+  damage: 150
   destroyTime: 0.1
 --- !u!70 &7241422147122680091
 CapsuleCollider2D:

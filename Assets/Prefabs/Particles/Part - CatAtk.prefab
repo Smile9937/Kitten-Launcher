@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7192191868698900416}
   - component: {fileID: 7192191868698900423}
   - component: {fileID: 7192191868698900422}
+  - component: {fileID: 3820695183444044528}
   m_Layer: 0
   m_Name: Part - CatAtk
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7192191868698900421}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.59, y: 7.475, z: -304.3924}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 7192191870127796329}
   - {fileID: 7192191868909632629}
@@ -4825,6 +4826,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3820695183444044528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192191868698900421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25ec795e5e2d8a43aedcd094e1e004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7192191868909632618
 GameObject:
   m_ObjectHideFlags: 0

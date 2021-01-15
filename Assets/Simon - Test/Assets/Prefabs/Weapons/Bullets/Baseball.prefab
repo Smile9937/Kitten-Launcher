@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCatLauncher: 0
+  isPlayerBullet: 1
   damage: 20
   destroyTime: 0.1
 --- !u!114 &4784093551177439062
@@ -149,10 +151,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 11
-  direction: {x: 0, y: 0}
+  bulletRotation: 90
+  direction: {x: 0, y: 0, z: 0}
+  shotIndex: 0
   scatterShot: {fileID: 0}
   numberOfScatters: 0
   scatterObjects: 0
   scattersFromScatters: 0
   isCatLauncher: 0
   cat: {fileID: 0}
+  catAttackParticle: {fileID: 0}
+  extraCatDamage: 0

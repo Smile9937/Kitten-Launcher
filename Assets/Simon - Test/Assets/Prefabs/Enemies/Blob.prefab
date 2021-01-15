@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6988845804503930660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,9 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2907a8a4ec294448b67ff1c200e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyIndex: 2
   startHealth: 600
+  enemyIndex: 2
   enemyReward: {fileID: 0}
+  weaponReward: {fileID: 0}
+  damageParticle: {fileID: 7007095446927607047, guid: 3e858c4e6dd4fb44eae4e810a72c68c0,
+    type: 3}
   health: 0
 --- !u!114 &6988845804503930665
 MonoBehaviour:
@@ -137,7 +140,7 @@ MonoBehaviour:
   enemyIndex: 2
   MoveSpeed: 4
   MaxDist: 10
-  MinDist: 5
+  MinDist: 0
   projectile: {fileID: 6838767965607174904, guid: c51b64c96252c274bb982400d15b6a94,
     type: 3}
   moving: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,8 +35,21 @@ public class CardPrefab : MonoBehaviour
         player.attackBonus += card.attackDamage * player.GetClosestRoom().effectMultiplier;
         player.attackSpeedBonus += card.attackSpeed * player.GetClosestRoom().effectMultiplier;
         player.speedBonus += card.moveSpeed * player.GetClosestRoom().effectMultiplier;
+        SummonObjects();
         gameSession.playerCards.Remove(card);
         betweenBattle.CloseDiscardCard();
         gameSession.OpenCanvas();
+    }
+
+    private void SummonObjects()
+    {
+
+        int randomPos = UnityEngine.Random.Range(0, 5);
+        Vector3 roomPos = player.GetClosestRoom().transform.position;
+
+        for(int i = 0; i < card.objectsToSummon; i++)
+        {
+            Instantiate(card.summon, new Vector2(roomPos.x + randomPos, roomPos.y + randomPos), transform.rotation);
+        }
     }
 }

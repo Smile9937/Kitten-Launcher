@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e2e4490eb7fc14c8363e7aab0c710e, type: 3}
+  m_Name: Tier1HealthCard
+  m_EditorClassIdentifier: 
+  id: 0
+  summon: {fileID: 0}
+  roomText: Text 1
+  activatedText: Text 2
+  cardSprite: {fileID: 3935687332956863941, guid: 9965bff611ac7034e828472679fa8924,
+    type: 3}
+  passiveAttackDamage: 30
+  passiveAttackSpeed: 0
+  healthIncrease: 0
+  attackDamage: 0
+  moveSpeed: 5
+  attackSpeed: 2
+  objectsToSummon: 0

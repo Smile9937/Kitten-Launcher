@@ -15,7 +15,7 @@ public class Cat : MonoBehaviour
 
     IEnumerator DamageEnemy()
     {
-        //Damage Enemy
+        DamageDealer damageDealer = GetComponent<DamageDealer>();
         GameObject enemy = transform.parent.gameObject;
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         enemyScript.TakeDamage(damage);

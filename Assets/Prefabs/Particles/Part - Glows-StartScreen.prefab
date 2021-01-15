@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 827591262596838377}
   - component: {fileID: 827591262596838382}
   - component: {fileID: 827591262596838383}
+  - component: {fileID: 2441750296779359694}
   m_Layer: 0
   m_Name: Part - Glows-StartScreen
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827591262596838380}
   m_LocalRotation: {x: 0.61777085, y: 0.34403363, z: 0.34403375, w: 0.6177709}
-  m_LocalPosition: {x: -10.64, y: 13.49, z: -343.20898}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4835,3 +4836,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2441750296779359694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827591262596838380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25ec795e5e2d8a43aedcd094e1e004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

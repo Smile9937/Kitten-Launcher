@@ -20,5 +20,5 @@ MonoBehaviour:
   passiveAttackDamage: 30
   passiveAttackSpeed: 0
   attackDamage: 0
-  moveSpeed: 5
-  attackSpeed: 2
+  moveSpeed: 3
+  attackSpeed: 1

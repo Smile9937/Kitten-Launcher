@@ -32,7 +32,7 @@ public class Shot : MonoBehaviour
     SoundLibrary soundLibrary;
     void Start()
     {
-        soundLibrary = FindObjectOfType<SoundLibrary>();
+        soundLibrary = SoundLibrary.Instance;
         if (!isScatter)
         {
             direction = GameObject.Find("Direction").transform.position;

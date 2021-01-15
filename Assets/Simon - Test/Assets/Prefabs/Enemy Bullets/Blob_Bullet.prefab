@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6838767965607174904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,9 +135,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641485e071bf58a47b080be9da15e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletRotation: 90
+  moveSpeed: 10
+  homing: 0
+  rotating: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationTarget: {x: 0, y: 0, z: 0}
   targetPlayer: 1
+  randomAttackSpread: {x: 0, y: 0, z: 0}
 --- !u!114 &8105622191349269362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,5 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCatLauncher: 0
   damage: 100
   destroyTime: 0.3

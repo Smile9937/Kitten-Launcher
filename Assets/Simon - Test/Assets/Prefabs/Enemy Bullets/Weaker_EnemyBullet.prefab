@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -630144219672261639}
   - component: {fileID: 8487959151792395213}
   m_Layer: 15
-  m_Name: EnemyBullet
+  m_Name: Weaker_EnemyBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   bulletRotation: 90
   moveSpeed: 10
   homing: 0
+  rotating: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationTarget: {x: 0, y: 0, z: 0}
   targetPlayer: 1
@@ -153,5 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  isCatLauncher: 0
+  damage: 20
   destroyTime: 0.1

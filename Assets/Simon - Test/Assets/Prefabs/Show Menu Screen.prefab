@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &880081255704178228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880081255704178226}
+  - component: {fileID: 880081255704178227}
+  m_Layer: 0
+  m_Name: Show Menu Screen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880081255704178226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880081255704178228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &880081255704178227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880081255704178228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11469ec0a4feb44a822a4126929e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuScreen: {fileID: 0}
+  cards:
+  - {fileID: 3269545515912559504, guid: 8274cbd8abd5d3442a7dfdbde3905e83, type: 3}
+  - {fileID: 2399709444320338863, guid: 0bf90b97a133d7648924605f8ca152fd, type: 3}
+  - {fileID: 3269545515912559504, guid: 4ce0b4fc17b2c75458a69d4b22d17466, type: 3}
+  quitButton: {fileID: 3269545515912559504, guid: c7c284489583acd44ac5df9dbb9747ac,
+    type: 3}
+  backButton: {fileID: 3269545515912559504, guid: 3758d81cd8b6a0a428cc05849ce166cf,
+    type: 3}
+  menuToggle: 0

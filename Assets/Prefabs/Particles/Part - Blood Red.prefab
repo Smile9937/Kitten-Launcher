@@ -4767,8 +4767,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7304dea5624e3a48a9a6d34c683fe56, type: 2}
-  - {fileID: 2100000, guid: 0484dcc6c1390bc40a4c71a047032335, type: 2}
+  - {fileID: 2100000, guid: efa87f9f6483fc14ea91c618f34cbc60, type: 2}
+  - {fileID: 2100000, guid: efa87f9f6483fc14ea91c618f34cbc60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4787,7 +4787,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -128170535
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -4823,6 +4823,7 @@ GameObject:
   - component: {fileID: 7007095446927607042}
   - component: {fileID: 7007095446927607045}
   - component: {fileID: 7007095446927607044}
+  - component: {fileID: 4860888038406564302}
   m_Layer: 0
   m_Name: Part - Blood Red
   m_TagString: Untagged
@@ -4838,7 +4839,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7007095446927607047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0327637, y: 4.7317286, z: -289.85938}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4976706090936752501}
@@ -9580,8 +9581,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0484dcc6c1390bc40a4c71a047032335, type: 2}
-  - {fileID: 2100000, guid: 0484dcc6c1390bc40a4c71a047032335, type: 2}
+  - {fileID: 2100000, guid: c010f7dfd6aa4aa4185b44d2082272ed, type: 2}
+  - {fileID: 2100000, guid: c010f7dfd6aa4aa4185b44d2082272ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9600,7 +9601,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -128170535
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -9625,3 +9626,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4860888038406564302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7007095446927607047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25ec795e5e2d8a43aedcd094e1e004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

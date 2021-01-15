@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Easier Bottom Right Corner
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: -1420573355640093278, guid: c22c5df87d8ef6843a941e93682a2c31, type: 3}
-  - {fileID: -1420573355640093278, guid: e0567ec9f9cf30e4399598bedda44161, type: 3}
+  - {fileID: -1420573355640093278, guid: 8d2ad7a4c9390fe429e46844dc33cac2, type: 3}
+  - {fileID: -1420573355640093278, guid: f355a5f619acd99419e1e83435f0b669, type: 3}
   roomType: 2

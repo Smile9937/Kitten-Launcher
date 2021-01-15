@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatLauncher: 1
+  isPlayerBullet: 1
   damage: 0
   destroyTime: 0.1
 --- !u!114 &4784093551177439062

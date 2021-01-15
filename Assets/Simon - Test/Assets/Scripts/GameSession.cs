@@ -7,7 +7,9 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] Text healthText;
     public List<Cards> playerCards;
+    public Weapon currentPlayerWeapon;
     public float playerHealth;
+    public int level = 0;
     PlayerController player;
 
     public static GameSession Instance { get; private set; }
@@ -27,7 +29,6 @@ public class GameSession : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        playerHealth = player.health;
         ChangeHealthText();
     }
 
@@ -50,17 +51,23 @@ public class GameSession : MonoBehaviour
 
     public void ChangeHealthText()
     {
-        healthText.text = playerHealth.ToString();
+        if (this != null) { healthText.text = playerHealth.ToString(); }
     }
 
     public void HideCanvas()
     {
-        GameObject canvas = gameObject.transform.GetChild(0).gameObject;
-        canvas.SetActive(false);
+        if (this != null)
+        {
+            GameObject canvas = gameObject.transform.GetChild(0).gameObject;
+            canvas.SetActive(false);
+        }
     }
     public void OpenCanvas()
     {
-        GameObject canvas = gameObject.transform.GetChild(0).gameObject;
-        canvas.SetActive(true);
+        if (this!= null)
+        {
+            GameObject canvas = gameObject.transform.GetChild(0).gameObject;
+            canvas.SetActive(true);
+        }
     }
 }

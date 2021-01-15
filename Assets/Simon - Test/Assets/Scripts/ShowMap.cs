@@ -117,6 +117,6 @@ public class ShowMap : MonoBehaviour
     public void MovePlayerIcon()
     {
         RectTransform playerIconRect = playerIconInstance.GetComponent<RectTransform>();
-        playerIconRect.anchoredPosition = Vector3.Scale(player.GetClosestRoom().transform.position - new Vector3(mapPositionX + 5, mapPositionY + 4, 0), new Vector3(2.5f, 4.2f, 0));
+        playerIconRect.anchoredPosition = Vector3.Scale(player.GetClosestRoom().transform.position - new Vector3(mapPositionX + 5, mapPositionY - 2, 0), new Vector3(2.5f, 4.2f, 0));
     }
 }
