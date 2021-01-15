@@ -42,9 +42,6 @@ public class EnemyBullet : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x);
             transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - bulletRotation);
         }
-
-
-
     }
     private void Update()
     {
@@ -69,7 +66,6 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            Debug.Log("Hit!");
             Destroy(gameObject);           
         }
     }

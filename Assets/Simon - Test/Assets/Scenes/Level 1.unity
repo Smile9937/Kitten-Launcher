@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -501,41 +501,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
-        type: 3}
-      propertyPath: roomEdits.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
-        type: 3}
-      propertyPath: roomEdits.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: ee3aa9761dbafa14abc54426d9fb7a7a,
-        type: 2}
-    - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
-        type: 3}
-      propertyPath: roomEdits.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0445ff34a1e0ac34c9ecb8225a33145e,
-        type: 2}
-    - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
-        type: 3}
-      propertyPath: roomEdits.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: f69506145164f1142adb1394d41068dd,
-        type: 2}
-    - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
-        type: 3}
-      propertyPath: roomEdits.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 12b0546ed60232e418aa8093bec210b2,
-        type: 2}
-    - target: {fileID: 6522145520616784151, guid: 237d1e9ab036fd44ea5e46b8a69b0edf,
-        type: 3}
-      propertyPath: roomEdits.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5336e3458030fc74c9da840f02be71de,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237d1e9ab036fd44ea5e46b8a69b0edf, type: 3}
 --- !u!1001 &2121683759
@@ -827,8 +792,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerCards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: f4d582d64c1805f4eb158d113b56d9d1,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}
       propertyPath: playerCards.Array.data[1]
@@ -1034,7 +998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3933262686630781582, guid: 6a87bef9d13c0a2459979699255f3a28,
         type: 3}
-      propertyPath: powerUpScreen
+      propertyPath: victoryScreen
       value: 
       objectReference: {fileID: 730156223}
     - target: {fileID: 3933262686630781582, guid: 6a87bef9d13c0a2459979699255f3a28,
@@ -1042,11 +1006,6 @@ PrefabInstance:
       propertyPath: discardScreen
       value: 
       objectReference: {fileID: 373036817}
-    - target: {fileID: 3933262686630781582, guid: 6a87bef9d13c0a2459979699255f3a28,
-        type: 3}
-      propertyPath: victoryScreen
-      value: 
-      objectReference: {fileID: 730156223}
     - target: {fileID: 3933262686630781583, guid: 6a87bef9d13c0a2459979699255f3a28,
         type: 3}
       propertyPath: m_LocalPosition.x

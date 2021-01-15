@@ -23,6 +23,7 @@ public class CardPrefab : MonoBehaviour
 
     public void GivePlayerCard()
     {
+        gameSession.IncreasePlayerHealth(card.healthIncrease);
         gameSession.playerCards.Add(card);
         betweenBattle.ClosePowerupScreen();
         player.GetClosestRoom().OpenDoors();
@@ -32,6 +33,7 @@ public class CardPrefab : MonoBehaviour
 
     public void SelectCard()
     {
+        gameSession.DecreasePlayerHealth(card.healthIncrease);
         player.attackBonus += card.attackDamage * player.GetClosestRoom().effectMultiplier;
         player.attackSpeedBonus += card.attackSpeed * player.GetClosestRoom().effectMultiplier;
         player.speedBonus += card.moveSpeed * player.GetClosestRoom().effectMultiplier;
@@ -43,13 +45,25 @@ public class CardPrefab : MonoBehaviour
 
     private void SummonObjects()
     {
-
-        int randomPos = UnityEngine.Random.Range(0, 5);
         Vector3 roomPos = player.GetClosestRoom().transform.position;
 
-        for(int i = 0; i < card.objectsToSummon; i++)
+        float summons = Mathf.Round(card.objectsToSummon * player.GetClosestRoom().effectMultiplier);
+
+        for(int i = 0; i < summons; i++)
         {
-            Instantiate(card.summon, new Vector2(roomPos.x + randomPos, roomPos.y + randomPos), transform.rotation);
+            float randomPosX = UnityEngine.Random.Range(0, 13) * RandomSign();
+            float randomPosY = UnityEngine.Random.Range(0, 8) * RandomSign();
+
+            Instantiate(card.summon, new Vector2(roomPos.x + randomPosX, roomPos.y + randomPosY), transform.rotation);
         }
+    }
+
+    private int RandomSign()
+    {
+        if (UnityEngine.Random.Range(0, 2) == 0)
+        {
+            return -1;
+        }
+        else { return 1; }
     }
 }

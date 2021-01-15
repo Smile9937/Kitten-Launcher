@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 { 
-    private Transform Player;
+    private Transform player;
     [SerializeField] int enemyIndex;
     [SerializeField] float MoveSpeed = 4f;
     [SerializeField] int MaxDist = 10;
@@ -21,16 +21,23 @@ public class EnemyAI : MonoBehaviour
     float nextFire;
     bool waitForPlayer = true;
     bool isPaused = false;
+
+    private Rigidbody2D rb;
+
     Animator animator;
     Enemy enemy;
     SoundLibrary soundLibrary;
+    GameSession gameSession;
+
     void Start()
     {
+        gameSession = GameSession.Instance;
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         // Checking when it's time to fire/attack
         nextFire = Time.time;
 
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = GetComponent<Enemy>();
         soundLibrary = SoundLibrary.Instance;
         Invoke("WaitForPlayer", 0.5f);
@@ -40,14 +47,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (!isPaused)
         {
-            if (Player != null && !waitForPlayer)
+            if (player != null && !waitForPlayer)
             {
-                if(moving)
-                {
-                  ChasePlayer();
-                }
-          
-                if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+                if (Vector3.Distance(transform.position, player.position) <= MaxDist)
         
                 AttackPlayer();
         
@@ -64,16 +66,32 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        if (!isPaused)
+        {
+            if (player != null && !waitForPlayer)
+            {
+                if (moving)
+                {
+                    ChasePlayer();
+                }
+            }
+        }
+    }
+
     private void ChasePlayer()
     {
-            if (Player != null)
+            if (player != null)
             {
-                if (Vector3.Distance(transform.position, Player.position) >= MinDist)
+                if (Vector3.Distance(transform.position, player.position) >= MinDist)
                 {
-                    var dif = Player.transform.position - transform.position;
+                    var dif = player.transform.position - transform.position;
                     if (dif.magnitude > 1)
                     {
-                        transform.position = Vector2.MoveTowards(transform.position, Player.position, MoveSpeed * Time.deltaTime);
+
+                        rb.MovePosition(Vector2.MoveTowards(transform.position, player.position, MoveSpeed * Time.deltaTime));
+                    
                         velocity = (transform.position - previous) / Time.deltaTime;
                         previous = transform.position;
                     }
@@ -81,10 +99,8 @@ public class EnemyAI : MonoBehaviour
                     {
                         velocity = Vector2.zero;
                     }
-                }
-                    
+                }   
             }
-        
     }
 
     void AttackPlayer()

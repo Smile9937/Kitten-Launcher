@@ -55,4 +55,8 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+    public void GotoLevel(int level) {
+        SceneManager.LoadScene(level);
+    }
 }

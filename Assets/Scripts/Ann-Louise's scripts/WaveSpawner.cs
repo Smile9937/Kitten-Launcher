@@ -125,7 +125,6 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        Debug.Log("Spawning wave" + _wave.name);
         state = SpawnState.SPAWNING;
         // Spawn
 
@@ -144,8 +143,6 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(Transform _enemy)
     {
         // Spawn enemy
-        Debug.Log("Spawning enemy" + _enemy.name);
-
         Transform _spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(portal, _spawnPoint.position, _spawnPoint.rotation);
         Instantiate(_enemy, _spawnPoint.position, _spawnPoint.rotation);

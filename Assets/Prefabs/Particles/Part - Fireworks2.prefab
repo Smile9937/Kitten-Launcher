@@ -9673,7 +9673,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 3
-    scalar: 1
+    scalar: 2
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -9785,9 +9785,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 50
-      minScalar: 5
+      minMaxState: 3
+      scalar: 45
+      minScalar: 65
       maxCurve:
         serializedVersion: 2
         m_Curve:

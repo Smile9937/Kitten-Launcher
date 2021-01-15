@@ -22,6 +22,11 @@ public class Button : MonoBehaviour
         sceneTransition.GotoCurrentLevel();
     }
 
+    public void Level1()
+    {
+        sceneTransition.GotoLevel(1);
+    }
+
     public void RestartGame()
     {
         gameSession.level = 0;

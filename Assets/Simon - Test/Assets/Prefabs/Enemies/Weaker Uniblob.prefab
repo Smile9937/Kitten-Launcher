@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyIndex: 1
   MoveSpeed: 4
-  MaxDist: 8
-  MinDist: 2
+  MaxDist: 7
+  MinDist: 4
   projectile: {fileID: 6838767965607174904, guid: 966f4ff58ff2776489b32797cd97bf8a,
     type: 3}
   moving: 1
@@ -171,9 +171,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05, y: -0.06}
   serializedVersion: 2
-  m_Radius: 0.39
+  m_Radius: 0.32
 --- !u!50 &7959656924904583199
 Rigidbody2D:
   serializedVersion: 4
@@ -182,12 +182,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4379459864827866291}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
+  m_Mass: 1
+  m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}

@@ -57,7 +57,6 @@ public class GenerateLayout : MonoBehaviour
             showMap.roomText.Add(effectMultiplier[currentEffectMultiplier]);
 
             currentRoom = roomEdits[i].roomArrays.rooms[UnityEngine.Random.Range(0, roomEdits[i].roomArrays.rooms.Length)];
-            Debug.Log(currentRoom);
             RoomManager roomPrefab = Instantiate(currentRoom, position[i], transform.rotation);
 
             roomPrefab.effectMultiplier = effectMultiplier[currentEffectMultiplier];

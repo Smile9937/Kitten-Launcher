@@ -9,11 +9,10 @@ public class SummonFireworks : MonoBehaviour
     {
         int spawnDelay = Random.Range(0, 1);
         Invoke("SpawnDelay", spawnDelay);
-
-
     }
     void SpawnDelay()
     {
-        GameObject firework = Instantiate(fireworksParticle, transform.position, transform.rotation);
+        int rand = Random.Range(0, 8);
+        GameObject firework = Instantiate(fireworksParticle, new Vector2(transform.position.x, transform.position.y + rand), transform.rotation);
     }
 }

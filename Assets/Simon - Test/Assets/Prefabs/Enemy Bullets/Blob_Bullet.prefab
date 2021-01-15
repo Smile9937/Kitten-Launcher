@@ -74,9 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: -1906989497
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2396980280414962331, guid: a74f20a30342c8841898aa12f29b8bd3,
-    type: 3}
-  m_Color: {r: 0, g: 1, b: 0.026485443, a: 0.5686275}
+  m_Sprite: {fileID: 683549215768121256, guid: b7af1e11a30d2c24bb1b13dba8822258, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7372549}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
@@ -156,5 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCatLauncher: 0
+  isPlayerBullet: 0
   damage: 100
   destroyTime: 0.3

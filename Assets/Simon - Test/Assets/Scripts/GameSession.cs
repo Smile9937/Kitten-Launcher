@@ -10,6 +10,10 @@ public class GameSession : MonoBehaviour
     public Weapon currentPlayerWeapon;
     public float playerHealth;
     public int level = 0;
+    float passiveHealthBonus;
+
+    public List<Rigidbody2D> EnemyRbs;
+
     PlayerController player;
 
     public static GameSession Instance { get; private set; }
