@@ -79,6 +79,25 @@ public class SoundLibrary : MonoBehaviour
     [FMODUnity.EventRef]
     string playerHitSFX = "event:/SFX/PlayerHit";
 
+    // MUSIC
+
+    [FMODUnity.EventRef]
+    string bossMusic = "event:/SFX/Music/BossMusic";  // Boss music, to trigger when fighting devilcorn and poshicorn
+
+    [FMODUnity.EventRef]
+    string FightMusic = "event:/SFX/Music/FightMusic";  // Fight music, to trigger at start of the game, loops until boss music
+
+    [FMODUnity.EventRef]
+    string menuMusic = "event:/SFX/Enemies/MenuMusic";  // Menu music, to plat during the start menu
+    
+    [FMODUnity.EventRef]
+    string fanfare = "event:/SFX/Music/Fanfare"; // Fanfare/level win sound
+
+    [FMODUnity.EventRef]
+    string menuClick = "event:/SFX/Music/MenuClickGun";  // Menu/button click sounds. 
+
+    
+
     public static SoundLibrary Instance { get; private set; }
     private void Awake()
     {
