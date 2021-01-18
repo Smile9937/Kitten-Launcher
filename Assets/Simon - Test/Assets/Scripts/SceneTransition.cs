@@ -15,12 +15,14 @@ public class SceneTransition : MonoBehaviour
     }
     public void GotoNextLevel()
     {
+        soundLibrary.PlayFightMusic();
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex + 1);
     }
 
     public void GotoCurrentLevel()
     {
+        soundLibrary.PlayFightMusic();
         if(gameSession.level > 0)
         {
             gameSession.OpenCanvas();
@@ -34,18 +36,21 @@ public class SceneTransition : MonoBehaviour
 
     public void GotoMenu()
     {
+        soundLibrary.PlayMenuMusic();
         gameSession.HideCanvas();
         SceneManager.LoadScene(0);
     }
 
     public void Restart()
     {
+        soundLibrary.PlayMenuMusic();
         Destroy(gameSession.gameObject);
         SceneManager.LoadScene(0);
     }
 
     public void Lose()
     {
+        soundLibrary.StopMusic();
         gameSession.HideCanvas();
         soundLibrary.GameOverSFX();
         SceneManager.LoadScene("Lose Screen");
@@ -56,7 +61,9 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
-    public void GotoLevel(int level) {
+    public void GotoLevel(int level)
+    {
+        soundLibrary.PlayFightMusic();
         SceneManager.LoadScene(level);
     }
 }

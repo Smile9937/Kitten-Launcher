@@ -33,6 +33,7 @@ public class Boss : MonoBehaviour
         target = FindObjectOfType<PlayerController>();
         enemy = GetComponent<Enemy>();
         soundLibrary = SoundLibrary.Instance;
+        soundLibrary.PlayBossMusic();
         nextFire = Time.time;
         halfHealth = enemy.startHealth / 2;
         transform.position = waypoints[waypointIndex].transform.position;
