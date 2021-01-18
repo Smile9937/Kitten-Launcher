@@ -4718,6 +4718,7 @@ MonoBehaviour:
   enemies: 0
   spawnerInRoom: 0
   roomCleared: 0
+  activeSpawners: 0
   inCardSelectMenu: 0
   aquiredCard: 0
 --- !u!61 &2534799457860844583

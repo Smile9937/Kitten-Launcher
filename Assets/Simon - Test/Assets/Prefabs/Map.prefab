@@ -58,3 +58,4 @@ MonoBehaviour:
   mapPositions: []
   roomType: 
   roomText: []
+  mapToggle: 0

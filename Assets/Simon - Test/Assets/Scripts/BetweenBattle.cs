@@ -6,7 +6,13 @@ public class BetweenBattle : MonoBehaviour
 {
     [SerializeField] GameObject victoryScreen;
     [SerializeField] GameObject discardScreen;
-    [SerializeField] GameObject[] lootPrefabs;
+    [SerializeField] List<GameObject> lootPrefabs;
+
+    [SerializeField] GameObject[] tier1LootPrefabs;
+    [SerializeField] GameObject[] tier2LootPrefabs;
+    [SerializeField] GameObject[] tier3LootPrefabs;
+    [SerializeField] GameObject[] tier4LootPrefabs;
+
     [SerializeField] GameObject[] cards;
     [SerializeField] GameObject closeButton;
     int index;
@@ -22,7 +28,7 @@ public class BetweenBattle : MonoBehaviour
         victoryScreen.SetActive(false);
         discardScreen.SetActive(false);
     }
-
+    
     public void OpenPowerupScreen()
     {
         if (canOpenVictoryScreen)
@@ -34,13 +40,6 @@ public class BetweenBattle : MonoBehaviour
 
             position = new float[3];
 
-            List<int> list = new List<int>();
-
-            for (int i = 0; i < lootPrefabs.Length + 1; i++)
-            {
-                list.Add(i);
-            }
-
             for (int i = 0; i < 3; i++)
             {
                 position = new float[3];
@@ -49,18 +48,36 @@ public class BetweenBattle : MonoBehaviour
                 position[1] = 0f;
                 position[2] = 220f;
 
-                index = Random.Range(0, list.Count - 1);
-                int currentLoot = list[index];
-                list.RemoveAt(index);
+                RandomizRarity(i);
 
-
-                GameObject cardInstance = Instantiate(lootPrefabs[currentLoot], Vector3.zero, transform.rotation);
+                GameObject cardInstance = Instantiate(lootPrefabs[i], Vector3.zero, transform.rotation);
                 cardInstance.transform.SetParent(victoryScreen.transform, false);
 
                 RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector2(position[i], -30f);
             }
             Invoke("Cooldown", 1);
+        }
+    }
+
+    private void RandomizRarity(int index)
+    {
+        var rarityIndex = Random.Range(0, 19);
+
+        switch (rarityIndex)
+        {
+            case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9:
+                lootPrefabs.Add(tier1LootPrefabs[index]);
+                break;
+            case 10: case 11: case 12: case 13: case 14: case 15:
+                lootPrefabs.Add(tier2LootPrefabs[index]);
+                break;
+            case 16: case 17: case 18:
+                lootPrefabs.Add(tier3LootPrefabs[index]);
+                break;
+            case 19:
+                lootPrefabs.Add(tier4LootPrefabs[index]);
+                break;
         }
     }
 
@@ -125,6 +142,11 @@ public class BetweenBattle : MonoBehaviour
         for(int i = 0; i < cardPrefabs.Length; i++)
         {
             Destroy(cardPrefabs[i]);
+        }
+
+        for(int i = 0; i < lootPrefabs.Count + 1; i++)
+        {
+            lootPrefabs.RemoveAt(i);
         }
     }
 

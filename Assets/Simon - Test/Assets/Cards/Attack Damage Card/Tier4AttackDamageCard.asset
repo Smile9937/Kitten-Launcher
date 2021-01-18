@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e2e4490eb7fc14c8363e7aab0c710e, type: 3}
   m_Name: Tier4AttackDamageCard
   m_EditorClassIdentifier: 
-  id: 2
+  id: 9
   summon: {fileID: 0}
   roomText: Text 1
   activatedText: Text 2
