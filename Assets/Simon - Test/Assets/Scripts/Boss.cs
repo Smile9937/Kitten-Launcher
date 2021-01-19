@@ -250,4 +250,9 @@ public class Boss : MonoBehaviour
     {
         isPaused = !isPaused;
     }
+
+    private void OnDestroy()
+    {
+        soundLibrary.PlayFanfare();
+    }
 }

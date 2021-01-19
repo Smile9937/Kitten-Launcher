@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyIndex: 2
   MoveSpeed: 4
-  MaxDist: 10
+  MaxDist: 12
   MinDist: 0
   projectile: {fileID: 6838767965607174904, guid: c51b64c96252c274bb982400d15b6a94,
     type: 3}

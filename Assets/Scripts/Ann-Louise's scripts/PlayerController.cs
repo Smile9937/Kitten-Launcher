@@ -116,8 +116,11 @@ public class PlayerController : MonoBehaviour
 
             for(int i = 0; i < cards.Count; i++)
             {
-                tempAttackBonus += cards[i].passiveAttackDamage;
-                tempAttackSpeedBonus += cards[i].passiveAttackSpeed;
+                if(cards[i] != null)
+                {
+                    tempAttackBonus += cards[i].passiveAttackDamage;
+                    tempAttackSpeedBonus += cards[i].passiveAttackSpeed;
+                }
             }
             passiveAttackBonus = tempAttackBonus;
             passiveAttackSpeedBonus = tempAttackSpeedBonus;
@@ -224,7 +227,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
     }
 
     public RoomManager GetClosestRoom()

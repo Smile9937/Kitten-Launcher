@@ -76,13 +76,13 @@ public class ShowMenuScreen : MonoBehaviour
         quit.transform.SetParent(menuScreen.transform, false);
 
         RectTransform rectTransform = quit.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(-330, 220);
+        rectTransform.anchoredPosition = new Vector2(-330, 200);
 
         GameObject back = Instantiate(backButton, Vector3.zero, transform.rotation);
         back.transform.SetParent(menuScreen.transform, false);
 
         RectTransform rectTransform1 = back.GetComponent<RectTransform>();
-        rectTransform1.anchoredPosition = new Vector2(330, -220);
+        rectTransform1.anchoredPosition = new Vector2(330, -200);
     }
 
     private void InstantiateCards()

@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114, y: -54}
-  m_SizeDelta: {x: 165.66016, y: 58.40027}
+  m_AnchoredPosition: {x: 232.26001, y: -79.961}
+  m_SizeDelta: {x: 394.5227, y: 118.20346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1069252934
 CanvasRenderer:
@@ -66,12 +66,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 50
-    m_Alignment: 4
+    m_MaxSize: 90
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -112,8 +112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 268.30997, y: -54}
-  m_SizeDelta: {x: 142.95984, y: 58.40027}
+  m_AnchoredPosition: {x: 480, y: -80}
+  m_SizeDelta: {x: 289.16302, y: 118.12547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1695833507
 CanvasRenderer:
@@ -144,11 +144,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 50
+    m_MaxSize: 90
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -306,3 +306,4 @@ MonoBehaviour:
     type: 2}
   playerHealth: 5000
   level: 0
+  EnemyRbs: []

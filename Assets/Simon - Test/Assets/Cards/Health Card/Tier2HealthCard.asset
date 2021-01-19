@@ -24,4 +24,4 @@ MonoBehaviour:
   attackDamage: 0
   moveSpeed: 0
   attackSpeed: 0
-  objectsToSummon: 3
+  objectsToSummon: 4

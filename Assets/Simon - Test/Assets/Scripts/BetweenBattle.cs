@@ -15,14 +15,19 @@ public class BetweenBattle : MonoBehaviour
 
     [SerializeField] GameObject[] cards;
     [SerializeField] GameObject closeButton;
+
     int index;
     float[] position;
+
     public bool canOpenVictoryScreen = true;
     public bool canOpenDiscardScreen = true;
+
     PlayerController player;
     GameSession gameSession;
+
     void Start()
     {
+
         player = FindObjectOfType<PlayerController>();
         gameSession = GameSession.Instance;
         victoryScreen.SetActive(false);
@@ -35,7 +40,7 @@ public class BetweenBattle : MonoBehaviour
         {
             gameSession.HideCanvas();
             canOpenVictoryScreen = false;
-            player.moveSpeed = 0;
+            player.TogglePause();
             victoryScreen.SetActive(true);
 
             position = new float[3];
@@ -62,20 +67,20 @@ public class BetweenBattle : MonoBehaviour
 
     private void RandomizRarity(int index)
     {
-        var rarityIndex = Random.Range(0, 19);
+        var rarityIndex = Random.Range(0, 23);
 
         switch (rarityIndex)
         {
-            case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9:
+            case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12: case 13:
                 lootPrefabs.Add(tier1LootPrefabs[index]);
                 break;
-            case 10: case 11: case 12: case 13: case 14: case 15:
+              case 14: case 15: case 16: case 17: case 18: case 19: case 20:
                 lootPrefabs.Add(tier2LootPrefabs[index]);
                 break;
-            case 16: case 17: case 18:
+            case 21: case 22:
                 lootPrefabs.Add(tier3LootPrefabs[index]);
                 break;
-            case 19:
+            case 23:
                 lootPrefabs.Add(tier4LootPrefabs[index]);
                 break;
         }
@@ -89,7 +94,7 @@ public class BetweenBattle : MonoBehaviour
             canOpenDiscardScreen = false;
             List<Cards> cardList = player.cards;
             discardScreen.SetActive(true);
-            player.moveSpeed = 0;
+            player.TogglePause();
 
             if(cardList.Count - 1 == 0)
             {
@@ -131,28 +136,24 @@ public class BetweenBattle : MonoBehaviour
             rectTransform1.anchoredPosition = new Vector2(330, -200);
             Invoke("Cooldown2", 1f);
         }
-
     }
 
     public void ClosePowerupScreen()
     {
         GameObject[] cardPrefabs = GameObject.FindGameObjectsWithTag("LootPrefab");
-        player.moveSpeed = player.startingMoveSpeed;
+        player.TogglePause();
         victoryScreen.SetActive(false);
         for(int i = 0; i < cardPrefabs.Length; i++)
         {
             Destroy(cardPrefabs[i]);
         }
 
-        for(int i = 0; i < lootPrefabs.Count + 1; i++)
-        {
-            lootPrefabs.RemoveAt(i);
-        }
+        lootPrefabs.Clear();
     }
 
     public void CloseDiscardCard()
     {
-        player.moveSpeed = player.startingMoveSpeed;
+        player.TogglePause();
         player.GetClosestRoom().inCardSelectMenu = false;
         Invoke("Test", 1f);
 

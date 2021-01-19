@@ -38,11 +38,9 @@ public class Shot : MonoBehaviour
             direction = GameObject.Find("Direction").transform.position;
             transform.position = GameObject.Find("Firepoint").transform.position;
         }
-        //var rotationTarget = direction;
         Vector3 rotationDirection = direction - transform.position;
         float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x);
         transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - bulletRotation);
-        //transform.eulerAngles = new Vector3(0, 0, GameObject.Find("Player").transform.eulerAngles.z);
     }
 
     void Update()
@@ -52,7 +50,6 @@ public class Shot : MonoBehaviour
         {
             if(scatter) { Scatter(); }
             Destroy(gameObject);
-
         }
     }
 
@@ -78,7 +75,6 @@ public class Shot : MonoBehaviour
                     GameObject particles = Instantiate(catAttackParticle, other.transform.position, transform.rotation);
                     particles.transform.parent = catInstance.gameObject.transform;
                 }
-
             }
 
             Destroy(gameObject);
@@ -154,6 +150,5 @@ public class Shot : MonoBehaviour
         scatterDir[29] = new Vector2(-0.125f, -0.125f);
         scatterDir[30] = new Vector2(0.125f, -0.125f);
         scatterDir[31] = new Vector2(-0.125f, 0.125f);
-
     }
 }

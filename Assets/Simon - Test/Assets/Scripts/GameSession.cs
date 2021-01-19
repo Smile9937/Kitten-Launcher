@@ -8,11 +8,11 @@ public class GameSession : MonoBehaviour
     [SerializeField] Text healthText;
     public List<Cards> playerCards;
     public Weapon currentPlayerWeapon;
+
     public float playerHealth;
     public int level = 0;
-    float passiveHealthBonus;
 
-    public List<Rigidbody2D> EnemyRbs;
+    float passiveHealthBonus;
 
     PlayerController player;
 
@@ -32,6 +32,7 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         player = FindObjectOfType<PlayerController>();
         ChangeHealthText();
     }

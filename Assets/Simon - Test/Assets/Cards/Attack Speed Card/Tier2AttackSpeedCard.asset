@@ -19,7 +19,7 @@ MonoBehaviour:
   cardSprite: {fileID: -5547543617732793867, guid: 6bb27a7fe3d3451459f6f96122140e46,
     type: 3}
   passiveAttackDamage: 0
-  passiveAttackSpeed: 0.7
+  passiveAttackSpeed: 0.4
   healthIncrease: 0
   attackDamage: 75
   moveSpeed: 0

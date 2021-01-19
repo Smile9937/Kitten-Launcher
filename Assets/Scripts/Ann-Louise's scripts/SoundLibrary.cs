@@ -234,39 +234,30 @@ public class SoundLibrary : MonoBehaviour
 
         musicInstance = RuntimeManager.CreateInstance(bossMusic);
         musicInstance.start();
-
-        //musicInstance = FMODUnity.RuntimeManager.PlayOneShot(bossMusic, transform.position);
-        
     }
 
     public void PlayFightMusic()
     {
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-        musicInstance = RuntimeManager.CreateInstance(bossMusic);
+        musicInstance = RuntimeManager.CreateInstance(fightMusic);
         musicInstance.start();
-
-        //FMODUnity.RuntimeManager.PlayOneShot(fightMusic, transform.position);
     }
-
-    /*public void PlayMenuMusic()
-    {
-        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-        musicInstance = RuntimeManager.CreateInstance(bossMusic);
-        musicInstance.start();
-       
-        //FMODUnity.RuntimeManager.PlayOneShot(menuMusic, transform.position);
-    }*/
 
     public void PlayMenuMusic()
     {
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
+        musicInstance = RuntimeManager.CreateInstance(bossMusic);
+        musicInstance.start();
+    }
+
+    public void PlayFanfare()
+    {
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         musicInstance = RuntimeManager.CreateInstance(fanfare);
         musicInstance.start();
-        
-        //FMODUnity.RuntimeManager.PlayOneShot(fanfare, transform.position);
     }
 
     public void PlayButtonClick()
