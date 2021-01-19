@@ -306,4 +306,3 @@ MonoBehaviour:
     type: 2}
   playerHealth: 5000
   level: 0
-  EnemyRbs: []

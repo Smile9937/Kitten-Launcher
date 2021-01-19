@@ -18,7 +18,7 @@ MonoBehaviour:
   activatedText: Text 2
   cardSprite: {fileID: -5410762864681816765, guid: 9965bff611ac7034e828472679fa8924,
     type: 3}
-  passiveAttackDamage: 40
+  passiveAttackDamage: 20
   passiveAttackSpeed: 0
   healthIncrease: 0
   attackDamage: 0

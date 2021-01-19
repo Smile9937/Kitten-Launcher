@@ -45,16 +45,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victoryScreen: {fileID: 0}
   discardScreen: {fileID: 0}
-  lootPrefabs:
+  lootPrefabs: []
+  tier1LootPrefabs:
   - {fileID: 3269545515912559504, guid: 124dde5eb12ef53408ba72f242226ffd, type: 3}
   - {fileID: 2399709444320338863, guid: a2018454e9b9b6c40963c08ace5a4ac9, type: 3}
   - {fileID: 3269545515912559504, guid: 527db7518a260334f94f501107766c90, type: 3}
+  tier2LootPrefabs:
   - {fileID: 3269545515912559504, guid: 382804d08bb6a164196a3d31c74e10c5, type: 3}
   - {fileID: 3269545515912559504, guid: 69724f2c115ca004587a40df960c28a7, type: 3}
   - {fileID: 3269545515912559504, guid: 5dcc5976befa5b643b91e2625f596f62, type: 3}
+  tier3LootPrefabs:
   - {fileID: 3269545515912559504, guid: 1dc67f0ad3e36e4478671234957362c6, type: 3}
   - {fileID: 3269545515912559504, guid: b47d43b7b564eac44b586d08feca071d, type: 3}
   - {fileID: 3269545515912559504, guid: 4aa6ca4c16ec68a4fb33f1d573136197, type: 3}
+  tier4LootPrefabs:
   - {fileID: 3269545515912559504, guid: 64a81a4055421d0468c76d18973cc361, type: 3}
   - {fileID: 3269545515912559504, guid: c875c9c12b03e074db76e0e63391df7d, type: 3}
   - {fileID: 3269545515912559504, guid: fba7453d4e6815643b4bcfd238346bd9, type: 3}

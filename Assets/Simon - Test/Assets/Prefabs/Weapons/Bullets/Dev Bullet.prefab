@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cf1be687bed8346a8ccad5f8a9788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCatLauncher: 0
+  isCatLauncher: 1
   isPlayerBullet: 1
-  damage: 100
+  damage: 1
   destroyTime: 0.1
 --- !u!114 &4784093551177439062
 MonoBehaviour:
@@ -158,7 +158,8 @@ MonoBehaviour:
   numberOfScatters: 3
   scatterObjects: 4
   scattersFromScatters: 8
-  isCatLauncher: 0
-  cat: {fileID: 0}
-  catAttackParticle: {fileID: 0}
+  isCatLauncher: 1
+  cat: {fileID: 4189049134331705177, guid: f05da78c7b6d40c46b7a3ac26b3d2975, type: 3}
+  catAttackParticle: {fileID: 5080584175008776619, guid: 71309c4cd09f3c745ab2c7c4743796a3,
+    type: 3}
   extraCatDamage: 0

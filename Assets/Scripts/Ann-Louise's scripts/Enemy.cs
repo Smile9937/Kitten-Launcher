@@ -9,16 +9,19 @@ public class Enemy : MonoBehaviour
     public float startHealth = 100f;
     [SerializeField] int enemyIndex = 0;
     [SerializeField] GameObject enemyReward;
-    [SerializeField] WeaponPickup weaponReward;
+    [SerializeField] WeaponPickup[] weaponReward;
     [SerializeField] GameObject damageParticle;
+    [SerializeField] bool giveWeapon;
     public float health;
     PlayerController player;
     BetweenBattle betweenBattle;
     SpriteRenderer spriteRenderer;
     SoundLibrary soundLibrary;
+    GameSession gameSession;
     bool preventMultiDeath = false;
     void Start()
     {
+        gameSession = GameSession.Instance;
         health = startHealth;
         player = FindObjectOfType<PlayerController>();
         betweenBattle = FindObjectOfType<BetweenBattle>();
@@ -56,7 +59,11 @@ public class Enemy : MonoBehaviour
                 betweenBattle.OpenPowerupScreen();
             }
             if (enemyReward != null) { Instantiate(enemyReward, transform.position, transform.rotation); }
-            if (weaponReward != null) { Instantiate(weaponReward, new Vector3(transform.position.x, transform.position.y - 3, transform.position.z), transform.rotation); }
+            if (giveWeapon)
+            {
+                int weaponIndex = UnityEngine.Random.Range(0, weaponReward.Length);
+                Instantiate(weaponReward[weaponIndex], new Vector3(transform.position.x, transform.position.y - 3, transform.position.z), transform.rotation);
+            }
             if(enemyIndex == 1)
             {
                 soundLibrary.UniblobNeighSFX();

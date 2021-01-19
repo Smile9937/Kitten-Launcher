@@ -48,7 +48,6 @@ public class Shot : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
         if (transform.position == new Vector3(direction.x, direction.y))
         {
-            if(scatter) { Scatter(); }
             Destroy(gameObject);
         }
     }
@@ -57,7 +56,7 @@ public class Shot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy") || other.CompareTag("Ground"))
+        if (other.CompareTag("Enemy"))
         {
             if (scatter) { Scatter(); }
 

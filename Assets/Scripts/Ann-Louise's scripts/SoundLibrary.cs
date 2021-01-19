@@ -89,7 +89,7 @@ public class SoundLibrary : MonoBehaviour
     string fightMusic = "event:/SFX/Music/FightMusic";  // Fight music, to trigger at start of the game, loops until boss music
 
     [EventRef]
-    string menuMusic = "event:/SFX/Enemies/MenuMusic";  // Menu music, to plat during the start menu
+    string menuMusic = "event:/SFX/Music/MenuMusic";  // Menu music, to plat during the start menu
     
     [EventRef]
     string fanfare = "event:/SFX/Music/Fanfare"; // Fanfare/level win sound
@@ -248,7 +248,7 @@ public class SoundLibrary : MonoBehaviour
     {
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-        musicInstance = RuntimeManager.CreateInstance(bossMusic);
+        musicInstance = RuntimeManager.CreateInstance(menuMusic);
         musicInstance.start();
     }
 
@@ -264,7 +264,6 @@ public class SoundLibrary : MonoBehaviour
     {
         if (this != null) { RuntimeManager.PlayOneShot(menuClick, transform.position); }
     }
-
 
     public void StopMusic()
     {

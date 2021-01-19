@@ -337,7 +337,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 8.280372
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230079729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.07, z: -10}
+  m_LocalPosition: {x: 0, y: 0.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -759,11 +759,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1069252932, guid: 3cb5a3c2c6a3c404186696ef448acc9f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -54
+      value: -79.961
       objectReference: {fileID: 0}
     - target: {fileID: 1069252932, guid: 3cb5a3c2c6a3c404186696ef448acc9f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 114
+      value: 232.26001
       objectReference: {fileID: 0}
     - target: {fileID: 1069252932, guid: 3cb5a3c2c6a3c404186696ef448acc9f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -783,11 +783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1695833505, guid: 3cb5a3c2c6a3c404186696ef448acc9f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -54
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 1695833505, guid: 3cb5a3c2c6a3c404186696ef448acc9f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 268.30997
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 1695833505, guid: 3cb5a3c2c6a3c404186696ef448acc9f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -827,8 +827,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerCards.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: f89e21e52a1de55449b55d504d9e15bf,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 910721411369809694, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}
       propertyPath: playerCards.Array.data[1]
@@ -887,7 +886,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentPlayerWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 76de7295e684ac04a9998b69abe58dfc,
+      objectReference: {fileID: 11400000, guid: 141fb12c59804034f9ca23af019f35aa,
         type: 2}
     - target: {fileID: 910721411369809695, guid: 3cb5a3c2c6a3c404186696ef448acc9f,
         type: 3}

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Banana ClusterBomb
   m_EditorClassIdentifier: 
   currentWeaponSpr: {fileID: 21300000, guid: 627ea03f4d337004bbd7492bddcbf97c, type: 3}
+  secondarySprite: {fileID: 0}
   bulletPrefab: {fileID: 1661679922909898786, guid: 17dc4bb0814cbfc41bf0ba1576d124bb,
     type: 3}
   fireRate: 5
+  weaponSoundIndex: 0
+  isCatLauncher: 1

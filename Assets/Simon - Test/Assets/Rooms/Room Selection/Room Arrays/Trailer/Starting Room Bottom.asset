@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3d0080efabf87942b7f57051dacd054, type: 3}
-  m_Name: Template
+  m_Name: Starting Room Bottom
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 0}
+  - {fileID: 1595544070, guid: b6378b0ae26fbb04082f5450de49c7c0, type: 3}
+  roomType: 7

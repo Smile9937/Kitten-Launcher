@@ -6265,6 +6265,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2519947584792484090, guid: 63ecd154bbb54264687157a6144e579b,
         type: 3}
+    - target: {fileID: 5595226157242227614, guid: 2abe925cda94dcf4db6ddbafa809544a,
+        type: 3}
+      propertyPath: portal
+      value: 
+      objectReference: {fileID: 32294221880804154, guid: 4716d7fa20360c34a99c01d47996d5b0,
+        type: 3}
     - target: {fileID: 6825355863004162522, guid: 2abe925cda94dcf4db6ddbafa809544a,
         type: 3}
       propertyPath: m_LocalPosition.x

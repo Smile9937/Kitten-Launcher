@@ -118,12 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2907a8a4ec294448b67ff1c200e9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 260
+  startHealth: 80
   enemyIndex: 0
   enemyReward: {fileID: 0}
-  weaponReward: {fileID: 0}
+  weaponReward:
+  - {fileID: 0}
   damageParticle: {fileID: 5754221266405699019, guid: e7c1ec25570db8b4c82cc86a81b9df32,
     type: 3}
+  giveWeapon: 0
   health: 0
 --- !u!114 &7459881690274875933
 MonoBehaviour:
